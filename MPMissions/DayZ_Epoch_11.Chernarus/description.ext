@@ -1,4 +1,3 @@
-#include "loot\config\cfgbuildingloot.hpp" //loot custom by "Valerjanich"
 respawn = "BASE";
 respawndelay = 5;
 onLoadMission= "DayZ Epoch Chernarus";
@@ -182,5 +181,5 @@ class RscTextGUIK {
     h = 0.2;
 };
 
-#include "=BTC=_Logistic\=BTC=_Lift\=BTC=_Hud.h" //gui fix
-#include "custom\snap_build\points.hpp" //build_snap
+#include "=BTC=_Logistic\=BTC=_Lift\=BTC=_Hud.h"
+#include "custom\snap_build\points.hpp"

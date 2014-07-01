@@ -131,6 +131,7 @@ if (isServer) then {
 
 [] execVM "service_point\service_point.sqf"; //Refuel_gold
 
-/*if (BTC) then {
+/*
+if (BTC) then {
 _logistic = execVM "=BTC=_Logistic\=BTC=_Logistic_Init.sqf"; //gui_fix
 };*/
