@@ -1343,7 +1343,7 @@ class Mission
 			interruptable=1;
 			age="UNKNOWN";
 			name="Lenz";
-			expCond="(player distance Lenz) < 50;";
+			expCond="(player distance Lenz) < 300;";
 			expActiv="[""trader city Lenzburg"",true,""enter""] spawn player_traderCity;";
 			expDesactiv="[""trader city Lenzburg"",true,""leave""] spawn player_traderCity;";
 			class Effects
@@ -1353,14 +1353,14 @@ class Mission
 		class Item1
 		{
 			position[]={15506.952,6.2226005,13229.368};
-			a=100;
-			b=100;
+			a=300;
+			b=300;
 			activationBy="WEST";
 			repeating=1;
 			interruptable=1;
 			age="UNKNOWN";
 			name="Emmen";
-			expCond="(player distance Emmen) < 100;";
+			expCond="(player distance Emmen) < 300;"; 
 			expActiv="[""trader city Emmen"",true,""enter""] spawn player_traderCity;";
 			expDesactiv="[""trader city Emmen"",true,""leave""] spawn player_traderCity;";
 			class Effects
@@ -1370,14 +1370,14 @@ class Mission
 		class Item2
 		{
 			position[]={12399.751,216.42809,5074.5273};
-			a=75;
-			b=75;
+			a=300;
+			b=300;
 			activationBy="WEST";
 			repeating=1;
 			interruptable=1;
 			age="UNKNOWN";
 			name="Schratten";
-			expCond="(player distance Schratten) < 75;";
+			expCond="(player distance Schratten) < 300;";
 			expActiv="[""trader city Schratten"",true,""enter""] spawn player_traderCity;";
 			expDesactiv="[""trader city Schratten"",true,""leave""] spawn player_traderCity;";
 			class Effects
@@ -1392,7 +1392,7 @@ class Mission
 			interruptable=1;
 			age="UNKNOWN";
 			name="Bandit";
-			expCond="(player distance Bandit) < 50;";
+			expCond="(player distance Bandit) < 300;";
 			expActiv="[""Bandit Camp"",true,""enter""] spawn player_traderCity;";
 			expDesactiv="[""Bandit Camp"",true,""leave""] spawn player_traderCity;";
 			class Effects
@@ -1407,7 +1407,7 @@ class Mission
 			interruptable=1;
 			age="UNKNOWN";
 			name="Hero";
-			expCond="(player distance Hero) < 50;";
+			expCond="(player distance Hero) < 300;";
 			expActiv="[""Hero Vendor"",true,""enter""] spawn player_traderCity;";
 			expDesactiv="[""Hero Vendor"",true,""leave""] spawn player_traderCity;";
 			class Effects
@@ -1422,7 +1422,7 @@ class Mission
 			interruptable=1;
 			age="UNKNOWN";
 			name="Wholesale1";
-			expCond="(player distance Wholesale1) < 50;";
+			expCond="(player distance Wholesale1) < 300;";
 			expActiv="[""West Wholesaler"",true,""enter""] spawn player_traderCity;";
 			expDesactiv="[""West Wholesaler"",true,""leave""] spawn player_traderCity;";
 			class Effects
@@ -1437,7 +1437,7 @@ class Mission
 			interruptable=1;
 			age="UNKNOWN";
 			name="Wholesaler";
-			expCond="(player distance Wholesaler) < 50;";
+			expCond="(player distance Wholesaler) < 300;";
 			expActiv="[""Wholesaler"",true,""enter""] spawn player_traderCity;";
 			expDesactiv="[""Wholesaler"",true,""leave""] spawn player_traderCity;";
 			class Effects
@@ -1452,7 +1452,7 @@ class Mission
 			interruptable=1;
 			age="UNKNOWN";
 			name="Boat1";
-			expCond="(player distance boat1) < 50;";
+			expCond="(player distance boat1) < 300;";
 			expActiv="[""Boat Vendor"",true,""enter""] spawn player_traderCity;";
 			expDesactiv="[""Boat Vendor"",true,""leave""] spawn player_traderCity;";
 			class Effects
@@ -1467,7 +1467,7 @@ class Mission
 			interruptable=1;
 			age="UNKNOWN";
 			name="Boat2";
-			expCond="(player distance boat2) < 50;";
+			expCond="(player distance boat2) < 300;";
 			expActiv="[""Boat Vendor"",true,""enter""] spawn player_traderCity;";
 			expDesactiv="[""Boat Vendor"",true,""leave""] spawn player_traderCity;";
 			class Effects
@@ -1482,7 +1482,7 @@ class Mission
 			interruptable=1;
 			age="UNKNOWN";
 			name="AWOL";
-			expCond="(player distance awol) < 75;";
+			expCond="(player distance awol) < 300;";
 			expActiv="[""Aircraft Vendor"",true,""enter""] spawn player_traderCity;";
 			expDesactiv="[""Aircraft Vendor"",true,""leave""] spawn player_traderCity;";
 			class Effects

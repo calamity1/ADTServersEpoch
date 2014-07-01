@@ -1,5 +1,3 @@
-[] spawn {[] execVM "\z\addons\dayz_server\init\AH.sqf";}; //26062014IAHAT331C
-
 waituntil {!isnil "bis_fnc_init"};
 
 BIS_MPF_remoteExecutionServer = {
