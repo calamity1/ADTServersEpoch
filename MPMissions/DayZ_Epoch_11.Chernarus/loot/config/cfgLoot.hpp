@@ -1,8 +1,8 @@
 #include "cfglootsmall.hpp"
-#include "loot_adt/sniper_loot.hpp" //РЎРЅР°Р№РїРµСЂРєРё & РїР°С‚СЂРѕРЅС‹...
+//#include "loot_adt/sniper_loot.hpp" //Снайперки & патроны...
 
 class CfgLoot {
-//РњСѓСЃРѕСЂ
+//Мусор
 	trash[] = {
 	{"TrashTinCan", 0.01},
 	{"TrashJackDaniels", 0.00},
@@ -11,7 +11,7 @@ class CfgLoot {
 	{"ItemTrashRazor", 0.01}
 	};
 
-//РµРґР° - РІРѕРґР° - РїР°С‚СЂРѕРЅС‹ - РјСѓСЃРѕСЂ - РіСЂР°Р¶РґР°РЅСЃРєРёРµ Р·РґР°РЅРёСЏ
+//еда - вода - патроны - мусор - гражданские здания
 	civilian[] = {
 	{"FoodCanUnlabeled", 0.01},
 	{"TrashJackDaniels", 0.01},
@@ -52,7 +52,8 @@ class CfgLoot {
 	{"FoodBioMeat", 0.01},
 	{"8Rnd_9x18_MakarovSD", 0.01},
 	{"ItemBriefcaseEmpty", 0.01},
-	{"ItemDocument", 0.02}};
+	{"ItemDocument", 0.02}
+	};
 
 
 	food[] = {
@@ -110,7 +111,7 @@ class CfgLoot {
 	{"ItemSodaCoke", 0.06},
 	{"ItemSodaPepsi", 0.04},
 	{"TrashJackDaniels", 0.01},
-	{"FoodCanBakedBeans", 0.01
+	{"FoodCanBakedBeans", 0.01},
 	{"FoodCanSardines", 0.01},
 	{"FoodCanFrankBeans", 0.01},
 	{"FoodCanPasta", 0.01},
@@ -134,7 +135,7 @@ class CfgLoot {
 	{"ItemHeatPack", 0.04}
 	};
 
-//РњРµРґРёС†РёРЅР°
+//Медицина
 	medical[] = {
 	{"ItemBandage", 0.04},
 	{"ItemPainkiller", 0.10},
@@ -154,7 +155,7 @@ class CfgLoot {
 	{"ItemAntibiotic", 0.02}
 	};
 
-//РІРѕРµРЅРЅС‹Рµ Р·РґР°РЅРёСЏ
+//военные здания
 	military[] = {
 	{"FoodCanUnlabeled", 0.07},
 	{"ItemSodaEmpty", 0.04},
@@ -199,7 +200,7 @@ class CfgLoot {
 	{"30Rnd_9x19_UZI_SD", 0.01},
 	{"ItemDocument", 0.02}
 	};
-//РІРѕРµРЅРЅРѕ-РІРѕР·РґСѓС€РЅС‹Рµ Р·РґР°РЅРёСЏ
+//военно-воздушные здания
 	militarypilot[] = {
 	{"FoodCanUnlabeled", 0.01},
 	{"ItemSodaEmpty", 0.01},
@@ -245,7 +246,7 @@ class CfgLoot {
 	{"ItemHotwireKit", 0.02}
 	};
 
-//Р›СѓС‚ РІ РїРѕР»РёС†. Р·РѕРјР±Рё
+//Лут в полиц. зомби
 	policeman[] = {{"ItemBandage", 0.04},
 	{"7Rnd_45ACP_1911", 0.08},
 	{"6Rnd_45ACP", 0.08},
@@ -261,7 +262,7 @@ class CfgLoot {
 	};
 
 
-//РћС…РѕС‚РЅРёС‡СЊСЏ РІС‹С€РєР°
+//Охотничья вышка
 	hunter[] = {
 	{"ItemBandage", 0.04},
 	{"5x_22_LR_17_HMR", 0.10},
@@ -276,7 +277,7 @@ class CfgLoot {
 	{"ItemMixOil", 0.01}
 	};
 
-//РЎР°СЂР°Рё
+//Сараи
 	worker[] = {
 	{"FoodCanUnlabeled", 0.01},
 	{"TrashJackDaniels", 0.01},
@@ -296,7 +297,7 @@ class CfgLoot {
 	{"ItemDocument", 0.02}
 	};
 
-//РЎРєРёРЅС‹
+//Скины
 	clothes[] = {
 	{"Skin_RU_Policeman_DZ", 0.11},
 	{"Skin_Pilot_EP1_DZ", 0.1},
@@ -313,7 +314,7 @@ class CfgLoot {
 	{"Skin_INS_Worker2_DZ", 0.02}
 	};
 
-//РЎРєРёРЅС‹ РІРѕРµРЅРЅС‹С…
+//Скины военных
 	militaryclothes[] = {
 	{"Skin_Camo1_DZ", 0.09},
 	{"Skin_Sniper1_DZ", 0.06},
@@ -332,7 +333,7 @@ class CfgLoot {
 	{"Skin_INS_Soldier_CO_DZ", 0.04}
 	};
 
-//РЎРїРµС†РёС„РёС†РёСЂРѕРІР°РЅРЅС‹Рµ СЃРєРёРЅС‹
+//Специфицированные скины
 	specialclothes[] = {
 	{"Skin_Ins_Soldier_GL_DZ", 0.05},
 	{"Skin_GUE_Commander_DZ", 0.08},
@@ -356,14 +357,14 @@ class CfgLoot {
 	{"Skin_INS_Lopotev_DZ", 0.02}
 	};
 
-//РџР°Р»Р°С‚РєРё
+//Палатки
 	tents[] = {
 	{"WeaponHolder_ItemTentOld", 0.24},
 	{"WeaponHolder_ItemTentDomed", 0.23},
 	{"WeaponHolder_ItemTentDomed2", 0.23}
 	};
 
-//Р СЋРєР·Р°РєРё
+//Рюкзаки
 	backpacks[] = {
 	{"DZ_Assault_Pack_EP1", 0.22},
 	{"DZ_Czech_Vest_Puch", 0.2},
@@ -373,7 +374,7 @@ class CfgLoot {
 	{"DZ_CompactPack_EP1", 0.11}
 	};
 
-//Р’РѕРµРЅРЅС‹Рµ СЂСЋРєР·Р°РєРё
+//Военные рюкзаки
 	militarybackpacks[] = {
 	{"DZ_British_ACU", 0.3},
 	{"DZ_GunBag_EP1", 0.25},
@@ -382,7 +383,7 @@ class CfgLoot {
 	{"DZ_LargeGunBag_EP1", 0.01}
 	};
 
-//РџР°С‚СЂРѕРЅС‹ РЅР° РїСѓР»РµРјРµС‚С‹
+//Патроны на пулеметы
 	militaryammo[] = {
 	{"2000Rnd_762x51_M134", 0.01},
 	{"29Rnd_30mm_AGS30", 0.1},
@@ -391,7 +392,7 @@ class CfgLoot {
 	{"100Rnd_127x99_M2", 0.1}
 	};
 
-//РџРёСЃС‚РѕР»РµС‚С‹
+//Пистолеты
 	pistols[] = {
 	{"Makarov", 0.5},
 	{"Colt1911", 0.5},
@@ -403,7 +404,7 @@ class CfgLoot {
 	{"revolver_gold_EP1", 0.1}
 	};
 
-//Р”СЂРѕР±РѕРІРёРєРё
+//Дробовики
 	shotgunsingleshot[] = {
 	{"Winchester1866", 0.25},
 	{"LeeEnfield", 0.2},
@@ -414,7 +415,7 @@ class CfgLoot {
 	{M1014, 0.05}
 	};
 
-//Р¤РµСЂРјС‹-Р°РјР±Р°СЂС‹-РєРѕСЂРѕРІРЅРёРєРё
+//Фермы-амбары-коровники
 	farmweapons[] = {
 	{"Winchester1866", 0.15},
 	{"LeeEnfield", 0.1},
@@ -426,7 +427,7 @@ class CfgLoot {
 	{"Chainsaw", 0.01}
 	};
 
-//РЎРЅР°Р№РїРµСЂСЃРєРёРµ РІРёРЅС‚РѕРІРєРё
+//Снайперские винтовки
 	sniperrifles[] = {
 	{AK_107_PSO, 0.5},
 	{M4SPR, 0.2},
@@ -445,7 +446,7 @@ class CfgLoot {
 	{DMR, 0.12}
 	};
 
-//РџР°С‚СЂРѕРЅС‹ Рє СЃРЅР°Р№РїРµСЂСЃРєРёРј РІРёРЅС‚РѕРІРєР°Рј
+//Патроны к снайперским винтовкам
 	sniperriflesammo[] = {
 	{"30Rnd_545x39_AKSD", 0.18},
 	{"5Rnd_127x108_KSVK", 0.08},
@@ -458,7 +459,7 @@ class CfgLoot {
 	{"20Rnd_9x39_SP5_VSS", 0.05}
 	};
 
-//РџРёСЃС‚РѕР»РµС‚С‹-РїСѓР»РµРјРµС‚С‹
+//Пистолеты-пулеметы
 	submachinegun[] = {
 	{UZI_EP1, 0.5},
 	{"bizon", 0.5},
@@ -469,7 +470,7 @@ class CfgLoot {
 	{MP5SD, 0.06}
 	};
 
-//РЁС‚СѓСЂРјРѕРІС‹Рµ РІРёРЅС‚РѕРІРєРё
+//Штурмовые винтовки
 	assaultrifles[] = {
 	{"AKS_74_kobra", 0.5},
 	{AKS_74_U, 0.5},
@@ -504,7 +505,7 @@ class CfgLoot {
 	{"M4A1_HWS_GL_SD_Camo", 0.5}
 	};
 
-//РџР°С‚СЂРѕРЅС‹ Рє С€С‚СѓСЂРјРѕРІС‹Рј РІРёРЅС‚РѕРІРєР°Рј
+//Патроны к штурмовым винтовкам
 	assaultrifleammo[] = {
 	{"30Rnd_762x39_SA58", 0.25},
 	{"30Rnd_762x39_AK47", 0.2},
@@ -514,7 +515,7 @@ class CfgLoot {
 	{"20Rnd_762x51_FNFAL", 0.07}
 	};
 
-//РўСЏР¶РµР»РѕРµ РІРѕРѕСЂСѓР¶РµРЅРёРµ
+//Тяжелое вооружение
 	machineguns[] = {
 	{RPK_74, 0.1},
 	{M8_SAW, 0.2},
@@ -530,7 +531,7 @@ class CfgLoot {
 	{"Mk_48_DZ", 0.03}
 	};
 
-//РїР°С‚СЂРѕРЅС‹ Рє РїСѓР»РµРјРµС‚Р°Рј РІ РјР°С€РёРЅР°С…
+//патроны к пулеметам в машинах
 	machinegunammo[] = {
 	{"100Rnd_556x45_BetaCMag", 0.2},
 	{"75Rnd_545x39_RPK", 0.2},
@@ -551,7 +552,7 @@ class CfgLoot {
 	{"PipeBomb", 0.01}
 	};
 
-//РЎР»Р°Р±С‹Рµ РґСЂРѕР±РѕРІРёРєРё
+//Слабые дробовики
 	militaryshotguns[] = {
 	{"Saiga12K", 0.25},
 	{"Remington870_lamp", 0.35},

@@ -64,7 +64,7 @@ if (_canDrink) then {
 	} else {
 		
 		player playActionNow "PutDown";
-		//_nul = [objNull, player, rSAY, "drink_water"] call RE; //fixes
+		//_nul = [objNull, player, rSAY, "drink_water"] call RE;
 		dayz_lastDrink = time;
 		dayz_thirst = 0;
 
