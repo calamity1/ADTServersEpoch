@@ -1,3 +1,4 @@
+#include "loot\config\cfgbuildingloot.hpp"
 respawn = "BASE";
 respawndelay = 5;
 onLoadMission= "DayZ Epoch Chernarus";

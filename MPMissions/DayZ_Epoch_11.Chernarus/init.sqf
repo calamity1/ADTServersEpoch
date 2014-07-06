@@ -25,7 +25,7 @@ enableSentences false;
 // DayZ Epoch config
 spawnShoremode = 1; // Default = 1 (on shore)
 spawnArea= 1500; // Default = 1500
-
+DZE_MissionLootTable = true;
 //start loot_fix
 DefaultMagazines = ["ItemBandage","ItemBandage","ItemPainkiller","HandRoadFlare"];
 DefaultWeapons = ["ItemFlashlight"];
@@ -70,7 +70,8 @@ EpochEvents = [["any","any","any","any",30,"crash_spawner"],["any","any","any","
 dayz_fullMoonNights = true;
 
 //Load in compiled functions
-call compile preprocessFileLineNumbers "\z\addons\dayz_code\init\variables.sqf";				//Initilize the Variables (IMPORTANT: Must happen very early)
+//call compile preprocessFileLineNumbers "\z\addons\dayz_code\init\variables.sqf";
+call compile preprocessFileLineNumbers "custom\variables.sqf"; //Fix_ADT_Server_v1.5.0.1|	
 progressLoadingScreen 0.1;
 call compile preprocessFileLineNumbers "\z\addons\dayz_code\init\publicEH.sqf";				//Initilize the publicVariable event handlers
 progressLoadingScreen 0.2;
@@ -127,7 +128,7 @@ if (isServer) then {
 
 #include "\z\addons\dayz_code\system\BIS_Effects\init.sqf"
 
-[] execVM "scripts\szone.sqf"; //Safe_Zone
+[] execVM "scripts\safez.sqf"; //Safe_Zone
 
 [] execVM "service_point\service_point.sqf"; //Refuel_gold
 
