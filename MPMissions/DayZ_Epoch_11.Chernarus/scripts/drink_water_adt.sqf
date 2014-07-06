@@ -47,7 +47,7 @@ if (_canDrink) then {
 	if ((floor (random 100) < _stagnant_water_rates)) then {
 	
 		player playActionNow "PutDown";
-		_nul = [objNull, player, rSAY, "drink_water"] call RE;
+		//_nul = [objNull, player, rSAY, "drink_water"] call RE;
 		r_player_infected = true;
 		player setVariable["USEC_infected",true,true];
 		player setVariable ["messing",[dayz_hunger,dayz_thirst],true];
@@ -64,7 +64,7 @@ if (_canDrink) then {
 	} else {
 		
 		player playActionNow "PutDown";
-		_nul = [objNull, player, rSAY, "drink_water"] call RE;
+		//_nul = [objNull, player, rSAY, "drink_water"] call RE; //fixes
 		dayz_lastDrink = time;
 		dayz_thirst = 0;
 
