@@ -15,6 +15,7 @@ _infiSZ =
 [
                 [[6325.6772,7807.7412],300,true], //StarySobor_safez
                 [[4080.0535,11671.371],200,true],  //Bash_safez_fix_
+		[[11472.873,11343.632],200,true], //Klen_fix
 		[[1621.2588,7797.7075],100,true], //Bandit_safez
 		[[12060.781,12641.241],150,true], //Air_Krasnostav_safez//fix_
 		[[12914.686,12748.712],100,true]  //Hero_safez//fix_
