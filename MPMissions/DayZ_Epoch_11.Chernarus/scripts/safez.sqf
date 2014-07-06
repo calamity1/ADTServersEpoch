@@ -13,8 +13,8 @@ LOG_EnterLeave = true;  // Пишем logs в RPT вход и выход игр�
 /* Используем "USE_CANBUILD" or/and (works together) the custom positions below (USE_POSITIONS) [кординаты zone,radius] */
 _infiSZ =
 [
-        [[6325.6772,7807.7412],300,true], //StarySobor_safez
-        [[4080.0535,11671.371],200,true],  //Bash_safez_fix_
+                [[6325.6772,7807.7412],300,true], //StarySobor_safez
+                [[4080.0535,11671.371],200,true],  //Bash_safez_fix_
 		[[1621.2588,7797.7075],100,true], //Bandit_safez
 		[[12060.781,12641.241],150,true], //Air_Krasnostav_safez//fix_
 		[[12914.686,12748.712],100,true]  //Hero_safez//fix_
