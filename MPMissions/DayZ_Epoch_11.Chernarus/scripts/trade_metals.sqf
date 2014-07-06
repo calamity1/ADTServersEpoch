@@ -10,23 +10,26 @@ DZE_ActionInProgress = true;
 s_player_parts_crtl = 1;
 
 _metals_conversion = [ 
-    ["ItemTopaz","ItemBriefcase100oz",1,1,"buy","Full Briefcases","Topaz",99],
-    ["ItemBriefcase100oz","ItemTopaz",1,1,"buy","Topaz","Full Briefcases",99],
+    ["ItemTopaz","ItemBriefcase40oz",1,1,"buy","Briefcase40oz","Topaz",99],
+    ["ItemBriefcase40oz","ItemTopaz",1,1,"buy","Topaz","Briefcase40oz",99],
     
-    ["ItemObsidian","ItemBriefcase100oz",1,1,"buy","Full Briefcases","Obsidian",99],
-    ["ItemBriefcase100oz","ItemObsidian",1,1,"buy","Obsidian","Full Briefcases",99],    
+    ["ItemObsidian","ItemBriefcase50oz",1,1,"buy","Briefcase50oz","Obsidian",99],
+    ["ItemBriefcase50oz","ItemObsidian",1,1,"buy","Obsidian","Briefcase50oz",99],    
     
     ["ItemRuby","ItemObsidian",1,1,"buy","Obsidian","Ruby",99],
     ["ItemObsidian","ItemRuby",1,1,"buy","Ruby","Obsidian",99],
 	 
-	["ItemSapphire","ItemBriefcase100oz",1,1,"buy","Full Briefcases","Sapphire",99],
-    ["ItemBriefcase100oz","ItemSapphire",1,1,"buy","Sapphire","Full Briefcases",99],
+	["ItemSapphire","ItemBriefcase30oz",1,1,"buy","Briefcase30oz","Sapphire",99],
+    ["ItemBriefcase30oz","ItemSapphire",1,1,"buy","Sapphire","Briefcase30oz",99],
 	
-	["ItemAmethyst","ItemBriefcase100oz",1,1,"buy","Full Briefcases","Amethyst",99],
-    ["ItemBriefcase100oz","ItemAmethyst",1,1,"buy","Amethyst","Full Briefcases",99],
+	["ItemAmethyst","ItemBriefcase10oz",1,1,"buy","Briefcase10oz","Amethyst",99],
+    ["ItemBriefcase10oz","ItemAmethyst",1,1,"buy","Amethyst","Briefcase10oz",99],
 	
-	["ItemEmerald","ItemBriefcase100oz",1,1,"buy","Full Briefcases","Emerald",99],
-    ["ItemBriefcase100oz","ItemEmerald",1,1,"buy","Emerald","Full Briefcases",99] 
+	["ItemEmerald","ItemBriefcase40oz",1,1,"buy","Briefcase40oz","Emerald",99],
+    ["ItemBriefcase40oz","ItemEmerald",1,1,"buy","Emerald","Briefcase40oz",99],
+	
+	["PartOreGold","ItemGoldBar",1,1,"buy","GoldBar","OreGold",99],
+    ["ItemGoldBar","PartOreGold",1,1,"buy","OreGold","GoldBar",99] 
 ];
 
 // Стат меню...
