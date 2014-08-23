@@ -440,7 +440,7 @@ dayz_cantseefov = 70; // half player field-of-view. Visible Z won't be spawned i
 dayz_canDelete = 300; // Z, further than this distance from its "owner", will be deleted
 
 if(isNil "DZE_SelfTransfuse") then {
-	DZE_SelfTransfuse = false;
+	DZE_SelfTransfuse = false; //ADT blood bag default "true"
 };
 if(isNil "dayz_maxAnimals") then {
 	dayz_maxAnimals = 5;

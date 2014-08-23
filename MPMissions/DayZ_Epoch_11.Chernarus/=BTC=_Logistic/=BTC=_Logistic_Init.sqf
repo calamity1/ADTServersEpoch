@@ -40,7 +40,7 @@ BTC_get_liftable_array =
 		//case "UH60M_EP1"       : {_array = ["Motorcycle","Car","Truck","Wheeled_APC","Tracked_APC","Air"];};
 		//case "UH60M_EP1_DZ"    : {_array = ["Motorcycle","Car","Truck","Wheeled_APC","Tracked_APC","Air"];};
 		//case "BAF_Merlin_HC3_D": {_array = ["Motorcycle","Car","Truck","Wheeled_APC","Tracked_APC","Air"];};
-		//case "Mi17_DZE"        : {_array = ["Motorcycle","Car","Truck","Wheeled_APC","Tracked_APC","Air"];};
+		case "Mi17_DZE"        : {_array = ["Car"];};
 		//case "UH60M_EP1_DZE"   : {_array = ["Motorcycle","Car","Truck","Wheeled_APC","Tracked_APC","Air"];};
 		//case "UH1H_DZE"        : {_array = ["Motorcycle","Car","Truck","Wheeled_APC","Tracked_APC","Air"];};
 		//case "UH1Y_DZE"        : {_array = ["Motorcycle","Car","Truck","Wheeled_APC","Tracked_APC","Air"];};
@@ -49,7 +49,7 @@ BTC_get_liftable_array =
 		//case "CH_47F_EP1_DZ"   : {_array = ["LandVehicle","Car","Air"];};
 		//case "CH_47F_BAF"      : {_array = ["LandVehicle","Car","Air"];};
 		//case "Mi17_TK_EP1"     : {_array = ["LandVehicle","Car","Air"];};
-		//case "Mi17_DZ"	       : {_array = ["LandVehicle","Car","Air"];};
+		case "Mi17_DZ"	       : {_array = ["Car"];};
 		//case "Mi171Sh_CZ_EP1"  : {_array = ["LandVehicle","Air"];};
 		//case "Mi17_Civilian_DZ"  : {_array = ["LandVehicle","Air"];};
 	};

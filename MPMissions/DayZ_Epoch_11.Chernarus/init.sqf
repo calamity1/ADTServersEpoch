@@ -1,7 +1,8 @@
 /*	 
-    DayZ Epoch |v1.0.5.1| "30.06.2014"
-	For ADT-68 SERVER DayZ 
-	Addons Credits: GROM, Valerjanich
+   * DayZ Overpoch |v1.0.5.1| "20.08.2014"
+   * For ADT-TEAM SERVER DayZ 
+   * Dev: GROM
+   * http://adt-team.ru/
 */
 
 //BTC           = true;
@@ -25,22 +26,24 @@ enableSentences false;
 // DayZ Epoch config
 spawnShoremode = 1; // Default = 1 (on shore)
 spawnArea= 1500; // Default = 1500
-DZE_MissionLootTable = true;
+
+DZE_SelfTransfuse = true; //Самозаливка крови
+
 //start loot_fix
-DefaultMagazines = ["ItemBandage","ItemBandage","ItemPainkiller","HandRoadFlare"];
-DefaultWeapons = ["ItemFlashlight"];
+DefaultMagazines = ["ItemBandage","ItemPainkiller","HandRoadFlare"];
+DefaultWeapons = ["ItemFlashlight","EvMoney"];
 DefaultBackpack = "DZ_Patrol_Pack_EP1";  
 DefaultBackpackItems = "";
 
 //Building
 DZE_BuildingLimit = 3000;
 DZE_PlotPole = [45,60]; //Default: [30;45]
-//
+
+snapTutorial = true;
+
 DZE_DeathMsgGlobal = false;
 DZE_DeathMsgSide = false;
 DZE_DeathMsgTitleText = false;
-
-//DZE_MissionLootTable = true; //custom loot by valerjanich 21.04.2014
 
 DZE_vehicleAmmo = 1;
 deathMessages = 1;
@@ -60,13 +63,33 @@ dayz_sellDistance_boat = 30;
 dayz_sellDistance_air = 40;
 
 dayz_maxAnimals = 15; // Default: 8
-dayz_tameDogs = true; //fix
+dayz_tameDogs = false; //fix
 DynamicVehicleDamageLow = 0; // Default: 0
 DynamicVehicleDamageHigh = 100; // Default: 100
 
 DZE_BuildOnRoads = false; // Default: False
+DZE_MissionLootTable = true; 
+DZE_ConfigTrader = false; //Overpoch adt fix
+
+
+/*
+DZE_defaultSkin = [
+	[
+"Haris_Press_EP1_DZ","Rocker3_DZ","Rocker1_DZ","SurvivorWurban_DZ","SurvivorWdesert_DZ","SurvivorW3_DZ","SurvivorWpink_DZ","Haris_Press_EP1_DZ","Pilot_EP1_DZ","RU_Policeman_DZ"
+	],
+	[
+		"Skin_SurvivorW2_DZ",
+		"Skin_SurvivorW3_DZ",
+		"Skin_SurvivorWcombat_DZ",
+		"Skin_SurvivorWdesert_DZ",
+		"Skin_SurvivorWpink_DZ",
+		"Skin_SurvivorWurban_DZ"
+	]
+]; //ADDED*/
+
 
 EpochEvents = [["any","any","any","any",30,"crash_spawner"],["any","any","any","any",0,"crash_spawner"],["any","any","any","any",15,"supply_drop"]];
+
 dayz_fullMoonNights = true;
 
 //Load in compiled functions
@@ -110,6 +133,9 @@ if (!isDedicated) then {
 	//Lights
 	//[false,12] execVM "\z\addons\dayz_code\compile\local_lights_init.sqf";
 	
+	[] execVM "scripts\fixes\effects_adt.sqf"; //Effects_ADT
+	
+	
 };
 
 //----------------------------***ADT-TEAM-Scripts***----------------------------//
@@ -117,23 +143,36 @@ if (!isDedicated) then {
 //*#include "\z\addons\dayz_code\system\REsec.sqf"*//
 
 //Start Dynamic Weather
-[] execVM "scripts\DynamicWeatherEffects.sqf";
+[] execVM "scripts\fixes\DynamicWeatherEffects.sqf";
 
-//AI_sector ADT-68 by GROM 13.06.2014
-if (isServer) then {
-
-   _nil = [] execVM "\z\addons\dayz_server\WAI\AI_ADT\Init_AI_ADT.sqf"; //fix AI_ADT by "GROM"
-
-};
+//["elevator"] execVM "elevator\elevator_init.sqf"; //Lift_
 
 #include "\z\addons\dayz_code\system\BIS_Effects\init.sqf"
 
 [] execVM "scripts\safez.sqf"; //Safe_Zone
 
+[] execVM "scripts\loginCamera.sqf"; //loginCamera
+
 [] execVM "service_point\service_point.sqf"; //Refuel_gold
 
 [] execVM "scripts\monitor.sqf"; //Debag_monitor
-/*
+
 if (BTC) then {
-_logistic = execVM "=BTC=_Logistic\=BTC=_Logistic_Init.sqf"; //gui_fix
-};*/
+_logistic = execVM "=BTC=_Logistic\=BTC=_Logistic_Init.sqf"; 
+};
+
+[] execVM "scripts\weedfarm.sqf"; //hemp farms
+
+
+//watermark_adt_team
+_pic = "gui\watermark.paa";
+[
+'<img align=''left'' size=''1.0'' shadow=''1'' image='+(str(_pic))+' />',
+safeZoneX+0.027,
+safeZoneY+safeZoneH-0.1,
+99999,
+0,
+0,
+3090
+] spawn bis_fnc_dynamicText;
+ 

@@ -1,13 +1,17 @@
-private["_ent"];
+//by GROM
+
+private["_ent","_started","_myArray","_myDance","_animState","_started","_finished","_isDancing"];
 _ent = _this select 3;
 player removeAction s_player_dance;
 s_player_dance = -1;
- 
-player playMove "ActsPercMstpSnonWnonDnon_DancingDuoIvan";
-sleep 2;
-//playsound "hardbass"; //fix_adt__
 
-cutText ["Отожгём сейчас хардбасс!","PLAIN DOWN"];
+_myArray = ["ActsPercMstpSnonWnonDnon_DancingDuoIvan","ActsPercMstpSnonWnonDnon_DancingStefan","ActsPercMstpSnonWnonDnon_DancingDuoStefan"];
+_myDance = _myArray call BIS_fnc_selectRandom;
+ 
+player playMove _myDance;
+ 
+cutText ["Отжигаем!!!","PLAIN DOWN"];
+ 
 r_interrupt = false;
 _animState = animationState player;
 r_doLoop = true;
@@ -16,7 +20,7 @@ _finished = false;
  
     while {r_doLoop} do {
         _animState = animationState player;
-        _isDancing = ["ActsPercMstpSnonWnonDnon_DancingDuoIvan",_animState] call fnc_inString;
+        _isDancing = [_myDance,_animState] call fnc_inString;
         if (_isDancing) then {
             _started = true;
         };
@@ -33,11 +37,11 @@ _finished = false;
  
 if (_finished) then {
  
-cutText ["Отлично зажёг, чувак!!!","PLAIN DOWN"];
+cutText ["Отлично зажёг, чувак!!!!","PLAIN DOWN"];
  
 } else {
 r_interrupt = false;
 [objNull, player, rSwitchMove,""] call RE;
 player playActionNow "stop";
-cutText ["Хардбасс прерван!","PLAIN DOWN"];
+cutText ["я стесняюсь... ;)","PLAIN DOWN"];
 };

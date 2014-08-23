@@ -766,11 +766,21 @@ if (!isNull cursorTarget && !_inVehicle && !_isPZombie && (player distance curso
 	};
 	*/
 
-
+/*
     //Sleep
 	if(_isTent && _ownerID == dayz_characterID) then {
 		if ((s_player_sleep < 0) && (player distance _cursorTarget < 3)) then {
 			s_player_sleep = player addAction [localize "str_actions_self_sleep", "\z\addons\dayz_code\actions\player_sleep.sqf",_cursorTarget, 0, false, true, "",""];
+		};
+	} else {
+		player removeAction s_player_sleep;
+		s_player_sleep = -1;
+	};*/
+	
+	//Sleep
+	if(_isTent and _ownerID == dayz_characterID) then {
+		if ((s_player_sleep < 0) and (player distance _cursorTarget < 3)) then {
+			s_player_sleep = player addAction [localize "str_actions_self_sleep", "scripts\medical\player_sleep.sqf",_cursorTarget, 0, false, true, "",""];
 		};
 	} else {
 		player removeAction s_player_sleep;
@@ -1024,3 +1034,15 @@ if (_dogHandle > 0) then {
 	player removeAction s_player_calldog;
 	s_player_calldog = 		-1;
 };
+
+//Медицинская помощь
+isMedik = typeOf cursorTarget in ["RU_Doctor","Dr_Hladik_EP1","Dr_Annie_Baker_EP1","Doctor"]; //id персонажей
+if((_isMedik && (player distance cursorTarget <= 3)) and _canDo) then {
+
+        if (s_player_needhill < 0) then {
+            s_player_needhill = player addAction ["Медицинская помощь","scripts\medical\healmefomgold.sqf","",-7,false,true,"", ""];
+        };
+    } else {
+        player removeAction s_player_needhill;
+        s_player_needhill = -1;
+        };

@@ -1,37 +1,8 @@
-/* *********************************************************************** */
- 
-/* =======================================================================
-/* SCRIPT NAME: Server Intro Credits Script by IT07
-/* SCRIPT VERSION: v1.3.5 BETA
-/* Credits for original script: Bohemia Interactive http://bistudio.com
-/* =======================================================================
- 
-/* *********************************************************************** */
+//ADT-TEAM http://adt-team.ru/
  
 // ========== SCRIPT CONFIG ============
 _onScreenTime = 6; //how long one role should stay on screen. Use value from 0 to 10 where 0 is almost instant transition to next role
-//NOTE: Above value is not in seconds!
- 
-// ==== HOW TO CUSTOMIZE THE CREDITS ===
-// If you want more or less credits on the screen, you have to add/remove roles.
-// Watch out though, you need to make sure BOTH role lists match eachother in terms of amount.
-// Just take a good look at the _role1 and the rest and you will see what I mean.
- 
-// For further explanation of it all, I included some info in the code.
- 
-// == HOW TO CUSTOMIZE THE COLOR OF CREDITS ==
-// Find line **** and look for: color='#f2cb0b'
-// The numbers and letters between the 2 '' is the HTML color code for a certain yellow.
-// If you want to change the color of the text, search on google for HTML color codes and pick the one your like.
-// Then, replace the existing color code for the code you would like to use instead. Don't forget the # in front of it.
-// HTML Color Codes Examples:
-// #FFFFFF (white)
-// #000000 (black) No idea why you would want black, but whatever
-// #C80000 (red)
-// #009FCF (light-blue)
-// #31C300 (Razer Green)
-// #FF8501 (orange)
-// ===========================================
+
  
  
 // SCRIPT START
@@ -40,15 +11,15 @@ waitUntil {!isNil "dayz_animalCheck"};
 sleep 10; //Wait in seconds before the credits start after player IS ingame
  
 _role1 = "Добро пожаловать на сервер";
-_role1names = ["ADT-68 Epoch 1.0.5.1/103718 NoCD"];
+_role1names = ["ADT-TEAM Epoch Chernarus 1.0.5.1/12555 NOCD"];
 _role2 = "Администраторы";
-_role2names = ["GROM", "Valerjanich", "Jezulya"];
+_role2names = ["GROM", "Valerjanich"];
 _role3 = "Версия";
 _role3names = ["DayZ Epoch Chernarus"];
 _role4 = "Группа ВКонтакте";
-_role4names = ["vk.com/adt_68"];
+_role4names = ["VK.COM/ADT_68"];
 _role5 = "Наш сайт";
-_role5names = ["dayz-adt.ru"];
+_role5names = ["ADT-TEAM.RU"];
 _role6 = "Основные нововведения";
 _role6names = ["Переделанные трейд зоны", "Сейфзоны 300 м"];
 _role7 = "Основные нововведения";

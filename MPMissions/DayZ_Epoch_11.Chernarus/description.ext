@@ -1,4 +1,4 @@
-#include "loot\config\cfgbuildingloot.hpp"
+#include "CfgServerTrader\cfgServerTrader.hpp"
 respawn = "BASE";
 respawndelay = 5;
 onLoadMission= "DayZ Epoch Chernarus";
@@ -8,12 +8,13 @@ OnLoadMissionTime = False;
 disabledAI = true;
 disableChannels[]={0,2,6};
 enableItemsDropping = 0;
+#include "loot\config\CfgBuildingLoot.hpp" 
 
 briefing = 0;
 debriefing = 0;
 
 onPauseScript = "";
-loadScreen = "loadscreenepoch.paa";
+loadScreen = "\z\addons\dayz_code\gui\dayz_logo_ca.paa";
 
 class Header
 {
@@ -166,6 +167,7 @@ class RscPictureGUI
     w = 0.2;
     h = 0.15;
 };
+
 class RscTextGUIK {
     type = 0;
     idc = -1;
@@ -182,5 +184,7 @@ class RscTextGUIK {
     h = 0.2;
 };
 
+#include "hpp\extra_rc.hpp"
+//#include "hpp\gui_adt.h" //fix_adt_gui
+#include "custom\snap_pro\snappoints.hpp"
 #include "=BTC=_Logistic\=BTC=_Lift\=BTC=_Hud.h"
-#include "custom\snap_build\points.hpp"
