@@ -26,8 +26,8 @@ enableRadio false;
 enableSentences false;
 
 //Start Loot
-DefaultMagazines = ["ItemBandage","ItemBandage","ItemPainkiller","HandRoadFlare"];
-DefaultWeapons = ["ItemFlashlight"];
+DefaultMagazines = ["ItemBandage","ItemBandage","8Rnd_9x18_Makarov","8Rnd_9x18_Makarov","ItemPainkiller","HandRoadFlare","ItemWaterbottleBoiled","FoodSteakCooked"];
+DefaultWeapons = ["ItemFlashlight","Makarov","ItemMap"];
 DefaultBackpack = "DZ_Patrol_Pack_EP1";  
 DefaultBackpackItems = "";
 
@@ -35,15 +35,15 @@ DefaultBackpackItems = "";
 spawnShoremode = 1; // Default = 1 (on shore)
 spawnArea= 1500; // Default = 1500
 // 
-MaxVehicleLimit = 200; // Default = 50
+MaxVehicleLimit = 400; // Default = 50
 MaxDynamicDebris = 500; // Default = 100
 dayz_MapArea = 18000; // Default = 10000
 
 dayz_minpos = -1000; 
 dayz_maxpos = 26000;
 
-dayz_paraSpawn = true;
-
+dayz_paraSpawn = false; //fix
+DZE_SelfTransfuse = true; //ADT blood bag default "true"
 DZE_PlotPole = [45,60]; //Default: [30;45]
 DZE_BuildingLimit = 4000;
 
@@ -69,7 +69,8 @@ EpochEvents = [["any","any","any","any",30,"crash_spawner"],["any","any","any","
 dayz_fullMoonNights = false; //true
 
 //Load in compiled functions
-call compile preprocessFileLineNumbers "\z\addons\dayz_code\init\variables.sqf";				//Initilize the Variables (IMPORTANT: Must happen very early)
+//call compile preprocessFileLineNumbers "\z\addons\dayz_code\init\variables.sqf";
+call compile preprocessFileLineNumbers "custom\variables.sqf"; //Fix_ADT_Server_v1.5.0.1|	
 progressLoadingScreen 0.1;
 call compile preprocessFileLineNumbers "\z\addons\dayz_code\init\publicEH.sqf";				//Initilize the publicVariable event handlers
 progressLoadingScreen 0.2;
@@ -92,7 +93,7 @@ if (isServer) then {
 };
 
 if (!isDedicated) then {
-[] execVM "scripts\welcome_napf_adt.sqf";
+[] execVM "scripts\welcome_adt.sqf";
 	//Conduct map operations
 	0 fadeSound 0;
 	waitUntil {!isNil "dayz_loadScreenMsg"};
@@ -111,21 +112,53 @@ if (!isDedicated) then {
 
 	//Lights
 	//[false,12] execVM "\z\addons\dayz_code\compile\local_lights_init.sqf";
+	[] execVM "scripts\fixes\effects_adt.sqf"; //Effects_ADT
 };
 //#include "\z\addons\dayz_code\system\REsec.sqf"
-//----------------------------------ADT-TEAM-Scripts-Napf----------------------------------//
-//Start Dynamic Weather
-execVM "scripts\DynamicWeatherEffects.sqf";
+//----------------------------***ADT-TEAM-Scripts***----------------------------//
 
+//*#include "\z\addons\dayz_code\system\REsec.sqf"*//
+
+//Start Dynamic Weather
+[] execVM "scripts\DynamicWeatherEffects.sqf";
+
+//AI_sector ADT-68 by GROM 13.06.2014
+//if (isServer) then {
+
+  // _nil = [] execVM "\z\addons\dayz_server\WAI\AI_ADT\Init_AI_ADT.sqf"; //fix AI_ADT by "GROM"
+
+//};
 #include "\z\addons\dayz_code\system\BIS_Effects\init.sqf"
 
-/*if (BTC) then {
-_logistic = execVM "=BTC=_Logistic\=BTC=_Logistic_Init.sqf";
-};*/
+[] execVM "scripts\safez_adt_napf.sqf"; //Safe_Zone_NAPF
 
-[] execVM "service_point\service_point.sqf";
+[] execVM "service_point\service_point.sqf"; //Refuel_gold
 
-//[] execVM "scripts\daln.sqf";
-//[] execVM "scripts\napf_len.sqf";
+[] execVM "scripts\monitor.sqf"; //Debag_monitor
 
-[] execVM "scripts\szone.sqf"; //safezone_adt
+[] execVM "scripts\loginCamera.sqf"; //loginCamera
+
+[] execVM "service_point\service_point.sqf"; //Refuel_gold
+
+[] execVM "scripts\monitor.sqf"; //Debag_monitor
+
+if (BTC) then {
+_logistic = execVM "=BTC=_Logistic\=BTC=_Logistic_Init.sqf"; 
+};
+
+[] execVM "scripts\weedfarm.sqf"; //hemp farms
+
+["elevator"] execVM "elevator\elevator_init.sqf";
+
+
+//watermark
+_pic = "gui\adt_watermark.paa"; //images
+[
+'<img align=''left'' size=''1.0'' shadow=''1'' image='+(str(_pic))+' />',
+safeZoneX+0.027,
+safeZoneY+safeZoneH-0.1,
+99999,
+0,
+0,
+3090
+] spawn bis_fnc_dynamicText;

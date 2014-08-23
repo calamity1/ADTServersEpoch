@@ -7,7 +7,7 @@ private ["_folder","_servicePointClasses","_maxDistance","_actionTitleFormat","_
 // general settings
 _folder = "service_point\"; // folder where the service point scripts are saved, relative to the mission file
 _servicePointClasses = dayz_fuelpumparray; // service point classes (can be house, vehicle and unit classes)
-_maxDistance = 10; // maximum distance from a service point for the options to be shown
+_maxDistance = 15; // maximum distance from a service point for the options to be shown //10 стандарт ADT-68
 _actionTitleFormat = "%1 (%2)"; // text of the vehicle menu, %1 = action name (Refuel, Repair, Rearm), %2 = costs (see format below)
 _actionCostsFormat = "%2 %1"; // %1 = item name, %2 = item count
 _costsFree = "free"; // text for no costs
@@ -16,8 +16,8 @@ _message = "Точка обслуживания транспортных сре�
 // refuel settings
 _refuel_enable = true; // enable or disable the refuel option
 _refuel_costs = [
-	["Air",["ItemGoldBar",2]], // 5 Gold for helicopters and planes
-	["AllVehicles",["ItemGoldBar",1]] // 2 Gold for all other vehicles
+	["Air",["ItemGoldBar",4]], // 5 Gold for helicopters and planes
+	["AllVehicles",["ItemGoldBar",2]] // 2 Gold for all other vehicles
 ];
 _refuel_updateInterval = 1; // update interval (in seconds)
 _refuel_amount = 0.05; // amount of fuel to add with every update (in percent)
@@ -25,8 +25,8 @@ _refuel_amount = 0.05; // amount of fuel to add with every update (in percent)
 // repair settings
 _repair_enable = true; // enable or disable the repair option
 _repair_costs = [
-	["Air",["ItemGoldBar",6]], // 5 Gold for helicopters and planes
-	["AllVehicles",["ItemGoldBar",4]] // 2 Gold for all other vehicles
+	["Air",["ItemGoldBar",8]], // 5 Gold for helicopters and planes
+	["AllVehicles",["ItemGoldBar",5]] // 2 Gold for all other vehicles
 ];
 _repair_repairTime = 2; // time needed to repair each damaged part (in seconds)
 

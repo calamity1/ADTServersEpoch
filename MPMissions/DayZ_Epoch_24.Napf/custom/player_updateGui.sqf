@@ -281,4 +281,4 @@ if (dayz_humanitytarget != _string) then {
 
 _array = [_foodVal,_thirstVal];
 _array
-//ADX TEAM http://vk.com/adx_team
+//ADT TEAM http://vk.com/adt_68
