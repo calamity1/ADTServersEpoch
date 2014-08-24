@@ -1,4 +1,4 @@
-#include "CfgServerTrader\cfgServerTrader.hpp"
+//#include "CfgServerTrader\cfgServerTrader.hpp"
 respawn = "BASE";
 respawndelay = 5;
 onLoadMission= "DayZ Epoch Chernarus";
