@@ -31,7 +31,7 @@ DZE_SelfTransfuse = true; //Самозаливка крови
 
 //start loot_fix
 DefaultMagazines = ["ItemBandage","ItemPainkiller","HandRoadFlare"];
-DefaultWeapons = ["ItemFlashlight","EvMoney"];
+DefaultWeapons = ["ItemFlashlight","EvMoney","ItemRadio"];
 DefaultBackpack = "DZ_Patrol_Pack_EP1";  
 DefaultBackpackItems = "";
 
@@ -47,11 +47,12 @@ DZE_DeathMsgTitleText = false;
 
 DZE_vehicleAmmo = 1;
 deathMessages = 1;
-
+//DZE_ConfigTrader = true; //fix traders
 MaxVehicleLimit = 100; // Default = 50
-MaxDynamicDebris = 500; // Default = 100
+MaxDynamicDebris = 300; // Default = 100 мусор на дорогах
 dayz_MapArea = 14000; // Default = 10000
-dayz_maxLocalZombies = 40; // Default = 30 
+dayz_maxLocalZombies = 40; // Default = 30
+dayz_tameDogs = true; //fix "false"
 
 dayz_paraSpawn = false;
 
@@ -63,7 +64,6 @@ dayz_sellDistance_boat = 30;
 dayz_sellDistance_air = 40;
 
 dayz_maxAnimals = 15; // Default: 8
-dayz_tameDogs = false; //fix
 DynamicVehicleDamageLow = 0; // Default: 0
 DynamicVehicleDamageHigh = 100; // Default: 100
 

@@ -185,11 +185,7 @@ class RscTextGUIK {
 };
 
 #include "dzgm\defines.hpp"
-class RscTitles
-{
 #include "dzgm\icons.hpp"
-};
-
 #include "hpp\extra_rc.hpp"
 //#include "hpp\gui_adt.h" //fix_adt_gui
 #include "custom\snap_pro\snappoints.hpp"

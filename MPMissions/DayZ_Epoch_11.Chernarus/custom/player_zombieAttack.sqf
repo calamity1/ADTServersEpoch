@@ -3,7 +3,7 @@
         Please request permission to use/alter/distribute from project leader (GROM) AND the author (botx68@gmail.com)
 		Vk:http://vk.com/adt_68
 		Websites:http://www.dayz-adt.ru/
-		Github:https://github.com/retro3f/ADT_MOD
+		Github:https://github.com/retro3f/
 		My Websites:http://gromx.ru/
 */
 private ["_rnd","_move","_wound","_cnt","_index","_damage","_total","_movePlayer"];
