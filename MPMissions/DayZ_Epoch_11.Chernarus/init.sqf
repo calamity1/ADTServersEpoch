@@ -126,7 +126,8 @@ if (!isDedicated) then {
 	//Run the player monitor
 	_id = player addEventHandler ["Respawn", {_id = [] spawn player_death;}];
 	_playerMonitor = 	[] execVM "\z\addons\dayz_code\system\player_monitor.sqf";
-    execVM "dzgm\init.sqf"; //DZGM radio	
+    execVM "dzgm\init.sqf"; //DZGM radio
+    execVM "scripts\switch_weapon\init.sqf"; //Достать оружия из рюкзака	
 	
 	//anti Hack
 	//[] execVM "\z\addons\dayz_code\system\antihack.sqf";
