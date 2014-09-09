@@ -1,27 +1,27 @@
 class Category_565 {
 	class SUV_TK_CIV_EP1 {
 		type = "trade_any_vehicle";
-		buy[] = {2,"ItemGoldBar10oz"};
+		buy[] = {3,"ItemGoldBar10oz"};
 		sell[] = {5,"ItemGoldBar"};
 	};
 	class SUV_Blue {
 		type = "trade_any_vehicle";
-		buy[] = {2,"ItemGoldBar10oz"};
+		buy[] = {3,"ItemGoldBar10oz"};
 		sell[] = {5,"ItemGoldBar"};
 	};
 	class SUV_Charcoal {
 		type = "trade_any_vehicle";
-		buy[] = {2,"ItemGoldBar10oz"};
+		buy[] = {3,"ItemGoldBar10oz"};
 		sell[] = {5,"ItemGoldBar"};
 	};
 	class SUV_Green {
 		type = "trade_any_vehicle";
-		buy[] = {2,"ItemGoldBar10oz"};
+		buy[] = {3,"ItemGoldBar10oz"};
 		sell[] = {5,"ItemGoldBar"};
 	};
 	class SUV_Orange {
 		type = "trade_any_vehicle";
-		buy[] = {2,"ItemGoldBar10oz"};
+		buy[] = {3,"ItemGoldBar10oz"};
 		sell[] = {5,"ItemGoldBar"};
 	};
 	class SUV_Pink {
@@ -31,17 +31,17 @@ class Category_565 {
 	};
 	class SUV_Red {
 		type = "trade_any_vehicle";
-		buy[] = {2,"ItemGoldBar10oz"};
+		buy[] = {3,"ItemGoldBar10oz"};
 		sell[] = {5,"ItemGoldBar"};
 	};
 	class SUV_Silver {
 		type = "trade_any_vehicle";
-		buy[] = {2,"ItemGoldBar10oz"};
+		buy[] = {3,"ItemGoldBar10oz"};
 		sell[] = {5,"ItemGoldBar"};
 	};
 	class SUV_White {
 		type = "trade_any_vehicle";
-		buy[] = {2,"ItemGoldBar10oz"};
+		buy[] = {3,"ItemGoldBar10oz"};
 		sell[] = {5,"ItemGoldBar"};
 	};
 	class SUV_Yellow {
@@ -51,7 +51,7 @@ class Category_565 {
 	};
 	class SUV_Camo {
 		type = "trade_any_vehicle";
-		buy[] = {2,"ItemGoldBar10oz"};
+		buy[] = {4,"ItemGoldBar10oz"};
 		sell[] = {1,"ItemGoldBar10oz"};
 	};
 	class UAZ_CDF {
@@ -88,27 +88,27 @@ class Category_565 {
 class Category_568 {
 	class SUV_TK_CIV_EP1 {
 		type = "trade_any_vehicle";
-		buy[] = {2,"ItemGoldBar10oz"};
+		buy[] = {3,"ItemGoldBar10oz"};
 		sell[] = {5,"ItemGoldBar"};
 	};
 	class SUV_Blue {
 		type = "trade_any_vehicle";
-		buy[] = {2,"ItemGoldBar10oz"};
+		buy[] = {3,"ItemGoldBar10oz"};
 		sell[] = {5,"ItemGoldBar"};
 	};
 	class SUV_Charcoal {
 		type = "trade_any_vehicle";
-		buy[] = {2,"ItemGoldBar10oz"};
+		buy[] = {3,"ItemGoldBar10oz"};
 		sell[] = {5,"ItemGoldBar"};
 	};
 	class SUV_Green {
 		type = "trade_any_vehicle";
-		buy[] = {2,"ItemGoldBar10oz"};
+		buy[] = {3,"ItemGoldBar10oz"};
 		sell[] = {5,"ItemGoldBar"};
 	};
 	class SUV_Orange {
 		type = "trade_any_vehicle";
-		buy[] = {2,"ItemGoldBar10oz"};
+		buy[] = {3,"ItemGoldBar10oz"};
 		sell[] = {5,"ItemGoldBar"};
 	};
 	class SUV_Pink {
@@ -118,27 +118,27 @@ class Category_568 {
 	};
 	class SUV_Red {
 		type = "trade_any_vehicle";
-		buy[] = {2,"ItemGoldBar10oz"};
+		buy[] = {3,"ItemGoldBar10oz"};
 		sell[] = {5,"ItemGoldBar"};
 	};
 	class SUV_Silver {
 		type = "trade_any_vehicle";
-		buy[] = {2,"ItemGoldBar10oz"};
+		buy[] = {3,"ItemGoldBar10oz"};
 		sell[] = {5,"ItemGoldBar"};
 	};
 	class SUV_White {
 		type = "trade_any_vehicle";
-		buy[] = {2,"ItemGoldBar10oz"};
+		buy[] = {3,"ItemGoldBar10oz"};
 		sell[] = {5,"ItemGoldBar"};
 	};
 	class SUV_Yellow {
 		type = "trade_any_vehicle";
-		buy[] = {2,"ItemGoldBar10oz"};
+		buy[] = {3,"ItemGoldBar10oz"};
 		sell[] = {5,"ItemGoldBar"};
 	};
 	class SUV_Camo {
 		type = "trade_any_vehicle";
-		buy[] = {2,"ItemGoldBar10oz"};
+		buy[] = {4,"ItemGoldBar10oz"};
 		sell[] = {1,"ItemGoldBar10oz"};
 	};
 	class UAZ_CDF {

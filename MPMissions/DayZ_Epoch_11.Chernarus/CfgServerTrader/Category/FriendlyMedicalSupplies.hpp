@@ -1,7 +1,7 @@
 class Category_541 {
 	class ItemAntibiotic {
 		type = "trade_items";
-		buy[] = {1,"ItemGoldBar"};
+		buy[] = {5,"ItemGoldBar"};
 		sell[] = {2,"ItemSilverBar10oz"};
 	};
 	class ItemBandage {
@@ -11,7 +11,7 @@ class Category_541 {
 	};
 	class ItemBloodbag {
 		type = "trade_items";
-		buy[] = {2,"ItemSilverBar"};
+		buy[] = {3,"ItemGoldBar"};
 		sell[] = {1,"ItemSilverBar"};
 	};
 	class ItemEpinephrine {
@@ -31,7 +31,12 @@ class Category_541 {
 	};
 	class ItemPainkiller {
 		type = "trade_items";
-		buy[] = {1,"ItemSilverBar"};
+		buy[] = {5,"ItemSilverBar"};
 		sell[] = {1,"ItemSilverBar"};
+	};
+	class ItemKiloHemp {
+		type = "trade_items";
+		buy[] = {4,"ItemGoldBar"};
+		sell[] = {5,"ItemSilverBar10oz"};
 	};
 };

@@ -1,4 +1,4 @@
-//#include "CfgServerTrader\cfgServerTrader.hpp"
+#include "CfgServerTrader\cfgServerTrader.hpp"
 respawn = "BASE";
 respawndelay = 5;
 onLoadMission= "DayZ Epoch Chernarus";
@@ -184,10 +184,7 @@ class RscTextGUIK {
     h = 0.2;
 };
 
-#include "dzgm\defines.hpp"
-#include "dzgm\icons.hpp"
+
 #include "hpp\extra_rc.hpp"
 //#include "hpp\gui_adt.h" //fix_adt_gui
 #include "custom\snap_pro\snappoints.hpp"
-#include "=BTC=_Logistic\=BTC=_Lift\=BTC=_Hud.h"
-#include "dzgm\groupManagement.hpp" //DZGM radio scripts

@@ -21,17 +21,17 @@ class Category_685 {
 	};
 	class DZ_Backpack_EP1 {
 		type = "trade_backpacks";
-		buy[] = {8,"ItemGoldBar"};
+		buy[] = {3,"ItemGoldBar10oz"};
 		sell[] = {4,"ItemGoldBar"};
 	};
 	class DZ_British_ACU {
 		type = "trade_backpacks";
-		buy[] = {4,"ItemGoldBar"};
+		buy[] = {6,"ItemGoldBar"};
 		sell[] = {2,"ItemGoldBar"};
 	};
 	class DZ_CivilBackpack_EP1 {
 		type = "trade_backpacks";
-		buy[] = {6,"ItemGoldBar"};
+		buy[] = {2,"ItemGoldBar10oz"};
 		sell[] = {4,"ItemGoldBar"};
 	};
 	class DZ_Czech_Vest_Puch {
@@ -51,8 +51,13 @@ class Category_685 {
 	};
 	class DZ_GunBag_EP1 {
 		type = "trade_backpacks";
-		buy[] = {6,"ItemGoldBar"};
+		buy[] = {1,"ItemGoldBar10oz"};
 		sell[] = {3,"ItemGoldBar"};
+	};
+	class DZ_LargeGunBag_EP1 {
+		type = "trade_backpacks";
+		buy[] = {5,"ItemGoldBar10oz"};
+		sell[] = {1,"ItemGoldBar10oz"};
 	};
 };
 class Category_496 {
@@ -78,17 +83,17 @@ class Category_496 {
 	};
 	class DZ_Backpack_EP1 {
 		type = "trade_backpacks";
-		buy[] = {8,"ItemGoldBar"};
+		buy[] = {3,"ItemGoldBar10oz"};
 		sell[] = {4,"ItemGoldBar"};
 	};
 	class DZ_British_ACU {
 		type = "trade_backpacks";
-		buy[] = {4,"ItemGoldBar"};
+		buy[] = {6,"ItemGoldBar"};
 		sell[] = {2,"ItemGoldBar"};
 	};
 	class DZ_CivilBackpack_EP1 {
 		type = "trade_backpacks";
-		buy[] = {6,"ItemGoldBar"};
+		buy[] = {2,"ItemGoldBar10oz"};
 		sell[] = {4,"ItemGoldBar"};
 	};
 	class DZ_Czech_Vest_Puch {
@@ -108,8 +113,13 @@ class Category_496 {
 	};
 	class DZ_GunBag_EP1 {
 		type = "trade_backpacks";
-		buy[] = {6,"ItemGoldBar"};
+		buy[] = {1,"ItemGoldBar10oz"};
 		sell[] = {3,"ItemGoldBar"};
+	};
+	class DZ_LargeGunBag_EP1 {
+		type = "trade_backpacks";
+		buy[] = {5,"ItemGoldBar10oz"};
+		sell[] = {1,"ItemGoldBar10oz"};
 	};
 };
 class Category_632 {
@@ -135,17 +145,17 @@ class Category_632 {
 	};
 	class DZ_Backpack_EP1 {
 		type = "trade_backpacks";
-		buy[] = {8,"ItemGoldBar"};
+		buy[] = {3,"ItemGoldBar10oz"};
 		sell[] = {4,"ItemGoldBar"};
 	};
 	class DZ_British_ACU {
 		type = "trade_backpacks";
-		buy[] = {4,"ItemGoldBar"};
+		buy[] = {6,"ItemGoldBar"};
 		sell[] = {2,"ItemGoldBar"};
 	};
 	class DZ_CivilBackpack_EP1 {
 		type = "trade_backpacks";
-		buy[] = {6,"ItemGoldBar"};
+		buy[] = {2,"ItemGoldBar10oz"};
 		sell[] = {4,"ItemGoldBar"};
 	};
 	class DZ_Czech_Vest_Puch {
@@ -165,7 +175,12 @@ class Category_632 {
 	};
 	class DZ_GunBag_EP1 {
 		type = "trade_backpacks";
-		buy[] = {6,"ItemGoldBar"};
+		buy[] = {1,"ItemGoldBar10oz"};
 		sell[] = {3,"ItemGoldBar"};
+	};
+	class DZ_LargeGunBag_EP1 {
+		type = "trade_backpacks";
+		buy[] = {5,"ItemGoldBar10oz"};
+		sell[] = {1,"ItemGoldBar10oz"};
 	};
 };

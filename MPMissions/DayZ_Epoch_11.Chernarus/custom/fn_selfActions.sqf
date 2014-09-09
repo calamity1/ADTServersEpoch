@@ -23,6 +23,7 @@ if (!isNull _nearLight) then {
 	};
 };
 
+
 // Отжечь! by GROM
 	
     if (inflamed cursorTarget and _canDo) then {
@@ -77,6 +78,7 @@ if (_canDrink) then {
         s_player_drinkWater = -1;
     };
 //ипить воду конец!
+
 //Grab Flare
 if (_canPickLight && !dayz_hasLight && !_isPZombie) then {
 	if (s_player_grabflare < 0) then {
@@ -766,21 +768,11 @@ if (!isNull cursorTarget && !_inVehicle && !_isPZombie && (player distance curso
 	};
 	*/
 
-/*
+
     //Sleep
 	if(_isTent && _ownerID == dayz_characterID) then {
 		if ((s_player_sleep < 0) && (player distance _cursorTarget < 3)) then {
 			s_player_sleep = player addAction [localize "str_actions_self_sleep", "\z\addons\dayz_code\actions\player_sleep.sqf",_cursorTarget, 0, false, true, "",""];
-		};
-	} else {
-		player removeAction s_player_sleep;
-		s_player_sleep = -1;
-	};*/
-	
-	//Sleep
-	if(_isTent and _ownerID == dayz_characterID) then {
-		if ((s_player_sleep < 0) and (player distance _cursorTarget < 3)) then {
-			s_player_sleep = player addAction [localize "str_actions_self_sleep", "scripts\medical\player_sleep.sqf",_cursorTarget, 0, false, true, "",""];
 		};
 	} else {
 		player removeAction s_player_sleep;
@@ -840,12 +832,7 @@ if (!isNull cursorTarget && !_inVehicle && !_isPZombie && (player distance curso
 				// Database menu
 				_buy = player addAction [localize "STR_EPOCH_PLAYER_289", "\z\addons\dayz_code\actions\show_dialog.sqf",(_traderMenu select 0), 999, true, false, "",""];
 				s_player_parts set [count s_player_parts,_buy];
-                
-				// Драг.камни by GROM dayz ADT-TEAM Server
-               _metals_trader = player addAction ["Обмен камней", "scripts\trade_metals.sqf",["na"], 0, true, false, "",""];
-               s_player_parts set [count s_player_parts,_metals_trader];
-				
-				
+
 			};
 			s_player_parts_crtl = 1;
 			
@@ -999,8 +986,7 @@ if (!isNull cursorTarget && !_inVehicle && !_isPZombie && (player distance curso
 	s_player_fuelauto = -1;
 	player removeAction s_player_fuelauto2;
 	s_player_fuelauto2 = -1;
-	//отжечь!
-	player removeAction s_player_dance;
+	player removeAction s_player_dance; //танец у костра!
     s_player_dance = -1; //fix_adt_//
 };
 
@@ -1034,15 +1020,3 @@ if (_dogHandle > 0) then {
 	player removeAction s_player_calldog;
 	s_player_calldog = 		-1;
 };
-
-//Медицинская помощь
-isMedik = typeOf cursorTarget in ["RU_Doctor","Dr_Hladik_EP1","Dr_Annie_Baker_EP1","Doctor"]; //id персонажей
-if((_isMedik && (player distance cursorTarget <= 3)) and _canDo) then {
-
-        if (s_player_needhill < 0) then {
-            s_player_needhill = player addAction ["Медицинская помощь","scripts\medical\healmefomgold.sqf","",-7,false,true,"", ""];
-        };
-    } else {
-        player removeAction s_player_needhill;
-        s_player_needhill = -1;
-        };

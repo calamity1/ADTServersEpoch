@@ -21,23 +21,23 @@ class Category_675 {
 	};
 	class bulk_ItemSandbag {
 		type = "trade_items";
-		buy[] = {2,"ItemGoldBar10oz"};
-		sell[] = {2,"ItemGoldBar10oz"};
+		buy[] = {4,"ItemGoldBar10oz"};
+		sell[] = {5,"ItemGoldBar"};
 	};
 	class bulk_ItemTankTrap {
 		type = "trade_items";
-		buy[] = {1,"ItemGoldBar"};
+		buy[] = {4,"ItemGoldBar10oz"};
 		sell[] = {1,"ItemGoldBar"};
 	};
 	class bulk_ItemWire {
 		type = "trade_items";
-		buy[] = {3,"ItemSilverBar10oz"};
-		sell[] = {3,"ItemSilverBar10oz"};
+		buy[] = {7,"ItemGoldBar10oz"};
+		sell[] = {2,"ItemGoldBar"};
 	};
 	class bulk_PartGeneric {
 		type = "trade_items";
-		buy[] = {6,"ItemSilverBar10oz"};
-		sell[] = {6,"ItemSilverBar10oz"};
+		buy[] = {6,"ItemGoldBar10oz"};
+		sell[] = {2,"ItemGoldBar"};
 	};
 	class CinderBlocks {
 		type = "trade_items";
@@ -88,23 +88,23 @@ class Category_636 {
 	};
 	class bulk_ItemSandbag {
 		type = "trade_items";
-		buy[] = {2,"ItemGoldBar10oz"};
+		buy[] = {4,"ItemGoldBar10oz"};
 		sell[] = {2,"ItemGoldBar10oz"};
 	};
 	class bulk_ItemTankTrap {
 		type = "trade_items";
-		buy[] = {1,"ItemGoldBar"};
+		buy[] = {4,"ItemGoldBar10oz"};
 		sell[] = {1,"ItemGoldBar"};
 	};
 	class bulk_ItemWire {
 		type = "trade_items";
-		buy[] = {3,"ItemSilverBar10oz"};
-		sell[] = {3,"ItemSilverBar10oz"};
+		buy[] = {7,"ItemGoldBar10oz"};
+		sell[] = {3,"ItemGoldBar"};
 	};
 	class bulk_PartGeneric {
 		type = "trade_items";
-		buy[] = {6,"ItemSilverBar10oz"};
-		sell[] = {6,"ItemSilverBar10oz"};
+		buy[] = {6,"ItemGoldBar10oz"};
+		sell[] = {2,"ItemGoldBar"};
 	};
 	class CinderBlocks {
 		type = "trade_items";
@@ -155,18 +155,18 @@ class Category_555 {
 	};
 	class bulk_ItemSandbag {
 		type = "trade_items";
-		buy[] = {2,"ItemGoldBar10oz"};
-		sell[] = {2,"ItemGoldBar10oz"};
+		buy[] = {4,"ItemGoldBar10oz"};
+		sell[] = {2,"ItemGoldBar"};
 	};
 	class bulk_ItemTankTrap {
 		type = "trade_items";
-		buy[] = {1,"ItemGoldBar"};
+		buy[] = {4,"ItemGoldBar10oz"};
 		sell[] = {1,"ItemGoldBar"};
 	};
 	class bulk_PartGeneric {
 		type = "trade_items";
-		buy[] = {6,"ItemSilverBar10oz"};
-		sell[] = {6,"ItemSilverBar10oz"};
+		buy[] = {6,"ItemGoldBar10oz"};
+		sell[] = {1,"ItemGoldBar"};
 	};
 	class CinderBlocks {
 		type = "trade_items";
@@ -190,8 +190,8 @@ class Category_555 {
 	};
 	class bulk_ItemWire {
 		type = "trade_items";
-		buy[] = {3,"ItemSilverBar10oz"};
-		sell[] = {3,"ItemSilverBar10oz"};
+		buy[] = {7,"ItemGoldBar10oz"};
+		sell[] = {3,"ItemGoldBar"};
 	};
 	class ItemFuelBarrelEmpty {
 		type = "trade_items";

@@ -1,11 +1,10 @@
 /*	 
-   * DayZ Overpoch |v1.0.5.1| "20.08.2014"
-   * For ADT-TEAM SERVER DayZ 
+   * DayZ Epoch |v1.0.5.1| "27.08.2014"
+   * For ADT-TEAM SERVER DayZ Chernarus #1
    * Dev: GROM
    * http://adt-team.ru/
 */
 
-//BTC           = true;
 startLoadingScreen ["","RscDisplayLoadCustom"];
 cutText ["","BLACK OUT"];
 enableSaving [false, false];
@@ -31,7 +30,7 @@ DZE_SelfTransfuse = true; //Самозаливка крови
 
 //start loot_fix
 DefaultMagazines = ["ItemBandage","ItemPainkiller","HandRoadFlare"];
-DefaultWeapons = ["ItemFlashlight","EvMoney","ItemRadio"];
+DefaultWeapons = ["ItemFlashlight","EvMoney"];
 DefaultBackpack = "DZ_Patrol_Pack_EP1";  
 DefaultBackpackItems = "";
 
@@ -47,12 +46,11 @@ DZE_DeathMsgTitleText = false;
 
 DZE_vehicleAmmo = 1;
 deathMessages = 1;
-//DZE_ConfigTrader = true; //fix traders
-MaxVehicleLimit = 100; // Default = 50
-MaxDynamicDebris = 300; // Default = 100 мусор на дорогах
+MaxVehicleLimit = 150; // Default = 50
+MaxDynamicDebris = 400; // Default = 100 мусор на дорогах
 dayz_MapArea = 14000; // Default = 10000
 dayz_maxLocalZombies = 40; // Default = 30
-dayz_tameDogs = true; //fix "false"
+dayz_tameDogs = false; //fix "false"
 
 dayz_paraSpawn = false;
 
@@ -63,13 +61,13 @@ dayz_sellDistance_vehicle = 10;
 dayz_sellDistance_boat = 30;
 dayz_sellDistance_air = 40;
 
-dayz_maxAnimals = 15; // Default: 8
+dayz_maxAnimals = 8; // Default: 8
 DynamicVehicleDamageLow = 0; // Default: 0
 DynamicVehicleDamageHigh = 100; // Default: 100
 
 DZE_BuildOnRoads = false; // Default: False
 DZE_MissionLootTable = true; 
-DZE_ConfigTrader = false; //Overpoch adt fix
+DZE_ConfigTrader = true;
 
 
 /*
@@ -126,7 +124,6 @@ if (!isDedicated) then {
 	//Run the player monitor
 	_id = player addEventHandler ["Respawn", {_id = [] spawn player_death;}];
 	_playerMonitor = 	[] execVM "\z\addons\dayz_code\system\player_monitor.sqf";
-    execVM "dzgm\init.sqf"; //DZGM radio
     execVM "scripts\switch_weapon\init.sqf"; //Достать оружия из рюкзака	
 	
 	//anti Hack
@@ -148,7 +145,13 @@ if (!isDedicated) then {
 [] execVM "scripts\fixes\DynamicWeatherEffects.sqf";
 
 #include "\z\addons\dayz_code\system\BIS_Effects\init.sqf"
-
+/*
+//Spawn select
+waitUntil {!isNil ("PVDZE_plr_LoginRecord")}; 
+	if (dayzPlayerLogin2 select 2) then {
+		[] execVM "custom\spawn_select\Spawn.sqf"; 
+	}; //After this comes the !isDedicated condition ending bracket!
+*/
 [] execVM "scripts\safez.sqf"; //Safe_Zone
 
 [] execVM "scripts\loginCamera.sqf"; //loginCamera
@@ -156,10 +159,6 @@ if (!isDedicated) then {
 [] execVM "service_point\service_point.sqf"; //Refuel_gold
 
 [] execVM "scripts\monitor.sqf"; //Debag_monitor
-
-if (BTC) then {
-_logistic = execVM "=BTC=_Logistic\=BTC=_Logistic_Init.sqf"; 
-};
 
 [] execVM "scripts\weedfarm.sqf"; //hemp farms
 

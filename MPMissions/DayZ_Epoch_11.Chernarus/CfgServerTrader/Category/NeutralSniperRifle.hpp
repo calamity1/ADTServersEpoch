@@ -12,7 +12,7 @@ class Category_605 {
 	class M14_EP1 {
 		type = "trade_weapons";
 		buy[] = {2,"ItemGoldBar10oz"};
-		sell[] = {1,"ItemGoldBar10oz"};
+		sell[] = {7,"ItemGoldBar"};
 	};
 	class huntingrifle {
 		type = "trade_weapons";
@@ -59,7 +59,7 @@ class Category_640 {
 	class M14_EP1 {
 		type = "trade_weapons";
 		buy[] = {2,"ItemGoldBar10oz"};
-		sell[] = {1,"ItemGoldBar10oz"};
+		sell[] = {7,"ItemGoldBar"};
 	};
 	class huntingrifle {
 		type = "trade_weapons";

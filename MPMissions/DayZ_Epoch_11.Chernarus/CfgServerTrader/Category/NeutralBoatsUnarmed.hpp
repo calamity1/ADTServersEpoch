@@ -26,22 +26,22 @@ class Category_672 {
 	};
 	class JetSkiYanahui_Case_Red {
 		type = "trade_any_boat";
-		buy[] = {6,"ItemGoldBar"};
+		buy[] = {8,"ItemGoldBar"};
 		sell[] = {3,"ItemGoldBar"};
 	};
 	class JetSkiYanahui_Case_Yellow {
 		type = "trade_any_boat";
-		buy[] = {6,"ItemGoldBar"};
+		buy[] = {8,"ItemGoldBar"};
 		sell[] = {3,"ItemGoldBar"};
 	};
 	class JetSkiYanahui_Case_Green {
 		type = "trade_any_boat";
-		buy[] = {6,"ItemGoldBar"};
+		buy[] = {8,"ItemGoldBar"};
 		sell[] = {3,"ItemGoldBar"};
 	};
 	class JetSkiYanahui_Case_Blue {
 		type = "trade_any_boat";
-		buy[] = {6,"ItemGoldBar"};
+		buy[] = {8,"ItemGoldBar"};
 		sell[] = {3,"ItemGoldBar"};
 	};
 };
@@ -73,22 +73,22 @@ class Category_557 {
 	};
 	class JetSkiYanahui_Case_Red {
 		type = "trade_any_boat";
-		buy[] = {6,"ItemGoldBar"};
+		buy[] = {8,"ItemGoldBar"};
 		sell[] = {3,"ItemGoldBar"};
 	};
 	class JetSkiYanahui_Case_Yellow {
 		type = "trade_any_boat";
-		buy[] = {6,"ItemGoldBar"};
+		buy[] = {8,"ItemGoldBar"};
 		sell[] = {3,"ItemGoldBar"};
 	};
 	class JetSkiYanahui_Case_Green {
 		type = "trade_any_boat";
-		buy[] = {6,"ItemGoldBar"};
+		buy[] = {8,"ItemGoldBar"};
 		sell[] = {3,"ItemGoldBar"};
 	};
 	class JetSkiYanahui_Case_Blue {
 		type = "trade_any_boat";
-		buy[] = {6,"ItemGoldBar"};
+		buy[] = {8,"ItemGoldBar"};
 		sell[] = {3,"ItemGoldBar"};
 	};
 };

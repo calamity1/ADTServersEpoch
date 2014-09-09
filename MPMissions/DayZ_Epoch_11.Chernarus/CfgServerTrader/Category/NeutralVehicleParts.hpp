@@ -6,8 +6,8 @@ class Category_664 {
 	};
 	class ItemJerrycanEmpty {
 		type = "trade_items";
-		buy[] = {2,"ItemSilverBar"};
-		sell[] = {1,"ItemSilverBar"};
+		buy[] = {4,"ItemSilverBar"};
+		sell[] = {2,"ItemSilverBar"};
 	};
 	class PartEngine {
 		type = "trade_items";
@@ -16,12 +16,12 @@ class Category_664 {
 	};
 	class PartVRotor {
 		type = "trade_items";
-		buy[] = {5,"ItemGoldBar"};
+		buy[] = {9,"ItemGoldBar"};
 		sell[] = {1,"ItemSilverBar10oz"};
 	};
 	class PartWheel {
 		type = "trade_items";
-		buy[] = {2,"ItemGoldBar"};
+		buy[] = {3,"ItemGoldBar"};
 		sell[] = {2,"ItemSilverBar"};
 	};
 	class PartGlass {
@@ -42,7 +42,7 @@ class Category_664 {
 	class ItemFuelBarrel {
 		type = "trade_items";
 		buy[] = {2,"ItemGoldBar"};
-		sell[] = {1,"ItemGoldBar"};
+		sell[] = {5,"ItemSilverBar"};
 	};
 };
 class Category_509 {
@@ -53,8 +53,8 @@ class Category_509 {
 	};
 	class ItemJerrycanEmpty {
 		type = "trade_items";
-		buy[] = {2,"ItemSilverBar"};
-		sell[] = {1,"ItemSilverBar"};
+		buy[] = {4,"ItemSilverBar"};
+		sell[] = {2,"ItemSilverBar"};
 	};
 	class PartEngine {
 		type = "trade_items";
@@ -63,12 +63,12 @@ class Category_509 {
 	};
 	class PartVRotor {
 		type = "trade_items";
-		buy[] = {5,"ItemGoldBar"};
+		buy[] = {9,"ItemGoldBar"};
 		sell[] = {1,"ItemSilverBar10oz"};
 	};
 	class PartWheel {
 		type = "trade_items";
-		buy[] = {2,"ItemGoldBar"};
+		buy[] = {3,"ItemGoldBar"};
 		sell[] = {2,"ItemSilverBar"};
 	};
 	class PartGlass {
@@ -89,6 +89,6 @@ class Category_509 {
 	class ItemFuelBarrel {
 		type = "trade_items";
 		buy[] = {2,"ItemGoldBar"};
-		sell[] = {1,"ItemGoldBar"};
+		sell[] = {5,"ItemSilverBar"};
 	};
 };
