@@ -203,12 +203,5 @@
 			text = "Принять";					
 			script = "execVM 'scripts\medical\color_epi_use.sqf'";
 		};
-	};	
-	
-	class ItemRadio {
-    class GroupManagement {
-       text = "Управление группой";
-       script = "[] execVM 'dzgm\loadGroupManagement.sqf'";
-        };
     };
 };
