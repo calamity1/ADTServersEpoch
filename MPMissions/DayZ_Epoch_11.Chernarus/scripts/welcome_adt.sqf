@@ -13,7 +13,7 @@ sleep 10; //Wait in seconds before the credits start after player IS ingame
 _role1 = "Добро пожаловать на сервер";
 _role1names = ["ADT-TEAM Epoch Chernarus 1.0.5.1/12555 NOCD"];
 _role2 = "Администраторы";
-_role2names = ["GROM", "Valerjanich"];
+_role2names = ["GROM","Valerjanich","IlidanHyperX"];
 _role3 = "Версия";
 _role3names = ["DayZ Epoch Chernarus"];
 _role4 = "Группа ВКонтакте";

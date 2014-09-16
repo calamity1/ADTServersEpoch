@@ -230,7 +230,7 @@ if (USE_AntiSteal) then
                 {
                         if (inSafezone) then
                         {
-                                _cnt = {isPlayer _x && _x != player} count (player nearEntities [['CAManBase'], 3]);
+                                _cnt = {isPlayer _x && _x != player} count (player nearEntities [['CAManBase'], 5]); //3
                                 if ((_cnt > 0) && (!isNull (findDisplay 106))) then
                                 {
                                         (findDisplay 106) closedisplay 0;

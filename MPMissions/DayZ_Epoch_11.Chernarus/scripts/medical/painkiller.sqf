@@ -8,10 +8,10 @@ _unit = (_this select 3) select 0;
 
 call fnc_usec_medic_removeActions;
 r_action = false;
-
+/*
 if (vehicle player == player) then {player playActionNow "PutDown"; playsound "paink_use";};
 sleep 3; 
-
+*/
 
 _num_removed = ([player,"ItemPainkiller"] call BIS_fnc_invRemove);
 if(_num_removed == 1) then {

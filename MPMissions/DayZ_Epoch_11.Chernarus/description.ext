@@ -167,7 +167,6 @@ class RscPictureGUI
     w = 0.2;
     h = 0.15;
 };
-
 class RscTextGUIK {
     type = 0;
     idc = -1;
@@ -184,7 +183,6 @@ class RscTextGUIK {
     h = 0.2;
 };
 
-
 #include "hpp\extra_rc.hpp"
-//#include "hpp\gui_adt.h" //fix_adt_gui
+#include "hpp\gui.h"
 #include "custom\snap_pro\snappoints.hpp"

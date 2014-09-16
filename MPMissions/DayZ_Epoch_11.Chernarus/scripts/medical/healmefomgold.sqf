@@ -79,11 +79,16 @@ R3F_TIRED_FNCT_DoBlackVanish = {};
 //
 cutText [format["Ты здаров!!"], "PLAIN DOWN"];
 //
+
+
+/*
 while {_heartbeat_2 > 0} do {
 playSound "heartbeat_1";
 _heartbeat_2 = _heartbeat_2 - 1;
 sleep 1;
-};
+}; 
+*/
+
 //			
 R3F_TIRED_FNCT_Voile_Noir = oR3F_TIRED_FNCT_Voile_Noir;
 R3F_TIRED_FNCT_DoBlackVanish = oR3F_TIRED_FNCT_DoBlackVanish;

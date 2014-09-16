@@ -6,7 +6,7 @@ _hndl ppEffectCommit 0;
 
 	while {true} do {
     _ran = ceil random 5;
-    playsound format ["wind_%1",_ran];
+    //playsound format ["wind_%1",_ran];
     setwind [-2*2,6*2,true];
 	_delay = 1 + random 5;
     sleep _delay;

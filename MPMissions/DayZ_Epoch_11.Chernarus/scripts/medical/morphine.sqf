@@ -8,9 +8,10 @@ _unit = (_this select 3) select 0;
 
 call fnc_usec_medic_removeActions;
 r_action = false;
-
+/*
 if (vehicle player == player) then {player playActionNow "PutDown"; playsound "epipans";};
-sleep 3; 
+
+sleep 3;*/ 
 
 
 	_num_removed = ([player,"ItemMorphine"] call BIS_fnc_invRemove);

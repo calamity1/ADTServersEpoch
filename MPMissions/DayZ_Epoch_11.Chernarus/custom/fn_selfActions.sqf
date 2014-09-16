@@ -22,8 +22,7 @@ if (!isNull _nearLight) then {
 		_canPickLight = isNull (_nearLight getVariable ["owner",objNull]);
 	};
 };
-
-
+/*
 // Отжечь! by GROM
 	
     if (inflamed cursorTarget and _canDo) then {
@@ -79,6 +78,7 @@ if (_canDrink) then {
     };
 //ипить воду конец!
 
+*/
 //Grab Flare
 if (_canPickLight && !dayz_hasLight && !_isPZombie) then {
 	if (s_player_grabflare < 0) then {
@@ -768,11 +768,21 @@ if (!isNull cursorTarget && !_inVehicle && !_isPZombie && (player distance curso
 	};
 	*/
 
-
+/*
     //Sleep
 	if(_isTent && _ownerID == dayz_characterID) then {
 		if ((s_player_sleep < 0) && (player distance _cursorTarget < 3)) then {
 			s_player_sleep = player addAction [localize "str_actions_self_sleep", "\z\addons\dayz_code\actions\player_sleep.sqf",_cursorTarget, 0, false, true, "",""];
+		};
+	} else {
+		player removeAction s_player_sleep;
+		s_player_sleep = -1;
+	};*/
+	
+	//Sleep
+	if(_isTent and _ownerID == dayz_characterID) then {
+		if ((s_player_sleep < 0) and (player distance _cursorTarget < 3)) then {
+			s_player_sleep = player addAction [localize "str_actions_self_sleep", "scripts\medical\player_sleep.sqf",_cursorTarget, 0, false, true, "",""];
 		};
 	} else {
 		player removeAction s_player_sleep;
@@ -832,7 +842,12 @@ if (!isNull cursorTarget && !_inVehicle && !_isPZombie && (player distance curso
 				// Database menu
 				_buy = player addAction [localize "STR_EPOCH_PLAYER_289", "\z\addons\dayz_code\actions\show_dialog.sqf",(_traderMenu select 0), 999, true, false, "",""];
 				s_player_parts set [count s_player_parts,_buy];
-
+                
+				// Драг.камни by GROM dayz ADT-TEAM Server
+               _metals_trader = player addAction ["Обмен камней", "scripts\trade_metals.sqf",["na"], 0, true, false, "",""];
+               s_player_parts set [count s_player_parts,_metals_trader];
+				
+				
 			};
 			s_player_parts_crtl = 1;
 			
@@ -986,8 +1001,9 @@ if (!isNull cursorTarget && !_inVehicle && !_isPZombie && (player distance curso
 	s_player_fuelauto = -1;
 	player removeAction s_player_fuelauto2;
 	s_player_fuelauto2 = -1;
-	player removeAction s_player_dance; //танец у костра!
-    s_player_dance = -1; //fix_adt_//
+	/*//отжечь!
+	player removeAction s_player_dance;
+    s_player_dance = -1; //fix_adt_//*/
 };
 
 

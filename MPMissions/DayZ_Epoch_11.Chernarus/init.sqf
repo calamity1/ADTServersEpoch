@@ -1,6 +1,6 @@
 /*	 
-   * DayZ Epoch |v1.0.5.1| "27.08.2014"
-   * For ADT-TEAM SERVER DayZ Chernarus #1
+   * DayZ Epoch |v1.0.5.1| "16.09.2014"
+   * For ADT-TEAM SERVER DayZ 
    * Dev: GROM
    * http://adt-team.ru/
 */
@@ -35,8 +35,8 @@ DefaultBackpack = "DZ_Patrol_Pack_EP1";
 DefaultBackpackItems = "";
 
 //Building
-DZE_BuildingLimit = 3000;
-DZE_PlotPole = [45,60]; //Default: [30;45]
+DZE_BuildingLimit = 1000;
+DZE_PlotPole = [30,45]; //Default: [30;45]
 
 snapTutorial = true;
 
@@ -46,8 +46,9 @@ DZE_DeathMsgTitleText = false;
 
 DZE_vehicleAmmo = 1;
 deathMessages = 1;
+//DZE_ConfigTrader = true; //fix traders
 MaxVehicleLimit = 150; // Default = 50
-MaxDynamicDebris = 400; // Default = 100 мусор на дорогах
+MaxDynamicDebris = 200; // Default = 100 мусор на дорогах
 dayz_MapArea = 14000; // Default = 10000
 dayz_maxLocalZombies = 40; // Default = 30
 dayz_tameDogs = false; //fix "false"
@@ -61,13 +62,13 @@ dayz_sellDistance_vehicle = 10;
 dayz_sellDistance_boat = 30;
 dayz_sellDistance_air = 40;
 
-dayz_maxAnimals = 8; // Default: 8
+dayz_maxAnimals = 15; // Default: 8
 DynamicVehicleDamageLow = 0; // Default: 0
 DynamicVehicleDamageHigh = 100; // Default: 100
 
 DZE_BuildOnRoads = false; // Default: False
 DZE_MissionLootTable = true; 
-DZE_ConfigTrader = true;
+DZE_ConfigTrader = true; //Overpoch adt fix
 
 
 /*
@@ -145,13 +146,7 @@ if (!isDedicated) then {
 [] execVM "scripts\fixes\DynamicWeatherEffects.sqf";
 
 #include "\z\addons\dayz_code\system\BIS_Effects\init.sqf"
-/*
-//Spawn select
-waitUntil {!isNil ("PVDZE_plr_LoginRecord")}; 
-	if (dayzPlayerLogin2 select 2) then {
-		[] execVM "custom\spawn_select\Spawn.sqf"; 
-	}; //After this comes the !isDedicated condition ending bracket!
-*/
+
 [] execVM "scripts\safez.sqf"; //Safe_Zone
 
 [] execVM "scripts\loginCamera.sqf"; //loginCamera

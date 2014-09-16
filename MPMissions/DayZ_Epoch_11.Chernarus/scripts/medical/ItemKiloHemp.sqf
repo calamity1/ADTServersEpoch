@@ -164,12 +164,15 @@ player removeMagazine "ItemKiloHemp";
 	cutText [format["Что со мной сейчас было??!... голова раскалывается, кушать хочу..."], "PLAIN DOWN"];
 	DZE_ActionInProgress = false;
 //
+
+/*
 _heartbeat_1 = 60;
 while {_heartbeat_1 > 0} do {
 playSound "heartbeat_1";
 _heartbeat_1 = _heartbeat_1 - 1;
 sleep 1;
 };
+*/
 //
 	} else {
 	r_interrupt = false;
