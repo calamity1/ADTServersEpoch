@@ -26,6 +26,7 @@ enableSentences false;
 spawnShoremode = 1; // Default = 1 (on shore)
 spawnArea= 1500; // Default = 1500
 
+MaxMineVeins = 8; //Рудники рандом  
 DZE_SelfTransfuse = true; //Самозаливка крови
 
 //start loot_fix
@@ -146,6 +147,7 @@ if (!isDedicated) then {
 [] execVM "scripts\fixes\DynamicWeatherEffects.sqf";
 
 #include "\z\addons\dayz_code\system\BIS_Effects\init.sqf"
+//#include "scripts\no_hack\antiBruteForce.sqf" //no hack esc button 
 
 [] execVM "scripts\safez.sqf"; //Safe_Zone
 
