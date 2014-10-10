@@ -29,10 +29,11 @@ spawnArea= 1500; // Default = 1500
 DZE_SelfTransfuse = true; //Самозаливка крови
 
 //start loot_fix
-DefaultMagazines = ["ItemBandage","ItemPainkiller","HandRoadFlare"];
-DefaultWeapons = ["ItemFlashlight","EvMoney"];
-DefaultBackpack = "DZ_Patrol_Pack_EP1";  
+DefaultMagazines = ["ItemBandage","ItemPainkiller","8Rnd_9x18_Makarov","HandRoadFlare"];
+DefaultWeapons = ["ItemFlashlight","EvMoney","Makarov"];
+DefaultBackpack = "";  
 DefaultBackpackItems = "";
+
 
 //Building
 DZE_BuildingLimit = 1000;
