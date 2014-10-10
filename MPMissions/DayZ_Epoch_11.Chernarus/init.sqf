@@ -158,6 +158,21 @@ if (!isDedicated) then {
 
 [] execVM "scripts\weedfarm.sqf"; //hemp farms
 
+[] spawn {
+
+ while {1 == 1} do
+ {
+  _vehicle_list = player nearEntities [["LandVehicle","Air","Ship"], 10];  //m12
+  {
+   if (locked _x) then {
+    closeDialog 0;
+    hint "by GROM"; //msg
+   }
+  } forEach _vehicle_list;
+  uiSleep 0.1;
+ };
+};
+
 
 //watermark_adt_team
 _pic = "gui\watermark.paa";

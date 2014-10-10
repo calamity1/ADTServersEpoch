@@ -191,6 +191,7 @@
             script = "execVM 'scripts\craft\Canvas.sqf'";
         };
 	};
+	
 	/*
 	class pravila {
 		text = "Правила сервера";

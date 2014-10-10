@@ -186,4 +186,4 @@ class RscTextGUIK {
 #include "hpp\extra_rc.hpp"
 #include "hpp\gui.h"
 #include "custom\snap_pro\snappoints.hpp"
-#include "fix_vev\csj_gyroac\config.cpp" //veh
+#include "fix_vev\csj_gyroac\config.cpp" //veh_fix
