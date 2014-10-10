@@ -1,7 +1,7 @@
 class Category_650 {
 	class MMT_Civ {
 		type = "trade_any_bicycle";
-		buy[] = {9,"ItemSilverBar"};
+		buy[] = {2,"ItemGoldBar"};
 		sell[] = {2,"ItemSilverBar"};
 	};
 	class Old_bike_TK_INS_EP1 {
