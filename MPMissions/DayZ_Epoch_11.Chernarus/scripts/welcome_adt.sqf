@@ -10,24 +10,24 @@ _onScreenTime = 6; //how long one role should stay on screen. Use value from 0 t
 waitUntil {!isNil "dayz_animalCheck"};
 sleep 10; //Wait in seconds before the credits start after player IS ingame
  
-_role1 = "Добро пожаловать на сервер";
-_role1names = ["ADT-TEAM Epoch Chernarus 1.0.5.1/12555 NOCD"];
-_role2 = "Администраторы";
+_role1 = "Добро пожаловать на сервер ADT-Team Epoch Chernarus 1.0.5.1/12555 NOCD";
+_role1names = ["Привет "+(name player)];
+_role2 = "Админы сервера";
 _role2names = ["GROM","Valerjanich","IlidanHyperX"];
 _role3 = "Версия";
-_role3names = ["DayZ Epoch Chernarus"];
+_role3names = ["DayZ Epoch Chernarus 1.0.5.1"];
 _role4 = "Группа ВКонтакте";
 _role4names = ["VK.COM/ADT_68"];
 _role5 = "Наш сайт";
 _role5names = ["ADT-TEAM.RU"];
 _role6 = "Основные нововведения";
-_role6names = ["Переделанные трейд зоны", "Сейфзоны 300 м"];
+_role6names = ["Переделанные трейд зоны", "Сейфзоны 300м"];
 _role7 = "Основные нововведения";
 _role7names = ["Автопочинка техники на заправках за золото"];
 _role8 = "Основные нововведения";
 _role8names = ["Перезарядка вооружения техники на заправках за золото"];
 _role9 = "Основные нововведения";
-_role9names = ["Переведены торговцы", "Добавлены новые товары"];
+_role9names = ["Переведены торговцы", "Добавлены новые товары","Анимированные хеликраши","Хардкорные зомби","Быстрая торговля"];
  
 {
 sleep 2;

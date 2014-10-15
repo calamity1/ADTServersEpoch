@@ -128,7 +128,7 @@ if (local _unit) then {
 						_index = (DAYZ_woundHit_ok select 1) select _index;
 						_wound = (DAYZ_woundHit_ok select 0) select _index; 
 					};
-					_damage = 0.7 + random (1.8); //"0.1" + "1.2"
+					_damage = 0.9 + random (1.9); //"0.1" + "1.2"
 					//diag_log ("Player_ZombieAttack: START DAM: Player Hit on " + _wound + " for " + str(_damage));
 					[player, _wound, _damage, _unit,"zombie"] call fnc_usec_damageHandler;
 				};

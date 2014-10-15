@@ -1,5 +1,5 @@
 /*	 
-   * DayZ Epoch |v1.0.5.1| "16.09.2014"
+   * DayZ Epoch |v1.0.5.1| "15.10.2014"
    * For ADT-TEAM SERVER DayZ 
    * Dev: GROM
    * http://adt-team.ru/
@@ -35,8 +35,9 @@ DefaultBackpack = "";
 DefaultBackpackItems = "";
 
 
+
 //Building
-DZE_BuildingLimit = 1000;
+DZE_BuildingLimit = 700;
 DZE_PlotPole = [30,45]; //Default: [30;45]
 
 snapTutorial = true;
@@ -47,12 +48,15 @@ DZE_DeathMsgTitleText = false;
 
 DZE_vehicleAmmo = 1;
 deathMessages = 1;
-//DZE_ConfigTrader = true; //fix traders
 MaxVehicleLimit = 150; // Default = 50
 MaxDynamicDebris = 200; // Default = 100 мусор на дорогах
 dayz_MapArea = 14000; // Default = 10000
 dayz_maxLocalZombies = 40; // Default = 30
+dayz_zedsAttackVehicles = true;			// Default: true
+//ADT_Team_Zombie_Attack_Veh = true; // zombie attack veh 
+dayz_spawnselection = 1; // DayZ Spawnselection / 1 = on spawn Spawnselection // 0 = off spawn Spawnselection
 dayz_tameDogs = false; //fix "false"
+DZE_ForceNameTags = true; //Отображения никнейма игрока 
 
 dayz_paraSpawn = false;
 
@@ -69,8 +73,7 @@ DynamicVehicleDamageHigh = 100; // Default: 100
 
 DZE_BuildOnRoads = false; // Default: False
 DZE_MissionLootTable = true; 
-DZE_ConfigTrader = true; //Overpoch adt fix
-
+DZE_ConfigTrader = true; //bd off
 
 /*
 DZE_defaultSkin = [
@@ -125,7 +128,11 @@ if (!isDedicated) then {
 	
 	//Run the player monitor
 	_id = player addEventHandler ["Respawn", {_id = [] spawn player_death;}];
-	_playerMonitor = 	[] execVM "\z\addons\dayz_code\system\player_monitor.sqf";
+	
+	
+	//_playerMonitor = 	[] execVM "\z\addons\dayz_code\system\player_monitor.sqf";
+	_playerMonitor = [] execVM "custom\system\player_monitor.sqf";
+	
     execVM "scripts\switch_weapon\init.sqf"; //Достать оружия из рюкзака	
 	
 	//anti Hack
@@ -159,11 +166,12 @@ if (!isDedicated) then {
 
 [] execVM "scripts\weedfarm.sqf"; //hemp farms
 
+
 [] spawn {
 
  while {1 == 1} do
  {
-  _vehicle_list = player nearEntities [["LandVehicle","Air","Ship"], 10];  //m12
+  _vehicle_list = player nearEntities [["LandVehicle","Air","Ship"], 3];  //m12
   {
    if (locked _x) then {
     closeDialog 0;

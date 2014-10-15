@@ -711,6 +711,8 @@ if(!isDedicated) then {
 	dayz_scaleLight = 		0;
 	dayzDebug = false;
 	dayzState = -1;
+	s_player_butcher_human = -1; //Cannibalism
+	
 	//uiNamespace setVariable ['DAYZ_GUI_display',displayNull];
 	//if (uiNamespace getVariable ['DZ_displayUI', 0] == 2) then {
 	//	dayzDebug = true;

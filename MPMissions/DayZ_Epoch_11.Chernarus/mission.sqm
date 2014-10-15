@@ -1173,18 +1173,21 @@ class Mission
 	class Markers
 	{
 		items=17;
+		
 		class Item0
 		{
 			position[]={7839.6055,381.33774,8414.7324};
 			name="center";
 			type="Empty";
 		};
+		/*
 		class Item1
 		{
 			position[]={-7245.377,365.98782,19535.367};
 			name="respawn_west";
 			type="Empty";
 		};
+		
 		class Item2
 		{
 			position[]={4932.3345,0.39950246,1989.1094};
@@ -1215,6 +1218,45 @@ class Mission
 			name="spawn4";
 			type="Empty";
 		};
+		*/
+		///////////////////////////// spawnselector - begin /////////////////////////////
+		class Item1
+		{
+			position[]={4932,0,1989};
+			name="spawn0"; //spawn_balota
+			type="Empty";
+		};
+		class Item2
+		{
+			position[]={2236,0,1923};
+			name="spawn1"; //spawn_kamenka
+			type="Empty";
+		};
+		class Item3
+		{
+			position[]={8738,0,2122};
+			name="spawn2"; //spawn_cherno
+			type="Empty";
+		};
+		class Item4
+		{
+			position[]={10909,0,2422};
+			name="spawn3"; //spawn_elektro
+			type="Empty";
+		};
+		class Item5
+		{
+			position[]={13510,0,5249};
+			name="spawn4"; //spawn_sol
+			type="Empty";
+		};
+		class Item6
+		{
+			position[]={12048,0,8352};
+			name="spawn5"; //spawn_berezino
+			type="Empty";
+		};
+///////////////////////////// spawnselector - end /////////////////////////////
 		class Item7
 		{
 			position[]={6326.4805,304.99265,7809.4888};

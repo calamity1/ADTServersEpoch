@@ -803,6 +803,20 @@ if (!isNull cursorTarget && !_inVehicle && !_isPZombie && (player distance curso
 			s_player_repair_crtl = -1;
 		};
 	};
+	
+	
+	  //####    Gut fools ####
+    if (!_isAlive and !_isZombie and !_isAnimal and !_isHarvested and _isMan and _hasKnife and _canDo) then {
+        if (s_player_butcher_human < 0) then {
+            s_player_butcher_human = player addAction [format["Разрезать человека"], "scripts\gather_meat_human.sqf",cursorTarget, 0, false, true, "", ""];
+        };
+    } else {
+        player removeAction s_player_butcher_human;
+        s_player_butcher_human = -1;
+    };
+
+    //##############################
+
 
 	// All Traders
 	if (_isMan && !_isPZombie && _traderType in serverTraders) then {
@@ -1001,6 +1015,9 @@ if (!isNull cursorTarget && !_inVehicle && !_isPZombie && (player distance curso
 	s_player_fuelauto = -1;
 	player removeAction s_player_fuelauto2;
 	s_player_fuelauto2 = -1;
+	//Gut Human
+    player removeAction s_player_butcher_human;
+    s_player_butcher_human = -1;
 	/*//отжечь!
 	player removeAction s_player_dance;
     s_player_dance = -1; //fix_adt_//*/

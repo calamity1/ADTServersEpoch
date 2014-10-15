@@ -25,7 +25,7 @@ _refuel_amount = 0.05; // amount of fuel to add with every update (in percent)
 // repair settings
 _repair_enable = true; // enable or disable the repair option
 _repair_costs = [
-	["Air",["ItemGoldBar",6]], // 5 Gold for helicopters and planes
+	["Air",["ItemGoldBar",8]], // 5 Gold for helicopters and planes
 	["AllVehicles",["ItemGoldBar",4]] // 2 Gold for all other vehicles
 ];
 _repair_repairTime = 2; // time needed to repair each damaged part (in seconds)
