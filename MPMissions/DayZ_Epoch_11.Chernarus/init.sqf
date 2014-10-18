@@ -48,7 +48,7 @@ DZE_DeathMsgTitleText = false;
 
 DZE_vehicleAmmo = 1;
 deathMessages = 1;
-MaxVehicleLimit = 150; // Default = 50
+MaxVehicleLimit = 300; // Default = 50
 MaxDynamicDebris = 200; // Default = 100 мусор на дорогах
 dayz_MapArea = 14000; // Default = 10000
 dayz_maxLocalZombies = 40; // Default = 30
@@ -186,6 +186,8 @@ if (!isDedicated) then {
 [] execVM "scripts\monitor.sqf"; //Debag_monitor
 
 [] execVM "scripts\weedfarm.sqf"; //hemp farms
+
+["elevator"] execVM "elevator\elevator_init.sqf";
 
 [] spawn {
 
