@@ -50,7 +50,8 @@ if (!isDedicated) then {
 		};
 	};
 
-	player_unlockDoor =			compile preprocessFileLineNumbers "\z\addons\dayz_code\compile\player_unlockDoor.sqf";
+	//player_unlockDoor =			compile preprocessFileLineNumbers "\z\addons\dayz_code\compile\player_unlockDoor.sqf";
+	player_unlockDoor =			compile preprocessFileLineNumbers "custom\player_unlockDoor.sqf";
 	player_changeCombo =		compile preprocessFileLineNumbers "\z\addons\dayz_code\compile\player_changeCombo.sqf";
 
 	player_lockVault =			compile preprocessFileLineNumbers "\z\addons\dayz_code\compile\player_lockVault.sqf";
@@ -58,7 +59,8 @@ if (!isDedicated) then {
 	player_updateGui =			compile preprocessFileLineNumbers "custom\player_updateGui.sqf"; //fix gui
 	player_crossbowBolt =		compile preprocessFileLineNumbers "\z\addons\dayz_code\compile\player_crossbowBolt.sqf";
 	player_music = 				compile preprocessFileLineNumbers "\z\addons\dayz_code\compile\player_music.sqf";			//Used to generate ambient music
-	player_death =				compile preprocessFileLineNumbers "\z\addons\dayz_code\compile\player_death.sqf";
+	//player_death =				compile preprocessFileLineNumbers "\z\addons\dayz_code\compile\player_death.sqf";
+	player_death =				compile preprocessFileLineNumbers "custom\player_death.sqf";
 	player_switchModel =		compile preprocessFileLineNumbers "\z\addons\dayz_code\compile\player_switchModel.sqf";
 	//player_switchModel =		compile preprocessFileLineNumbers "custom\player_switchModel.sqf"; //fixes dzgm radio scripts
 	player_checkStealth =		compile preprocessFileLineNumbers "\z\addons\dayz_code\compile\player_checkStealth.sqf";
@@ -423,7 +425,8 @@ if (!isDedicated) then {
 		call compile preprocessFileLineNumbers "\z\addons\dayz_code\compile\player_traderMenuHive.sqf";
 	};
 	// recent murders menu code
-	call compile preprocessFileLineNumbers "\z\addons\dayz_code\compile\player_murderMenu.sqf";
+	//call compile preprocessFileLineNumbers "\z\addons\dayz_code\compile\player_murderMenu.sqf";
+	call compile preprocessFileLineNumbers "custom\player_murderMenu.sqf"; //fix by GROM
 
 	//This is still needed but the fsm should terminate if any errors pop up.
 	[] spawn {

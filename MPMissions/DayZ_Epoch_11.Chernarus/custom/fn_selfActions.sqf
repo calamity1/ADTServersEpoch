@@ -858,6 +858,17 @@ if (!isNull cursorTarget && !_inVehicle && !_isPZombie && (player distance curso
 	};
 
 	
+	//Take_Skin
+    if (isMan and !isAlive and !isZombie and !isAnimal) then {
+    if (s_clothes < 0) then {
+            s_clothes = player addAction [("<t color=""#FF0000"">" + ("Забрать одежду") + "</t>"), "scripts\take_clothes\clothes.sqf",cursorTarget, 1, false, true, "",""];
+        };
+    } else {
+        player removeAction s_clothes;
+        s_clothes = -1;
+    };
+	
+	
 	if(dayz_tameDogs) then {
 		
 		//Dog
@@ -1001,6 +1012,8 @@ if (!isNull cursorTarget && !_inVehicle && !_isPZombie && (player distance curso
 	s_player_fuelauto = -1;
 	player removeAction s_player_fuelauto2;
 	s_player_fuelauto2 = -1;
+	player removeAction s_clothes; //Take clothes
+    s_clothes = -1;
 	/*//отжечь!
 	player removeAction s_player_dance;
     s_player_dance = -1; //fix_adt_//*/

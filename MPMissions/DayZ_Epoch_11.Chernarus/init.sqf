@@ -53,10 +53,12 @@ MaxDynamicDebris = 200; // Default = 100 мусор на дорогах
 dayz_MapArea = 14000; // Default = 10000
 dayz_maxLocalZombies = 40; // Default = 30
 dayz_zedsAttackVehicles = true;			// Default: true
-//ADT_Team_Zombie_Attack_Veh = true; // zombie attack veh 
+//ADT_Team_Zombie_Attack_Veh = true; // zombie attack veh
+DZE_PlayerZed =	false;	//	Если игрок умер инфицированным, - возраждать в виде зомби. По умолчанию: да.
 dayz_spawnselection = 1; // DayZ Spawnselection / 1 = on spawn Spawnselection // 0 = off spawn Spawnselection
 dayz_tameDogs = false; //fix "false"
-DZE_ForceNameTags = true; //Отображения никнейма игрока 
+DZE_ForceNameTags =	false;	//	Принудительно отображать имена игроков.
+DZE_Light =	false;	//	Локальное освещение
 
 dayz_paraSpawn = false;
 
@@ -68,8 +70,9 @@ dayz_sellDistance_boat = 30;
 dayz_sellDistance_air = 40;
 
 dayz_maxAnimals = 15; // Default: 8
-DynamicVehicleDamageLow = 0; // Default: 0
-DynamicVehicleDamageHigh = 100; // Default: 100
+
+DynamicVehicleDamageLow		=	40; 	//	Минимальный порог возможных повреждений техники при респе(0  - возможно респ целая)
+DynamicVehicleDamageHigh	=	90; 	//	Максимальный порог возможных повреждений техники при респе(100 - полностью сломанная)
 
 DZE_BuildOnRoads = false; // Default: False
 DZE_MissionLootTable = true; 
@@ -141,12 +144,14 @@ if (!isDedicated) then {
 	//[] execVM "\z\addons\dayz_code\system\antihack.sqf";
 
 	//Lights
+	if (DZE_Light) then
+			{[false,12] execVM "\z\addons\dayz_code\compile\local_lights_init.sqf";};
 	//[false,12] execVM "\z\addons\dayz_code\compile\local_lights_init.sqf";
 	//[getPos player, 3000]execVM "\lightsoff.sqf"
 	
 	
 	//System Lights by GROM 
-	execVM "scripts\light\lightsoff.sqf";
+	//execVM "scripts\light\lightsoff.sqf";
 	/*
 	["OFF",player,3000] execVM "scripts\light\ws_fnc_switchLights.sqf";
 	["OFF",Land_A_Office01,3000] execVM "scripts\light\ws_fnc_switchLights.sqf";
