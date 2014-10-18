@@ -1,6 +1,6 @@
 private ["_args","_option","_obj","_id","_elevatorStop","_dist"];
 
-if (DZE_ActionInProgress) exitWith { cutText ["Upgrade already in progress." , "PLAIN DOWN"]; };
+if (DZE_ActionInProgress) exitWith { cutText ["Улучшение уже в процессе." , "PLAIN DOWN"]; };
 DZE_ActionInProgress = true;
 
 player removeAction s_player_elevator_upgrade;
@@ -18,7 +18,7 @@ switch (_option) do {
 		if ((ELE_RequiredBuildTools call AC_fnc_hasTools) && {ELE_RequiredBuildItems call AC_fnc_checkAndRemoveRequirements}) then {
 			["Medic", ELE_MaxRange] call AC_fnc_doAnimationAndAlertZombies;
 			ELE_elevator = [_obj, _id] call AC_fnc_swapObject;
-			titleText ["Elevator Built", "PLAIN"];
+			titleText ["Лифт уже построен", "PLAIN"];
 		};
 	};
 	case "build_stop": {
@@ -31,7 +31,7 @@ switch (_option) do {
 		if ((ELE_RequiredBuildTools call AC_fnc_hasTools) && {ELE_RequiredBuildStopItems call AC_fnc_checkAndRemoveRequirements}) then {
 			["Medic", ELE_MaxRange] call AC_fnc_doAnimationAndAlertZombies;
 			_elevatorStop = [_obj, _id, ELE_StopClass] call AC_fnc_swapObject;
-			titleText ["Elevator Stop Built", "PLAIN"];
+			titleText ["Прекращена постройка лифта", "PLAIN"];
 		};
 	};
 };

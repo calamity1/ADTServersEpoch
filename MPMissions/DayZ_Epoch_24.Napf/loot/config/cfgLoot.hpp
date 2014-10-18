@@ -100,7 +100,7 @@ class CfgLoot {
 	{"HandChemBlue", 0.07},
 	{"HandChemRed", 0.07},
 	{"ItemHeatPack", 0.03},
-	{"ItemLockbox", 0.01},
+	{"ItemLockbox", 0.02},
 	{"ItemDocument", 0.02}
 	};
 
@@ -258,6 +258,7 @@ class CfgLoot {
 	{"SmokeShell", 0.08},
 	{"FoodMRE", 0.04},
 	{"ItemHotwireKit", 0.01},
+	{"ItemLockbox", 0.02},
 	{"ItemDocument", 0.02}
 	};
 
@@ -440,7 +441,7 @@ class CfgLoot {
 	{M24, 0.06},
 	{"BAF_LRR_scoped", 0.01},
 	{KSVK_DZE, 0.01},
-	{"VSS_vintorez", 0.04},
+	{"VSS_vintorez", 0.03},
 	{"SCAR_H_LNG_Sniper_SD", 0.01},
 	{M14_EP1, 0.08},
 	{DMR, 0.05},

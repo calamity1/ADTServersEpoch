@@ -32,5 +32,5 @@ if (dayz_combat == 1) then {
 	_weed setDamage 1;
 	player addMagazine "ItemKiloHemp";
 	sleep 2;
-	cutText [format["Вы собрали конаплю! Курите это дерьмо или продайте на черном рынке!!"], "PLAIN DOWN"];	
+	cutText [format["Вы собрали конаплю! Курите это дерьмо или продайте ее медиком!"], "PLAIN DOWN"];	
 };

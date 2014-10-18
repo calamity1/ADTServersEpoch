@@ -88,12 +88,17 @@ if (isServer) then {
 	call compile preprocessFileLineNumbers "\z\addons\dayz_server\missions\DayZ_Epoch_24.Napf\dynamic_vehicle.sqf";				
 	// Add trader citys
 	_nil = [] execVM "\z\addons\dayz_server\missions\DayZ_Epoch_24.Napf\mission.sqf";
+	//________________LOOT_______________________
+	_nil = [] execVM "\z\addons\dayz_server\missions\DayZ_Epoch_24.Napf\aero.sqf";   //aero_loot
+	
+	//________________LOOT_______________________
 
 	_serverMonitor = 	[] execVM "\z\addons\dayz_code\system\server_monitor.sqf";
 };
 
 if (!isDedicated) then {
 [] execVM "scripts\welcome_adt.sqf";
+[] execVM "scripts\craft\kill_msg.sqf";
 	//Conduct map operations
 	0 fadeSound 0;
 	waitUntil {!isNil "dayz_loadScreenMsg"};
@@ -104,7 +109,8 @@ if (!isDedicated) then {
 	//[] ExecVM "scripts\vip_loot_napf.sqf"; //donators_napf_&*
 	//Run the player monitor
 	_id = player addEventHandler ["Respawn", {_id = [] spawn player_death;}];
-	_playerMonitor = 	[] execVM "\z\addons\dayz_code\system\player_monitor.sqf";	
+	_playerMonitor = 	[] execVM "\z\addons\dayz_code\system\player_monitor.sqf";
+    execVM "scripts\switch_weapon\init.sqf"; //Достать оружия из рюкзака
 	
 	
 	//anti Hack_fix_AH
@@ -135,8 +141,7 @@ if (!isDedicated) then {
 [] execVM "service_point\service_point.sqf"; //Refuel_gold
 
 [] execVM "scripts\monitor.sqf"; //Debag_monitor
-
-[] execVM "scripts\loginCamera.sqf"; //loginCamera
+[] execVM "scripts\craft\fix_v.sqf"; //fix_v
 
 [] execVM "service_point\service_point.sqf"; //Refuel_gold
 
@@ -151,8 +156,9 @@ _logistic = execVM "=BTC=_Logistic\=BTC=_Logistic_Init.sqf";
 ["elevator"] execVM "elevator\elevator_init.sqf";
 
 
+
 //watermark
-_pic = "gui\adt_watermark.paa"; //images
+_pic = "gui\watermark.paa"; //images
 [
 '<img align=''left'' size=''1.0'' shadow=''1'' image='+(str(_pic))+' />',
 safeZoneX+0.027,
@@ -162,3 +168,7 @@ safeZoneY+safeZoneH-0.1,
 0,
 3090
 ] spawn bis_fnc_dynamicText;
+
+waitUntil {!isNil ("PVDZE_plr_LoginRecord")}; 
+if (dayzPlayerLogin2 select 2) then { 
+[] execVM "custom\spawn\Spawn.sqf";}

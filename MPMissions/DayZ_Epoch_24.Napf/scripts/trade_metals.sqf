@@ -28,8 +28,8 @@ _metals_conversion = [
 	["ItemEmerald","ItemBriefcase40oz",1,1,"buy","Briefcase40oz","Emerald",99],
     ["ItemBriefcase40oz","ItemEmerald",1,1,"buy","Emerald","Briefcase40oz",99],
 	
-	["PartOreGold","ItemGoldBar",1,1,"buy","GoldBar","OreGold",99],
-    ["ItemGoldBar","PartOreGold",1,1,"buy","OreGold","GoldBar",99],
+	///["PartOreGold","ItemGoldBar",1,1,"buy","GoldBar","OreGold",99],
+    //["ItemGoldBar","PartOreGold",1,1,"buy","OreGold","GoldBar",99],
 
     ["ItemCitrine","ItemBriefcase30oz",1,1,"buy","Briefcase30oz","Citrine",99],
     ["ItemBriefcase30oz","ItemCitrine",1,1,"buy","Citrine","Briefcase30oz",99]	

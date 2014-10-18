@@ -5,7 +5,7 @@ player selectWeapon _Weapon;
 reload player;
 sleep 1.5;
 player switchMove 'ActsPercMstpSnonWpstDnon_suicide1B';
-cutText ["Rest in peace.", "PLAIN DOWN"];
+cutText ["Неужели это конец?", "PLAIN DOWN"];
 sleep 3.9;
 player fire (currentWeapon player);
 sleep 1;

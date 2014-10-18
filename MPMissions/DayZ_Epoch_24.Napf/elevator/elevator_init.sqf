@@ -14,7 +14,7 @@ if (isNil "ELE_PlatformClass") then { ELE_PlatformClass = "MetalFloor_DZ" };
 if (isNil "ELE_StopClass") then { ELE_StopClass = "MetalFloor_Preview_DZ" };
 if (isNil "ELE_MaxRange") then { ELE_MaxRange = 100 }; // m
 if (isNil "ELE_Size") then { ELE_Size = 4 }; // m
-if (isNil "ELE_Speed") then { ELE_Speed = 5}; // m/s
+if (isNil "ELE_Speed") then { ELE_Speed = 4}; // m/s
 if (isNil "ELE_StopWaitTime") then { ELE_StopWaitTime = 5 }; // s
 if (isNil "ELE_UpdatesPerSecond") then { ELE_UpdatesPerSecond = 60 }; // animation updates per second
 if (isNil "ELE_RequiredBuildTools") then { ELE_RequiredBuildTools = ["ItemToolbox", "ItemCrowbar"] }; // required tools for building an elevator and elevator stop
@@ -40,32 +40,32 @@ while {true} do {
 			// elevator actions
 			if ([_ct] call ELE_fnc_isElevator) then {
 				if (s_player_elevator_next < 0 && {[_ct] call ELE_fnc_hasNextStop}) then {
-					s_player_elevator_next = player addAction ["<t color=""#ffffff"">Activate Elevator: Next Stop</t>", _folder+"elevator_actions.sqf", ["next",_ct], 5, false];
+					s_player_elevator_next = player addAction ["<t color=""#ffffff"">Активировать лифт: Следующая остановка</t>", _folder+"elevator_actions.sqf", ["next",_ct], 5, false];
 				};
 				if (s_player_elevator_previous < 0 && {[_ct] call ELE_fnc_hasPreviousStop}) then {
-					s_player_elevator_previous = player addAction ["<t color=""#ffffff"">Activate Elevator: Previous Stop</t>", _folder+"elevator_actions.sqf", ["previous",_ct], 5, false];
+					s_player_elevator_previous = player addAction ["<t color=""#ffffff"">Активировать лифт: Предыдущая остановка</t>", _folder+"elevator_actions.sqf", ["previous",_ct], 5, false];
 				};
 				if (s_player_elevator_select < 0) then {
-					s_player_elevator_select = player addAction ["<t color=""#ffffff"">Select Elevator</t>", _folder+"elevator_actions.sqf", ["select",_ct], 1, false];
+					s_player_elevator_select = player addAction ["<t color=""#ffffff"">Выделить лифт</t>", _folder+"elevator_actions.sqf", ["select",_ct], 1, false];
 				};
 			} else {
 				if (s_player_elevator_upgrade < 0) then {
-					s_player_elevator_upgrade = player addAction ["<t color=""#ffffff"">Upgrade to Elevator</t>", _folder+"elevator_build.sqf", ["build",_ct], 0, false];
+					s_player_elevator_upgrade = player addAction ["<t color=""#ffffff"">Улучшить до лифта</t>", _folder+"elevator_build.sqf", ["build",_ct], 0, false];
 				};
 				if (s_player_elevator_upgrade_stop < 0) then {
-					s_player_elevator_upgrade_stop = player addAction ["<t color=""#ffffff"">Upgrade to Elevator Stop</t>", _folder+"elevator_build.sqf", ["build_stop",_ct], 0, false];
+					s_player_elevator_upgrade_stop = player addAction ["<t color=""#ffffff"">Улучшить до остановки лифта</t>", _folder+"elevator_build.sqf", ["build_stop",_ct], 0, false];
 				};
 			};
 		};
 		// elevator stop actions
 		if ([_ct] call ELE_fnc_isElevatorStop) then {
 			if (s_player_elevator_call < 0) then {
-				s_player_elevator_call = player addAction ["<t color=""#ffffff"">Call Elevator</t>", _folder+"elevator_actions.sqf", ["call",_ct], 5, false];
+				s_player_elevator_call = player addAction ["<t color=""#ffffff"">Вызвать лифт</t>", _folder+"elevator_actions.sqf", ["call",_ct], 5, false];
 			};
 		};
 		// debug actions
 		if (s_player_elevator_id < 0 && ELE_Debug) then {
-			s_player_elevator_id = player addAction ["<t color=""#ddffffff"">Show Elevator ID</t>", _folder+"elevator_actions.sqf", ["id",_ct], 0, false];
+			s_player_elevator_id = player addAction ["<t color=""#ddffffff"">Показать ID лифта</t>", _folder+"elevator_actions.sqf", ["id",_ct], 0, false];
 		};
 	} else {
 		player removeAction s_player_elevator_next;

@@ -1334,7 +1334,7 @@ class Mission
 	};
 	class Sensors
 	{
-		items=10;
+		items=13;
 		class Item0
 		{
 			position[]={8246.3184,15.544708,15485.867};
@@ -1488,7 +1488,67 @@ class Mission
             		class Effects
             		{
             		};
-	        };		
+	        };	
+        class Item10
+        {
+            position[]={9950.6484, 0, 9429.3906};
+            a=110;
+            b=110;
+            activationBy="WEST";
+            repeating=1;
+            interruptable=1;
+            age="UNKNOWN";
+            name="KLAN1";
+            expCond="(vehicle player) in thislist;";
+            expActiv="KLAN1 = [] execVM ""scripts\privat\klan.sqf"";";
+            expDesactiv="KLAN1 = [] execVM ""scripts\privat\klanout.sqf"";";
+            class Effects
+            {
+            titleType="TEXT";
+            titleEffect="PLAIN DOWN";
+            title="Ты вошел на територию клана !!!";
+            };
+        };
+		class Item11
+        {
+            position[]={7956.1987, 0, 18127.66};
+            a=100;
+            b=100;
+            activationBy="WEST";
+            repeating=1;
+            interruptable=1;
+            age="UNKNOWN";
+            name="KLAN2";
+            expCond="(vehicle player) in thislist;";
+            expActiv="KLAN2 = [] execVM ""scripts\privat\klan1.sqf"";";
+            expDesactiv="KLAN2 = [] execVM ""scripts\privat\klanout.sqf"";";
+            class Effects
+            {
+            titleType="TEXT";
+            titleEffect="PLAIN DOWN";
+            title="Ты вошел на територию клана !!!";
+            };
+        };
+		class Item12
+        {
+            position[]={18903.412, 0, 3827.9553};
+            a=100;
+            b=100;
+            activationBy="WEST";
+            repeating=1;
+            interruptable=1;
+            age="UNKNOWN";
+            name="KLAN2";
+            expCond="(vehicle player) in thislist;";
+            expActiv="KLAN3 = [] execVM ""scripts\privat\klan2.sqf"";";
+            expDesactiv="KLAN3 = [] execVM ""scripts\privat\klanout.sqf"";";
+            class Effects
+            {
+            titleType="TEXT";
+            titleEffect="PLAIN DOWN";
+            title="Ты вошел на територию клана !!!";
+            };
+        };
 	};
 };
 class Intro

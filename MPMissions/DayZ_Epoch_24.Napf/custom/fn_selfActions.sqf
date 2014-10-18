@@ -23,60 +23,6 @@ if (!isNull _nearLight) then {
 	};
 };
 
-// Отжечь! by GROM
-	
-    if (inflamed cursorTarget and _canDo) then {
-            if (s_player_dance < 0) then {
-			s_player_dance = player addaction[("<t color=""#327521"">" + ("Отжечь!") +"</t>"),"scripts\dance_adt.sqf",cursorTarget, 0, false, true, "",""]; //fix
-        };
-    } else {
-        player removeAction s_player_dance;
-        s_player_dance = -1;
-    };
-//Конец отжечь by GROM
-
-//испить воду скрипт\\ by GROM
-private["_playerPos","_canDrink","_isPond","_isWell","_pondPos","_objectsWell","_objectsPond","_display"];
- 
-_playerPos = getPosATL player;
-_canDrink = count nearestObjects [_playerPos, ["Land_pumpa","Land_water_tank"], 4] > 0;
-_isPond = false;
-_isWell = false;
-_pondPos = [];
-_objectsWell = [];
- 
-if (!_canDrink) then {
-    _objectsWell = nearestObjects [_playerPos, [], 4];
-    {
-        //Check for Well
-        _isWell = ["_well",str(_x),false] call fnc_inString;
-        if (_isWell) then {_canDrink = true};
-    } forEach _objectsWell;
-};
- 
-if (!_canDrink) then {
-    _objectsPond = nearestObjects [_playerPos, [], 50];
-    {
-        //Check for pond
-        _isPond = ["pond",str(_x),false] call fnc_inString;
-        if (_isPond) then {
-            _pondPos = (_x worldToModel _playerPos) select 2;
-            if (_pondPos < 0) then {
-                _canDrink = true;
-            };
-        };
-    } forEach _objectsPond;
-};
- 
-if (_canDrink) then {
-        if (s_player_drinkWater < 0) then {
-            s_player_drinkWater = player addaction[("<t color=""#255684"">" + ("Испить водицы") +"</t>"),"scripts\drink_water_adt.sqf"]; //Fix_ADT
-        };
-    } else {
-        player removeAction s_player_drinkWater;
-        s_player_drinkWater = -1;
-    };
-//ипить воду конец!
 //Grab Flare
 if (_canPickLight && !dayz_hasLight && !_isPZombie) then {
 	if (s_player_grabflare < 0) then {
@@ -776,6 +722,20 @@ if (!isNull cursorTarget && !_inVehicle && !_isPZombie && (player distance curso
 		player removeAction s_player_sleep;
 		s_player_sleep = -1;
 	};
+	_clothesTaken = cursorTarget getVariable["clothesTaken",false];
+                       
+               // Take clothes by Zabn @ BalotaBuddies.net
+               if (_isMan and !_isAlive and !_isZombie and !_clothesTaken) then {
+                   if (s_player_clothes < 0) then {
+                       s_player_clothes
+= player addAction [("<t color='#0096ff'>")+("Take
+Clothes")+("</t>"), "custom\player_takeClothesFixed.sqf",cursorTarget,
+-10, false, true, "",""];
+                   };
+               } else {
+                   player removeAction s_player_clothes;
+                   s_player_clothes = -1;
+                   };
 	
 	//Repairing Vehicles
 	if ((dayz_myCursorTarget != _cursorTarget) && _isVehicle && !_isMan && _hasToolbox && (damage _cursorTarget < 1) && !_isDisallowRepair) then {

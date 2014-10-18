@@ -99,12 +99,7 @@
 			script = "execVM 'custom\player_suicide.sqf';";
 		};
 	};	
-	class revolver_gold_EP1 {
-		class suicide {
-			text = "Самоубийство";
-			script = "execVM 'custom\player_suicide.sqf';";
-		};
-	};
+	
 	class ItemZombieParts {
 		class cover {
 			text = "Обмазаться";
@@ -129,4 +124,91 @@
 			script = "execVM 'custom\donate_system.sqf';";
 		};
 	};
-};
+	
+	class ItemNewspaper {
+		class ItemNewspaper {
+			text = "Читать газету";					
+			script = "execVM 'scripts\craft\gazeta.sqf'";
+		};
+	};
+	
+	class PartOreGold {
+		class PartOreGold {
+			text = "Переплавить";
+            script = "execVM 'scripts\craft\oregold.sqf'";
+        };
+	};		
+
+    class PartOreSilver {
+		class PartOreSilver {
+			text = "Переплавить";					
+			script = "execVM 'scripts\craft\oresilver.sqf'";
+		};
+	};	
+
+    class PartOre {
+		class PartOre {
+			text = "Переплавить";					
+			script = "execVM 'scripts\craft\oreiron.sqf'";
+		};
+	};
+    
+	class AKS_GOLD {
+		class AKS_GOLD {
+			text = "Переплавить в золото";					
+			script = "execVM 'scripts\craft\akm_gold.sqf'";
+		};
+	};
+	
+	class revolver_gold_EP1 {
+	class suicide {
+			text = "Самоубийство";
+			script = "execVM 'custom\player_suicide.sqf';";
+		};
+		class revolver_gold_EP1 {
+			text = "Переплавить в золото";					
+			script = "execVM 'scripts\craft\rev_gold.sqf'";
+    	};
+	};
+	
+	class ItemSandbag {
+		class sement {
+            text = "Создать: CinderBlocks";
+            script = "execVM 'scripts\craft\CinderBlocks.sqf'";
+        };
+	};
+	
+    class MortarBucket {
+		class pesok {
+			text = "Создать: CinderBlocks";
+            script = "execVM 'scripts\craft\CinderBlocks.sqf'";
+        };
+	};
+	
+    class Skin_Survivor2_DZ {
+		class craft_canv {
+			text = "Создать: Canvas";
+            script = "execVM 'scripts\craft\Canvas.sqf'";
+        };
+	};
+	/*
+	class pravila {
+		text = "Правила сервера";
+		script = "execVM 'scripts\rules_adt.sqf'";
+		};
+	};*/
+	
+	class ItemEpinephrine{
+		class ItemEpinephrine {
+			text = "Принять";					
+			script = "execVM 'scripts\medical\color_epi_use.sqf'";
+		};
+	};	
+	
+	class ItemMap {
+	class pravila {
+		text = "Правила сервера";
+		script = "execVM 'scripts\rules.sqf'";
+		};
+	};
+	};

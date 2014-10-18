@@ -16,7 +16,7 @@ _message = "Точка обслуживания транспортных сре�
 // refuel settings
 _refuel_enable = true; // enable or disable the refuel option
 _refuel_costs = [
-	["Air",["ItemGoldBar",4]], // 5 Gold for helicopters and planes
+	["Air",["ItemGoldBar",5]], // 5 Gold for helicopters and planes
 	["AllVehicles",["ItemGoldBar",2]] // 2 Gold for all other vehicles
 ];
 _refuel_updateInterval = 1; // update interval (in seconds)
@@ -33,9 +33,9 @@ _repair_repairTime = 2; // time needed to repair each damaged part (in seconds)
 // rearm settings
 _rearm_enable = true; // enable or disable the rearm option
 _rearm_costs = [
-	["ArmoredSUV_PMC_DZE",["ItemGoldBar10oz",3]], // special costs for a single vehicle type
-	["Air",["ItemGoldBar10oz",4]], // 2 10oz Gold for helicopters and planes
-	["AllVehicles",["ItemGoldBar10oz",2]] // 1 10oz Gold for all other vehicles
+	["ArmoredSUV_PMC_DZE",["ItemBriefcase100oz",1]], // special costs for a single vehicle type
+	["Air",["ItemGoldBar10oz",7]], // 2 10oz Gold for helicopters and planes
+	["AllVehicles",["ItemGoldBar10oz",3]] // 1 10oz Gold for all other vehicles
 ];
 _rearm_magazineCount = 3; // amount of magazines to be added to the vehicle weapon
 

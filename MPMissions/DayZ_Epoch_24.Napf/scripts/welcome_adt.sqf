@@ -42,7 +42,7 @@ sleep 10; //Wait in seconds before the credits start after player IS ingame
 _role1 = "Добро пожаловать на сервер";
 _role1names = ["ADT-68 Napf 1.0.5.1/112555 NO CD"];
 _role2 = "Администраторы";
-_role2names = ["Mavet", "Cristofer Nolan", "Hooligan"];
+_role2names = ["Mavet", "Cristofer Nolan"];
 _role3 = "Версия";
 _role3names = ["DayZ Napf"];
 _role4 = "Группа ВКонтакте";
@@ -56,7 +56,7 @@ _role7names = ["Автопочинка техники на заправках з
 _role8 = "Основные нововведения";
 _role8names = ["Перезарядка вооружения техники на заправках за золото"];
 _role9 = "Основные нововведения";
-_role9names = ["Переведены торговцы", "Добавлены новые товары", "Много дополнительных скриптов"];
+_role9names = ["Переведены торговцы", "Добавлены новые товары", "Анимированные хеликраши"];
  
 {
 sleep 2;

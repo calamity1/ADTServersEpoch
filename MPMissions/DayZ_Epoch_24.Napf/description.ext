@@ -1,3 +1,4 @@
+#include "scripts\sounds\sound.hpp"
 #include "loot\config\cfgbuildingloot.hpp"
 respawn = "BASE";
 respawndelay = 5;
@@ -12,8 +13,9 @@ enableItemsDropping=0;
 briefing = 0;
 debriefing = 0;
 
-onPauseScript = "";
-loadScreen = "\z\addons\dayz_code\gui\dayz_logo_ca.paa";
+onPauseScript = "scripts\dupingfix.sqf";              //Duping fixes by GROMx.ru
+//loadScreen = "\z\addons\dayz_code\gui\dayz_logo_ca.paa";
+loadScreen = "dayzlogo.jpg";
 
 class Header
 {
@@ -181,8 +183,9 @@ class RscTextGUIK {
     w = 0.1;
     h = 0.2;
 };
-
 #include "hpp\extra_rc.hpp"
 //#include "hpp\gui_adt.h" //fix_adt_gui
 #include "custom\snap_pro\snappoints.hpp"
 #include "=BTC=_Logistic\=BTC=_Lift\=BTC=_Hud.h"
+#include "custom\spawn\dialogs.hpp"
+#include "fix_vev\csj_gyroac\config.cpp" //veh_fix
