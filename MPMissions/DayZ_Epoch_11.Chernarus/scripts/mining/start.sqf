@@ -42,18 +42,18 @@ if (_currentWeapon == "MeleeSledge") then {																//
 			_rand = floor(random 100);
 			
 			if (_rand <= 60) then {
-				_has_free_space=[player,"CinderBlocks",false] call BIS_fnc_invAdd;
+				_has_free_space=[player,"PartOreSilver",false] call BIS_fnc_invAdd;
 				_mining_message="Добыто немного камней";
 			};
-			if (_rand <= 85 && _rand > 60) then {
-				_has_free_space=[player,"PartOreSilver",false] call BIS_fnc_invAdd;
+			if (_rand <= 100 && _rand > 98) then {
+				_has_free_space=[player,"CinderBlocks",false] call BIS_fnc_invAdd;
 				_mining_message="Добыто немного серебрянной руды";
 			};
-			if (_rand <= 88 && _rand > 85) then {
+			if (_rand <= 100 && _rand > 90) then {
 					_has_free_space=[player,"PartOre",false] call BIS_fnc_invAdd;
 				_mining_message="Добыто немного железной руды";
 			};
-			if (_rand <= 100 && _rand > 90) then { //85
+			if (_rand <= 100 && _rand > 98) then { //85
 				_has_free_space=[player,"PartOreGold",false] call BIS_fnc_invAdd;
 				_mining_message="Добыто немного золотой руды";
 			};

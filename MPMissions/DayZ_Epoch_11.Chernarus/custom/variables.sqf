@@ -251,9 +251,7 @@ dayz_resetSelfActions = {
 	s_player_heli_lift = -1;
 	s_player_heli_detach = -1;
 	s_player_lockUnlock_crtl = -1;
-	//s_player_drinkWater = -1; //ADT_SERVER_DRINK_WATER_BY_GROM
-	s_player_mining = -1; 	//rudnick
-	s_player_mine = -1; //rudnick
+	s_player_drinkWater = -1; //ADT_SERVER_DRINK_WATER_BY_GROM
 };
 call dayz_resetSelfActions;
 

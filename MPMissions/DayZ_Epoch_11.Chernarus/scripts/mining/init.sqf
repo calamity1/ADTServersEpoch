@@ -38,7 +38,7 @@ while {true} do {
 	if (_inRange && _hasToolbox && _hasSledge) then {
 	
 		if (s_player_mine < 0 && !isMining) then { s_player_mine = player addaction [("<t color=""#0074E8"">" + ("Добывать руду") +"</t>"),"scripts\mining\start.sqf","",5,false,true,"",""]; };
-		if (s_player_mining < 0 && isMining) then {	s_player_mining = player addaction [("<t color=""#0074E8"">" + ("Прекратить добычу") +"</t>"),"scripts\mining\mining\stop.sqf","",5,false,true,"",""]; };
+		if (s_player_mining < 0 && isMining) then {	s_player_mining = player addaction [("<t color=""#0074E8"">" + ("Прекратить добычу") +"</t>"),"scripts\mining\stop.sqf","",5,false,true,"",""]; };
 	} else {
 		player removeAction s_player_mining;
 		player removeAction s_player_mine;

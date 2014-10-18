@@ -128,8 +128,7 @@ if (local _unit) then {
 						_index = (DAYZ_woundHit_ok select 1) select _index;
 						_wound = (DAYZ_woundHit_ok select 0) select _index; 
 					};
-					//_damage = 0.9 + random (1.9); //"0.1" + "1.2"
-					_damage = 1.0 + random (2.1); //by GROM
+					_damage = 0.9 + random (1.2); //"0.1" + "1.2"
 					//diag_log ("Player_ZombieAttack: START DAM: Player Hit on " + _wound + " for " + str(_damage));
 					[player, _wound, _damage, _unit,"zombie"] call fnc_usec_damageHandler;
 				};
@@ -148,8 +147,7 @@ if (local _unit) then {
 		if ((_unit distance player) <= 3.6) then {
 			
 		//Make sure sure evrything is processed as we attack.
-		//_damage = 0.2 + random (1.2);
-		_damage = 1.0 + random (2.1); //by GROM
+		_damage = 0.9 + random (1.2); //0.2
 		
 		//LOS check
 		_cantSee = [_vehicle,_unit] call dayz_losCheck;

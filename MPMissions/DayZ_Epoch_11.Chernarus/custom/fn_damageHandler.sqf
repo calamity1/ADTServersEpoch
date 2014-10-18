@@ -56,7 +56,7 @@ if (_unitIsPlayer) then {
 };
 
 //PVP Damage
-_scale = 1300; //200 //900
+_scale = 1500; //200
 if (_damage > 0.4) then {
 	if (_ammo != "zombie") then {
 		_scale = _scale + 50;

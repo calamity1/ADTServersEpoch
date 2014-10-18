@@ -1337,13 +1337,13 @@ class Mission
 			type="mil_dot";
 			colorName="ColorBlue";
 		};
-	    class Item17
+		class Item17
 		{
 			position[]={13258.352,0, 6085.3574};
-            name="Mine1";
-            text="Рудник";
-            type="mil_dot";
-            colorName="ColorBrown";
+                        name="Mine1";
+                        text="Рудник";
+                        type="mil_dot";
+                        colorName="ColorBrown";
 		};
 	};
 	class Sensors

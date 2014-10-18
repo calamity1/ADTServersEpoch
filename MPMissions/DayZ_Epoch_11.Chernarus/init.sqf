@@ -121,8 +121,8 @@ if (isServer) then {
 
 if (!isDedicated) then {
 [] execVM "scripts\welcome_adt.sqf"; //ADT_Welcome_ by GROM "11.06.2014"
-[] execVM "scripts\mining\init.sqf"; // Добыча руды ADTMod
 [] execVM "scripts\kill_msg.sqf";
+[] execVM "scripts\mining\init.sqf"; // Добыча руды ADTMod
 	//Conduct map operations
 	0 fadeSound 0;
 	waitUntil {!isNil "dayz_loadScreenMsg"};
@@ -146,7 +146,7 @@ if (!isDedicated) then {
 	
 	
 	//System Lights by GROM 
-	[getPos player, 3000] execVM "scripts\light\lightsoff.sqf";
+	execVM "scripts\light\lightsoff.sqf";
 	/*
 	["OFF",player,3000] execVM "scripts\light\ws_fnc_switchLights.sqf";
 	["OFF",Land_A_Office01,3000] execVM "scripts\light\ws_fnc_switchLights.sqf";
