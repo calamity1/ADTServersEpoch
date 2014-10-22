@@ -188,4 +188,3 @@ class RscTextGUIK {
 #include "custom\snap_pro\snappoints.hpp"
 #include "fix_vev\csj_gyroac\config.cpp" //veh_fix
 #include "hpp\RscDisplaySpawnSelecter.hpp"
-#include "hpp\CfgNonAIVehicles.hpp"

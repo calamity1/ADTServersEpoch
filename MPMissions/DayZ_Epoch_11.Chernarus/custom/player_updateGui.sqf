@@ -142,7 +142,7 @@ switch true do {
 	default { _uiNumber = 0 };
 };
 
-_bloodText = "gui\status_blood_border";
+_bloodText = "\z\addons\dayz_code\gui\status\status_blood_border";
 
 if (r_player_infected) then {
 	switch true do {
@@ -152,7 +152,7 @@ if (r_player_infected) then {
 	};
 } else {
 	//if (r_player_Sepsis select 0) then {
-	//	_bloodText = "\z\addons\dayz_code\gui\status\status_blood_border_sick_ca.paa"
+	//	_bloodText = "\z\addons\dayz_code\\z\addons\dayz_code\gui\status\status\status_blood_border_sick_ca.paa"
 	//} else {
 		switch true do {
 			case (_uiNumber < 0): { _bloodText = _bloodText + "_down" + str(_uiNumber * -1) + "_ca.paa" };
@@ -165,26 +165,27 @@ if (r_player_infected) then {
 _ctrlBloodOuter ctrlSetText _bloodText;
 
 if (_bloodLvl <= 0) then {
-	_blood = "gui\status_blood_inside_1_ca.paa";
+	_blood = "\z\addons\dayz_code\gui\status\status_blood_inside_1_ca.paa";
 } else {
-	_blood = "gui\status_blood_inside_" + str(_bloodLvl) + "_ca.paa";
+	_blood = "\z\addons\dayz_code\gui\status\status_blood_inside_" + str(_bloodLvl) + "_ca.paa";
 };
 
 if (_thirstLvl < 0) then { _thirstLvl = 0 };
-_thirst = "gui\status_thirst_inside_" + str(_thirstLvl) + "_ca.paa";
+_thirst = "\z\addons\dayz_code\gui\status\status_thirst_inside_" + str(_thirstLvl) + "_ca.paa";
 
 if (_foodLvl < 0) then { _foodLvl = 0 };
-_food = "gui\status_food_inside_" + str(_foodLvl) + "_ca.paa";
+_food = "\z\addons\dayz_code\gui\status\status_food_inside_" + str(_foodLvl) + "_ca.paa";
 
 switch true do {
 	case (_tempLvl >= 36): { _tempImg = 4 };
 	case (_tempLvl > 33 and _tempLvl < 36): { _tempImg = 3 };
 	case (_tempLvl >= 30 and _tempLvl <= 33): { _tempImg = 2 };
 	case (_tempLvl > 28 and _tempLvl < 30): { _tempImg = 1 };
+    //case ( _tempLvl <= 28 ): { _tempImg = 0 };
 	default { _tempImg = 0 };
 };
 
-_temp = "gui\status_temp_" + str(_tempImg) + "_ca.paa";
+_temp = "\z\addons\dayz_code\gui\status\status_temp_" + str(_tempImg) + "_ca.paa";
 
 _ctrlBlood ctrlSetText _blood;
 _ctrlThirst ctrlSetText _thirst;
@@ -217,6 +218,77 @@ if (r_player_injured) then { _ctrlBleed call player_guiControlFlash; };
 /*
 Opt-in tag system with friend tagging
 */
+
+/*
+Opt-in tag system with friend tagging
+*/
+_string = "";
+_humanityTarget = cursorTarget;
+if (!isNull _humanityTarget && isPlayer _humanityTarget && alive _humanityTarget) then {
+
+	_distance = player distance _humanityTarget;
+
+	if (_distance < DZE_HumanityTargetDistance) then {
+		
+		_size = (1-(floor(_distance/5)*0.1)) max 0.1;
+
+		// Display name if player opt-in || if friend
+		_friendlies = player getVariable ["friendlies", []];
+		_charID = player getVariable ["CharacterID", "0"];
+		//PLOTPOLE4LIFE CODE
+		//_charID = [player] call convertPlayerUID; 
+
+		_rcharID = _humanityTarget getVariable ["CharacterID", "0"];
+		//PLOTPOLE4LIFE CODE
+		//_rcharID = [_humanityTarget] call convertPlayerUID; 
+		_rfriendlies = _humanityTarget getVariable ["friendlies", []];
+		_rfriendlyTo = _humanityTarget getVariable ["friendlyTo", []];
+
+		if ((_rcharID in _friendlies) && (_charID in _rfriendlies)) then {
+
+			if !(_charID in _rfriendlyTo) then {
+				// diag_log format["IS FRIENDLY: %1", _player];
+				_rfriendlyTo set [count _rfriendlyTo, _charID];
+				_humanityTarget setVariable ["friendlyTo", _rfriendlyTo, true];
+			};
+	
+			// <br /><t %2 align='center' size='0.7'>Humanity: %3</t>
+
+			_color = "color='#339933'";
+			_string = format["<t %2 align='center' size='%3'>%1</t>",(name _humanityTarget),_color,_size];
+		
+		} else {
+
+			// Humanity checks
+			_humanity = _humanityTarget getVariable ["humanity",0];
+
+			_color = "color='#ffffff'";
+			if(_humanity < -5000) then {
+				_color = "color='#ff0000'";
+			} else {
+				if(_humanity > 5000) then {
+					_color = "color='#3333ff'";
+				};
+			};
+			if((_humanityTarget getVariable ["DZE_display_name", false]) || (DZE_ForceNameTagsInTrader && isInTraderCity)) then {
+				_string = format["<t %2 align='center' size='%3'>%1</t>",(name _humanityTarget),_color,_size];
+			};
+		};
+	};
+};
+
+// update gui if changed
+if (dayz_humanitytarget != _string) then {
+	_targetControl = _display displayCtrl 1199;
+	_targetControl ctrlSetStructuredText (parseText _string);
+	dayz_humanitytarget = _string;
+};
+
+_array = [_foodVal,_thirstVal];
+_array
+
+
+/*
 _targetControl = _display displayCtrl 1199;
 _string = "";
 _humanityTarget = cursorTarget;
@@ -281,4 +353,6 @@ if (dayz_humanitytarget != _string) then {
 
 _array = [_foodVal,_thirstVal];
 _array
+
+*/
 //ADT TEAM http://vk.com/adt_68

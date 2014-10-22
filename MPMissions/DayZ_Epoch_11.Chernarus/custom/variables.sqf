@@ -252,7 +252,6 @@ dayz_resetSelfActions = {
 	s_player_heli_detach = -1;
 	s_player_lockUnlock_crtl = -1;
 	//s_player_drinkWater = -1; //ADT_SERVER_DRINK_WATER_BY_GROM
-	s_clothes = -1; //Скины
 };
 call dayz_resetSelfActions;
 
@@ -712,7 +711,7 @@ if(!isDedicated) then {
 	dayz_scaleLight = 		0;
 	dayzDebug = false;
 	dayzState = -1;
-	
+	s_player_butcher_human = -1;
 	//uiNamespace setVariable ['DAYZ_GUI_display',displayNull];
 	//if (uiNamespace getVariable ['DZ_displayUI', 0] == 2) then {
 	//	dayzDebug = true;

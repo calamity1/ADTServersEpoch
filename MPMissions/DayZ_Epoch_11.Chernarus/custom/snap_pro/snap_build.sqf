@@ -1,9 +1,15 @@
-//------------------|
-// Created by Raymix|
-// July 6 2014		|
-//------------------|
-
-private ["_object","_objectSnapGizmo","_objColorActive","_objColorInactive","_classname","_whitelist","_points","_cfg","_cnt","_pos","_findWhitelisted","_nearbyObject","_posNearby","_selectedAction","_newPos","_pointsNearby","_onWater"];
+/*-----------------------------------------------------------*/
+// Created by Raymix
+// Last update - August 21 2014
+/*-----------------------------------------------------------*/
+/**	
+	DayZ Epoch 1.0.5.1
+	Configured by Joze
+	VK: vk.com/dayz_tlg
+	Website: adt-team.ru
+	Map: Napf
+**/
+private ["_object","_objectSnapGizmo","_objColorActive","_objColorInactive","_classname","_whitelist","_points","_radius","_cfg","_cnt","_pos","_findWhitelisted","_nearbyObject","_posNearby","_selectedAction","_newPos","_pointsNearby","_onWater","_waterBase"];
 //Args
 snapActionState = _this select 3 select 0;
 _object = _this select 3 select 1;
@@ -15,6 +21,7 @@ _selectedAction = _this select 3 select 4;
 _cfg = (missionConfigFile >> "SnapBuilding" >> _classname);
 _whitelist = getArray (_cfg >> "snapTo");
 _points = getArray (_cfg >> "points");
+_radius = getNumber (_cfg >> "radius");
 
 //colors
 _objColorActive = "#(argb,8,8,3)color(0,0.92,0.06,1,ca)";
@@ -26,12 +33,14 @@ fnc_snapActionCleanup = {
 	_s1 = _this select 0;
 	_s2 = _this select 1;
 	_s3 = _this select 2;
-	player removeAction s_player_toggleSnap;
-	player removeAction s_player_toggleSnapSelect;
-	{player removeAction _x;} count s_player_toggleSnapSelectPoint;
+	player removeAction s_player_toggleSnap; s_player_toggleSnap = -1;
+	player removeAction s_player_toggleSnapSelect; s_player_toggleSnapSelect = -1;
+    player removeAction s_player_snapOn; s_player_snapOn = -1;
+	if (count s_player_toggleSnapSelectPoint != 0) then {{player removeAction _x;} count s_player_toggleSnapSelectPoint; s_player_toggleSnapSelectPoint=[]; snapActions = -1;};
 	if (_s1 > 0) then {
+	    	s_player_snapOn = player addAction [format[("<t color=""#b4eeb4"">" + ("Прилипить обьект") +"</t>")], "custom\snap_pro\snap_key.sqf",cursorTarget, 6, false, true, "",""];
 		s_player_toggleSnap = player addaction [format[("<t color=""#ffffff"">" + ("Прилипание: %1") +"</t>"),snapActionState],"custom\snap_pro\snap_build.sqf",[snapActionState,_object,_classname,_objectHelper],6,false,true];
-	};
+        };
 	if (_s2 > 0) then {
 		s_player_toggleSnapSelect = player addaction [format[("<t color=""#ffffff"">" + ("Точка прилипания: %1") +"</t>"),snapActionStateSelect],"custom\snap_pro\snap_build.sqf",[snapActionStateSelect,_object,_classname,_objectHelper],5,false,true];
 	};
@@ -56,24 +65,23 @@ fnc_initSnapPoints = {
 };
 
 fnc_initSnapPointsNearby = {
-	_pos = getPosATL _object;
+	_pos = [_object] call FNC_GetPos;
 	_findWhitelisted = []; _pointsNearby = [];
-	_findWhitelisted = nearestObjects [_pos,_whitelist,15]-[_object];
+	_findWhitelisted = nearestObjects [_pos,_whitelist,(_radius + DZE_snapExtraRange)]-[_object];
 	snapGizmosNearby = [];	
 	{	
 		_nearbyObject = _x;
 		_pointsNearby = getArray (missionConfigFile >> "SnapBuilding" >> (typeOf _x) >> "points");
 		{
-			_onWater = surfaceIsWater position _nearbyObject;
 			_objectSnapGizmo = "Sign_sphere10cm_EP1" createVehicleLocal [0,0,0];
 			_objectSnapGizmo setobjecttexture [0,_objColorInactive];
+			_objectSnapGizmo setDir (getDir _nearbyObject);
 			_posNearby = _nearbyObject modelToWorld [_x select 0,_x select 1,_x select 2];
-			if (_onWater) then {
+			if (surfaceIsWater _posNearby) then {
 				_objectSnapGizmo setPosASL [(_posNearby) select 0,(_posNearby) select 1,(getPosASL _nearbyObject select 2) + (_x select 2)];
 			} else {
 				_objectSnapGizmo setPosATL _posNearby;
 			};
-			_objectSnapGizmo setDir (getDir _nearbyObject);
 			snapGizmosNearby set [count snapGizmosNearby,_objectSnapGizmo];
 		} count _pointsNearby;
 	} forEach _findWhitelisted;
@@ -81,7 +89,7 @@ fnc_initSnapPointsNearby = {
 
 fnc_initSnapPointsCleanup = {
 	{detach _x;deleteVehicle _x;}count snapGizmos;snapGizmos=[];
-	{deleteVehicle _x;}count snapGizmosNearby;snapGizmosNearby=[];
+	{detach _x;deleteVehicle _x;}count snapGizmosNearby;snapGizmosNearby=[];
 	snapActionState = "OFF";
 };
 
@@ -91,12 +99,7 @@ fnc_snapDistanceCheck = {
 	_distClosestPointFound = objNull; _distCheck = 0; _distClosest = 10; _distClosestPoint = objNull; _testXPos = []; _distClosestPointFoundPos =[]; _distClosestPointFoundDir = 0;
 		{	
 			if (_x !=_distClosestPointFound) then {_x setobjecttexture [0,_objColorInactive];};
-			_onWater = surfaceIsWater position _x;
-			if (_onWater) then {
-				_testXPos = [(getPosASL _x select 0),(getPosASL _x select 1),(getPosASL _x select 2)];
-			} else {
-				_testXPos = [(getPosATL _x select 0),(getPosATL _x select 1),(getPosATL _x select 2)];
-			};
+			_testXPos = [_x] call FNC_GetPos;
 			_distCheck = _objectHelper distance _testXPos;
 			_distClosestPoint = _x;
 				if (_distCheck < _distClosest) then {
@@ -120,18 +123,15 @@ fnc_snapDistanceCheck = {
 						_objectHelper setPosATL _distClosestPointFoundPos;
 					};
 					_objectHelper setDir _distClosestPointFoundDir;
+					DZE_memDir = _distClosestPointFoundDir;
+					[_objectHelper,[DZE_memForBack,DZE_memLeftRight,DZE_memDir]] call fnc_SetPitchBankYaw;
 					waitUntil {sleep 0.1; !helperDetach};
 				};
 			} else {
 				_distClosestAttached = objNull; _distCheckAttached = 0; _distClosest = 10; _distClosestAttachedFoundPos = [];
 				{
 					if (_x !=_distClosestAttached) then {_x setobjecttexture [0,_objColorInactive];};
-					_onWater = surfaceIsWater position _x;
-					if (_onWater) then {
-						_testXPos = [(getPosASL _x select 0),(getPosASL _x select 1),(getPosASL _x select 2)];
-					} else {
-						_testXPos = [(getPosATL _x select 0),(getPosATL _x select 1),(getPosATL _x select 2)];
-					};
+					_testXPos = [_x] call FNC_GetPos;
 					_distCheckAttached = _distClosestPointFound distance _testXPos;
 					_distClosestPoint = _x;
 						if (_distCheckAttached < _distClosest) then {
@@ -161,6 +161,8 @@ fnc_snapDistanceCheck = {
 						_objectHelper setPosATL _distClosestPointFoundPos;
 					};
 					_objectHelper setDir _distClosestPointFoundDir;
+					DZE_memDir = _distClosestPointFoundDir;
+					[_objectHelper,[DZE_memForBack,DZE_memLeftRight,DZE_memDir]] call fnc_SetPitchBankYaw;
 					waitUntil {sleep 0.1; !helperDetach};
 				};
 			};
@@ -197,8 +199,8 @@ fnc_initSnapTutorial = {
 			sleep 0.1;
 			
 			//Init Tutorial text
-			if (_bldTxtEnable) then {
-				_bldTxtStringTitle = format ["<t %1%2%3%4>Прилипание при <t %5%6%7>Строительстве</t></t><br />",_bldTxtClrO,_bldTxtSz,_bldTxtShdw,_bldTxtAlgnL,_bldTxtClrW,_bldTxtUndrln,_bldTxtBold];
+		if (_bldTxtEnable) then {
+				_bldTxtStringTitle = format ["<t %1%2%3%4>Прилипание при cтроительстве</t>",_bldTxtClrO,_bldTxtSz,_bldTxtShdw,_bldTxtAlgnL,_bldTxtClrW,_bldTxtUndrln,_bldTxtBold];
 				_bldTxtStringSD = format["<t %1%4%5%6>[Прилипание]<t %2> Выключено:</t> <t %3>покрутите колёсико чтобы включить.</t></t><br /><br />",_bldTxtClrC,_bldTxtClrR,_bldTxtClrW,_bldTxtSzT,_bldTxtShdw,_bldTxtAlgnL];
 				_bldTxtStringSE = format["<t %1%4%5%6>[Прилипание]<t %2> Включено:</t> <t %3>покрутите колёсико чтобы выключить.</t></t><br /><br />",_bldTxtClrC,_bldTxtClrG,_bldTxtClrW,_bldTxtSzT,_bldTxtShdw,_bldTxtAlgnL];
 				_bldTxtStringSA = format["<t %1%3%4%5>[Точка прилипания]<t %2> Автоматически: Точка прилипания выбирается автоматически.</t></t><br /><br />",_bldTxtClrC,_bldTxtClrW,_bldTxtSzT,_bldTxtShdw,_bldTxtAlgnL];
@@ -208,7 +210,7 @@ fnc_initSnapTutorial = {
 				_bldTxtStringCPG = format["<t %1%3%4%5>[Ctrl]+[PgUP / PgDOWN]<t %2>: Регулировка высоты объекта на 1 см.</t></t><br />",_bldTxtClrC,_bldTxtClrW,_bldTxtSzT,_bldTxtShdw,_bldTxtAlgnL];
 				_bldTxtStringQE = format["<t %1%3%4%5>[Q / E]<t %2>: Удерживая, объект поворачивается на 180 градусов.</t></t><br />",_bldTxtClrC,_bldTxtClrW,_bldTxtSzT,_bldTxtShdw,_bldTxtAlgnL];
 				_bldTxtStringQEF = format["<t %1%3%4%5>[Q / E]<t %2>: В то время как объект прицеплен он поворачивается на 45 градусов.</t></t><br /><br />",_bldTxtClrC,_bldTxtClrW,_bldTxtSzT,_bldTxtShdw,_bldTxtAlgnL];
-				_bldTxtStringFD = format["<t %1%3%4%5>[F]<t %2>: Прилипить объект.</t></t><br />",_bldTxtClrO,_bldTxtClrW,_bldTxtSzT,_bldTxtShdw,_bldTxtAlgnL];
+				_bldTxtStringFD = format["<t %1%3%4%5>[F] или скролменю<t %2>: Прилипить объект.</t></t><br />",_bldTxtClrO,_bldTxtClrW,_bldTxtSzT,_bldTxtShdw,_bldTxtAlgnL];
 				_bldTxtStringFS = format["<t %1%3%4%5>[F]<t %2>: Отлипить объект.</t></t><br />",_bldTxtClrO,_bldTxtClrW,_bldTxtSzT,_bldTxtShdw,_bldTxtAlgnL];
 				switch (_bldTxtSwitch) do {
 					case "init": {
@@ -224,8 +226,8 @@ fnc_initSnapTutorial = {
 
 				[
 					_bldTxtFinal, //structured text
-					[0.73 * safezoneW + safezoneX], //number - x
-					[0.65 * safezoneH + safezoneY], //number - y
+					0.73 * safezoneW + safezoneX, //number - x
+					0.65 * safezoneH + safezoneY, //number - y
 					30, //number - duration
 					1, // number - fade in time
 					0, // number - delta y
@@ -233,7 +235,6 @@ fnc_initSnapTutorial = {
 				] spawn bis_fnc_dynamicText;
 			};
 		};	
-	snapTutorial = true;  //fix_adt
 };
 
 switch (snapActionState) do {
@@ -243,7 +244,7 @@ switch (snapActionState) do {
 		[1,0,0] call fnc_snapActionCleanup;
 		[] spawn {
 		while {true} do {
-			if(!DZE_ActionInProgress) exitWith {call fnc_initSnapPointsCleanup;[0,0,0] call fnc_snapActionCleanup; ["",false] call fnc_initSnapTutorial; snapActionState = "OFF";};
+			if(!DZE_ActionInProgress || DZE_cancelBuilding) exitWith {call fnc_initSnapPointsCleanup;[0,0,0] call fnc_snapActionCleanup; ["",false] call fnc_initSnapTutorial; snapActionState = "OFF";};
 			sleep 2;
 			};
 		};
@@ -284,10 +285,12 @@ switch (snapActionState) do {
 		_newPos = [(getPosATL _x select 0),(getPosATL _x select 1),(getPosATL _x select 2)];
 		detach _object;
 		detach _objectHelper;
+		_objectHelper setDir (getDir _object);
 		_objectHelper setPosATL _newPos;
 		_object attachTo [_objectHelper];
 		_x setobjecttexture [0,_objColorActive];
-		if (!helperDetach) then {_objectHelper attachTo [player];};	
+		if (!helperDetach) then {_objectHelper attachTo [player]; _objectHelper setDir ((getDir _objectHelper)-(getDir player));};
+		[_objectHelper,[DZE_memForBack,DZE_memLeftRight,DZE_memDir]] call fnc_SetPitchBankYaw;
 	};
 	_cnt = _cnt+1;
 }count snapGizmos;

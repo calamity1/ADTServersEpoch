@@ -194,4 +194,11 @@ if ((_dikCode == 0x21 and (!_alt and !_ctrl)) or (_dikCode in actionKeys "User6"
 	DZE_F = true;
 };
 
+/*
+if (_dikCode in actionKeys "TacticalView") then {
+    execVM "dzgm\noTactical.sqf";
+};
+*/
+
+
 _handled

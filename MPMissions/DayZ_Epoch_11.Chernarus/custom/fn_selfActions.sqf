@@ -214,6 +214,7 @@ if (!isNull cursorTarget && !_inVehicle && !_isPZombie && (player distance curso
 	} count _itemsPlayer;
 
 	_hasKnife = 	"ItemKnife" in _itemsPlayer;
+	_hasMatches    = "ItemMatchbox_DZE" in items player;
 	_hasToolbox = 	"ItemToolbox" in _itemsPlayer;
 
 	_isMan = _cursorTarget isKindOf "Man";
@@ -503,7 +504,7 @@ if (!isNull cursorTarget && !_inVehicle && !_isPZombie && (player distance curso
 		player removeAction s_player_studybody;
 		s_player_studybody = -1;
 	};
-
+	
 	// logic vars
 	_player_cook = false;
 	_player_boil = false;
@@ -559,6 +560,16 @@ if (!isNull cursorTarget && !_inVehicle && !_isPZombie && (player distance curso
 		player removeAction s_player_fireout;
 		s_player_fireout = -1;
 	};
+	
+	// ADT-team.ru Fire Tents
+	if(_isTent && _hasMatches) then {
+        if (s_player_igniteTent < 0) then {
+            s_player_igniteTent = player addAction [format[("<t color=""#ee8900"">" + ("Сжечь палатку") +"</t>")], "scripts\tent_ignite_adt.sqf",cursorTarget, 0, true, true, "",""];
+        };
+    } else {
+        player removeAction s_player_igniteTent;
+        s_player_igniteTent = -1;
+    };
 	
 	//Packing my tent
 	if(_isTent && (player distance _cursorTarget < 3)) then {
@@ -685,7 +696,7 @@ if (!isNull cursorTarget && !_inVehicle && !_isPZombie && (player distance curso
 		if (s_player_upgrade_build < 0) then {
 			// s_player_lastTarget = _cursorTarget;
 			s_player_lastTarget set [0,_cursorTarget];
-			s_player_upgrade_build = player addAction [format[localize "STR_EPOCH_ACTIONS_UPGRADE",_text], "\z\addons\dayz_code\actions\player_upgrade.sqf",_cursorTarget, -1, false, true, "",""];
+						s_player_upgrade_build = player addAction [format[localize "STR_EPOCH_ACTIONS_UPGRADE",_text], "custom\player_upgrade.sqf",_cursorTarget, -1, false, true, "",""];
 		};
 	} else {
 		player removeAction s_player_upgrade_build;
@@ -703,7 +714,7 @@ if (!isNull cursorTarget && !_inVehicle && !_isPZombie && (player distance curso
 
 		if (s_player_downgrade_build < 0) then {
 			s_player_lastTarget set [1,_cursorTarget];
-			s_player_downgrade_build = player addAction [format[localize "STR_EPOCH_ACTIONS_REMLOCK",_text], "\z\addons\dayz_code\actions\player_buildingDowngrade.sqf",_cursorTarget, -2, false, true, "",""];
+			s_player_downgrade_build = player addAction [format[localize "STR_EPOCH_ACTIONS_REMLOCK",_text], "custom\player_buildingDowngrade.sqf",_cursorTarget, -2, false, true, "",""];
 		};
 	} else {
 		player removeAction s_player_downgrade_build;
@@ -804,6 +815,19 @@ if (!isNull cursorTarget && !_inVehicle && !_isPZombie && (player distance curso
 		};
 	};
 
+		  //####    Gut fools ####
+    if (!_isAlive && !_isZombie && !_isAnimal && _isMan && _hasKnife && _canDo) then {
+        if (s_player_butcher_human < 0) then {
+            s_player_butcher_human = player addAction [format["Выпотрошить человека"], "scripts\gut_player_adt.sqf",cursorTarget, 1, false, true, "", ""];
+        };
+    } else {
+        player removeAction s_player_butcher_human;
+        s_player_butcher_human = -1;
+    };
+
+    //##############################
+	
+	
 	// All Traders
 	if (_isMan && !_isPZombie && _traderType in serverTraders) then {
 		
@@ -856,17 +880,6 @@ if (!isNull cursorTarget && !_inVehicle && !_isPZombie && (player distance curso
 		{player removeAction _x} count s_player_parts;s_player_parts = [];
 		s_player_parts_crtl = -1;
 	};
-
-	
-	//Take_Skin
-    if (isMan and !isAlive and !isZombie and !isAnimal) then {
-    if (s_clothes < 0) then {
-            s_clothes = player addAction [("<t color=""#FF0000"">" + ("Забрать одежду") + "</t>"), "scripts\take_clothes\clothes.sqf",cursorTarget, 1, false, true, "",""];
-        };
-    } else {
-        player removeAction s_clothes;
-        s_clothes = -1;
-    };
 	
 	
 	if(dayz_tameDogs) then {
@@ -951,6 +964,9 @@ if (!isNull cursorTarget && !_inVehicle && !_isPZombie && (player distance curso
 	player removeAction s_player_forceSave;
 	s_player_forceSave = -1;
 	player removeAction s_player_flipveh;
+	//Gut Human
+    player removeAction s_player_butcher_human;
+    s_player_butcher_human = -1;
 	s_player_flipveh = -1;
 	player removeAction s_player_sleep;
 	s_player_sleep = -1;
@@ -966,10 +982,13 @@ if (!isNull cursorTarget && !_inVehicle && !_isPZombie && (player distance curso
 	s_player_fireout = -1;
 	player removeAction s_player_packtent;
 	s_player_packtent = -1;
+	player removeAction s_player_igniteTent;
+    s_player_igniteTent = -1;
 	player removeAction s_player_fillfuel;
 	s_player_fillfuel = -1;
 	player removeAction s_player_studybody;
 	s_player_studybody = -1;
+	
 	//Dog
 	player removeAction s_player_tamedog;
 	s_player_tamedog = -1;
@@ -1012,8 +1031,6 @@ if (!isNull cursorTarget && !_inVehicle && !_isPZombie && (player distance curso
 	s_player_fuelauto = -1;
 	player removeAction s_player_fuelauto2;
 	s_player_fuelauto2 = -1;
-	player removeAction s_clothes; //Take clothes
-    s_clothes = -1;
 	/*//отжечь!
 	player removeAction s_player_dance;
     s_player_dance = -1; //fix_adt_//*/
@@ -1049,3 +1066,20 @@ if (_dogHandle > 0) then {
 	player removeAction s_player_calldog;
 	s_player_calldog = 		-1;
 };
+
+
+// ZOMBIE SHIELD START
+if (("PartEngine" in magazines player) && ("ItemJerrycan" in magazines player) && ("PartGeneric" in magazines player)&& ("ItemGenerator" in magazines player) && ("ItemToolbox" in items player)) then {
+    hasShield = true;
+} else {
+    hasShield = false;
+};
+if (hasShield) then {
+    if (zombieShield < 0) then {
+    zombieShield = player addAction [("<t color=""#00c362"">" + ("Создание зомбищита") +"</t>"),"scripts\shield\ZombieShield_adt.sqf","",5,false,true,"",""];
+    };
+} else {
+    player removeAction zombieShield;
+    zombieShield = -1;
+};
+// ZOMBIE SHIELD END

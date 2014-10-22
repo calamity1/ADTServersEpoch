@@ -1,5 +1,5 @@
 /*	 
-   * DayZ Epoch |v1.0.5.1| "15.10.2014"
+   * DayZ Epoch |v1.0.5.1| "22.10.2014"
    * For ADT-TEAM SERVER DayZ 
    * Dev: GROM
    * http://adt-team.ru/
@@ -77,6 +77,11 @@ DynamicVehicleDamageHigh	=	90; 	//	Максимальный порог возм�
 DZE_BuildOnRoads = false; // Default: False
 DZE_MissionLootTable = true; 
 DZE_ConfigTrader = true; //bd off
+//Build Vectors
+DZE_noRotate = ["VaultStorageLocked","ItemComboLock","Plastic_Pole_EP1_DZ "]; //Объекты которые запретим вращать. Пр: DZE_noRotate = ["VaultStorageLocked"]
+DZE_curPitch = 45; //Starting rotation angle. Only 1, 5, 45, or 90.
+
+
 
 /*
 DZE_defaultSkin = [
@@ -144,8 +149,10 @@ if (!isDedicated) then {
 	//[] execVM "\z\addons\dayz_code\system\antihack.sqf";
 
 	//Lights
+
 	if (DZE_Light) then
 			{[false,12] execVM "\z\addons\dayz_code\compile\local_lights_init.sqf";};
+			
 	//[false,12] execVM "\z\addons\dayz_code\compile\local_lights_init.sqf";
 	//[getPos player, 3000]execVM "\lightsoff.sqf"
 	
@@ -186,6 +193,9 @@ if (!isDedicated) then {
 [] execVM "scripts\monitor.sqf"; //Debag_monitor
 
 [] execVM "scripts\weedfarm.sqf"; //hemp farms
+
+[] execVM "\z\addons\dayz_server\maps\rud_mar.sqf"; //rud_mar
+
 
 ["elevator"] execVM "elevator\elevator_init.sqf";
 

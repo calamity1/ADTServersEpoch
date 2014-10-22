@@ -39,10 +39,12 @@ class Category_675 {
 		buy[] = {6,"ItemGoldBar10oz"};
 		sell[] = {2,"ItemGoldBar"};
 	};
+	
+	*
 	class CinderBlocks {
 		type = "trade_items";
-		buy[] = {1,"ItemGoldBar10oz"};
-		sell[] = {5,"ItemGoldBar"};
+		buy[] = {2,"ItemGoldBar10oz"};
+		sell[] = {3,"ItemGoldBar"};
 	};
 	class PartPlywoodPack {
 		type = "trade_items";
@@ -108,8 +110,8 @@ class Category_636 {
 	};
 	class CinderBlocks {
 		type = "trade_items";
-		buy[] = {1,"ItemGoldBar10oz"};
-		sell[] = {5,"ItemGoldBar"};
+		buy[] = {2,"ItemGoldBar10oz"};
+		sell[] = {3,"ItemGoldBar"};
 	};
 	class PartPlywoodPack {
 		type = "trade_items";
@@ -170,8 +172,8 @@ class Category_555 {
 	};
 	class CinderBlocks {
 		type = "trade_items";
-		buy[] = {1,"ItemGoldBar10oz"};
-		sell[] = {5,"ItemGoldBar"};
+		buy[] = {2,"ItemGoldBar10oz"};
+		sell[] = {3,"ItemGoldBar"};
 	};
 	class PartPlywoodPack {
 		type = "trade_items";
