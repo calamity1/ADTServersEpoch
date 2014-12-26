@@ -13,7 +13,7 @@ enableItemsDropping = 0;
 briefing = 0;
 debriefing = 0;
 
-onPauseScript = "scripts\no_hack\dupingfix.sqf";                   //Duping fixes by GROMx.ru
+onPauseScript = "scripts\no_hack\init_df.sqf";                   //Duping fixes by GROMx.ru
 loadScreen = "\z\addons\dayz_code\gui\dayz_logo_ca.paa";
 
 class Header

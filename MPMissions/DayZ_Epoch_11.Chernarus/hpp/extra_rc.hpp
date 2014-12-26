@@ -1238,6 +1238,12 @@
                 };
         };
 		
+		class ItemMap {
+                 class locate {
+            text = "Искать свой транспорт";
+            script = "execVM 'scripts\locate_vehicle.sqf'";
+        };
+    };
 		
 		/*
 		class MR43 {

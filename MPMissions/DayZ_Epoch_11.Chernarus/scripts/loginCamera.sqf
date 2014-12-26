@@ -13,7 +13,7 @@ _camera camSetTarget vehicle player;
 _camera camSetRelPos [0,0,2];
 _camera camCommit 8;
 sleep 0.1;
-hint "DayZVTX";
+hint "ADT-Team";
 waitUntil {camCommitted _camera};
 _camera cameraEffect ["terminate","back"];
 camDestroy _camera;

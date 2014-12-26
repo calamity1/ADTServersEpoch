@@ -9,13 +9,14 @@ if (!isDedicated) then {
 	BIS_Effects_Burn = 				compile preprocessFile "\ca\Data\ParticleEffects\SCRIPTS\destruction\burn.sqf";
 	player_zombieCheck = 			compile preprocessFileLineNumbers "\z\addons\dayz_code\compile\player_zombieCheck.sqf";	//Run on a players computer, checks if the player is near a zombie
 	//player_zombieAttack = 			compile preprocessFileLineNumbers "\z\addons\dayz_code\compile\player_zombieAttack.sqf";	//Run on a players computer, causes a nearby zombie to attack them
-	player_zombieAttack = 			compile preprocessFileLineNumbers "custom\player_zombieAttack.sqf";	//Fix_ "by GROM" Scripts_ ADT-MOD
+	player_zombieAttack = 			compile preprocessFileLineNumbers "custom\lib\player_zombieAttack.sqf";	//Fix_ "by GROM" Scripts_ ADT-MOD
 	//fnc_usec_damageActions =		compile preprocessFileLineNumbers "\z\addons\dayz_code\compile\fn_damageActions.sqf";		//Checks which actions for nearby casualty
 	fnc_usec_damageActions =		compile preprocessFileLineNumbers "scripts\medical\fn_damageActions.sqf";
 	fnc_inAngleSector =				compile preprocessFileLineNumbers "\z\addons\dayz_code\compile\fn_inAngleSector.sqf";		//Checks which actions for nearby casualty
 	fnc_usec_selfActions =			compile preprocessFileLineNumbers "custom\fn_selfActions.sqf";		//fix_adt
 	fnc_usec_unconscious =			compile preprocessFileLineNumbers "\z\addons\dayz_code\compile\fn_unconscious.sqf";
 	player_temp_calculation	=		compile preprocessFileLineNumbers "\z\addons\dayz_code\compile\fn_temperatur.sqf";		//Temperatur System	//TeeChange
+	//player_temp_calculation	=		compile preprocessFileLineNumbers "custom\lib\fn_temperatur.sqf"; //Temperatur System //TeeChange
 	player_weaponFiredNear =		compile preprocessFileLineNumbers "\z\addons\dayz_code\compile\player_weaponFiredNear.sqf";
 	player_animalCheck =			compile preprocessFileLineNumbers "\z\addons\dayz_code\compile\player_animalCheck.sqf";
 	player_spawnCheck = 			compile preprocessFileLineNumbers "\z\addons\dayz_code\compile\player_spawnCheck.sqf";
@@ -28,7 +29,8 @@ if (!isDedicated) then {
 	player_harvest =				compile preprocessFileLineNumbers "\z\addons\dayz_code\compile\player_harvest.sqf";
 	player_packTent =				compile preprocessFileLineNumbers "\z\addons\dayz_code\compile\player_packTent.sqf";
 	player_packVault =				compile preprocessFileLineNumbers "\z\addons\dayz_code\compile\player_packVault.sqf";
-	player_unlockVault =			compile preprocessFileLineNumbers "\z\addons\dayz_code\compile\player_unlockVault.sqf";
+	//player_unlockVault =			compile preprocessFileLineNumbers "\z\addons\dayz_code\compile\player_unlockVault.sqf";
+	player_unlockVault =			compile preprocessFileLineNumbers "custom\player_unlockVault.sqf";
 
 	player_removeObject =			compile preprocessFileLineNumbers "\z\addons\dayz_code\actions\remove.sqf";
 	player_removeNearby =    		compile preprocessFileLineNumbers "\z\addons\dayz_code\compile\object_removeNearby.sqf";
@@ -54,13 +56,14 @@ if (!isDedicated) then {
 	player_unlockDoor =			compile preprocessFileLineNumbers "custom\player_unlockDoor.sqf";
 	player_changeCombo =		compile preprocessFileLineNumbers "\z\addons\dayz_code\compile\player_changeCombo.sqf";
 
-	player_lockVault =			compile preprocessFileLineNumbers "\z\addons\dayz_code\compile\player_lockVault.sqf";
+	//player_lockVault =			compile preprocessFileLineNumbers "\z\addons\dayz_code\compile\player_lockVault.sqf";
+	player_lockVault =			compile preprocessFileLineNumbers "custom\player_lockVault.sqf";
 	//player_updateGui =			compile preprocessFileLineNumbers "\z\addons\dayz_code\compile\player_updateGui.sqf";
 	player_updateGui =			compile preprocessFileLineNumbers "custom\player_updateGui.sqf"; //fix gui
 	player_crossbowBolt =		compile preprocessFileLineNumbers "\z\addons\dayz_code\compile\player_crossbowBolt.sqf";
 	player_music = 				compile preprocessFileLineNumbers "\z\addons\dayz_code\compile\player_music.sqf";			//Used to generate ambient music
-	//player_death =				compile preprocessFileLineNumbers "\z\addons\dayz_code\compile\player_death.sqf";
-	player_death =				compile preprocessFileLineNumbers "custom\player_death.sqf";
+	player_death =				compile preprocessFileLineNumbers "\z\addons\dayz_code\compile\player_death.sqf";
+	//player_death =				compile preprocessFileLineNumbers "custom\player_death.sqf";
 	player_switchModel =		compile preprocessFileLineNumbers "\z\addons\dayz_code\compile\player_switchModel.sqf";
 	//player_switchModel =		compile preprocessFileLineNumbers "custom\player_switchModel.sqf"; //fixes dzgm radio scripts
 	player_checkStealth =		compile preprocessFileLineNumbers "\z\addons\dayz_code\compile\player_checkStealth.sqf";
@@ -510,7 +513,7 @@ if (!isDedicated) then {
 	object_delLocal =			compile preprocessFileLineNumbers "\z\addons\dayz_code\compile\object_delLocal.sqf";
 	// object_cargoCheck =			compile preprocessFileLineNumbers "\z\addons\dayz_code\compile\object_cargoCheck.sqf";		//Run by the player || server to monitor changes in cargo contents
 	//fnc_usec_damageHandler =		compile preprocessFileLineNumbers "\z\addons\dayz_code\compile\fn_damageHandler.sqf";		//Event handler run on damage
-	fnc_usec_damageHandler =		compile preprocessFileLineNumbers "custom\fn_damageHandler.sqf";		//fix_ by GROM & ADT-MOD
+	fnc_usec_damageHandler =		compile preprocessFileLineNumbers "custom\lib\fn_damageHandler.sqf";		//fix_ by GROM & ADT-MOD
 	fnc_veh_ResetEH = 			compile preprocessFileLineNumbers "\z\addons\dayz_code\init\veh_ResetEH.sqf";			//Initialize vehicle
 	// Vehicle damage fix
 	vehicle_handleDamage    = 		compile preprocessFileLineNumbers "\z\addons\dayz_code\compile\vehicle_handleDamage.sqf";

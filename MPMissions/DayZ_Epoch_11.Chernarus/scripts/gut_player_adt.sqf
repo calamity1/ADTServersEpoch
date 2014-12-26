@@ -1,9 +1,8 @@
 /*	
-	DayZ Epoch 1.0.5.1
-	Configured by Joze
-	VK: vk.com/dayz_tlg
-	Website: adt-team.ru
-	Map: Napf
+ADT-Team.ru
+User: GROM
+fixes humanity
+date: 20.12.2014
 */
 private["_hasKnife","_qty","_item","_text","_string","_type","_loop","_meat","_timer"];
 _item = _this select 3;
@@ -34,7 +33,7 @@ if (_hasKnife and !_hasHarvested) then {
 
     _id = [player,50,true,(getPosATL player)] spawn player_alertZombies;
 
-    dayzHumanity = [player,-500];
+    dayzHumanity = [player,-200]; //500
     _id = dayzHumanity spawn player_humanityChange;
 
     _array = [_item,_qty];

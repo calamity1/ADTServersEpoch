@@ -296,7 +296,7 @@ class CfgLootSmall {
 	{"glock17_EP1", 0.1},
 	{"MakarovSD", 0.07},
 	{"M9", 0.07},
-	{M9SD, 0.02},
+	{"M9SD", 0.02},
 	{"revolver_gold_EP1", 0.01}
 	};
 };

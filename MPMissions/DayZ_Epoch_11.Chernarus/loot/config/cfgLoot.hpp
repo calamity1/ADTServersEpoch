@@ -400,7 +400,7 @@ class CfgLoot {
 	{"glock17_EP1", 0.15},
 	{"MakarovSD", 0.08},
 	{"M9", 0.13},
-	{M9SD, 0.03},
+	{"M9SD", 0.03},
 	{"revolver_gold_EP1", 0.01}
 	};
 
@@ -412,7 +412,7 @@ class CfgLoot {
 	{"Saiga12K", 0.03},
 	{"Remington870_lamp", 0.13},
 	{"Crossbow_DZ", 0.2},
-	{M1014, 0.15}
+	{"M1014", 0.15}
 	};
 
 //Фермы-амбары-коровники
@@ -429,21 +429,21 @@ class CfgLoot {
 
 //Снайперские винтовки
 	sniperrifles[] = {
-	{AK_107_PSO, 0.25},
-	{M4SPR, 0.2},
-	{M40A3, 0.12},
-	{SVD_CAMO, 0.05},
+	{"AK_107_PSO", 0.25},
+	{"M4SPR", 0.2},
+	{"M40A3", 0.12},
+	{"SVD_CAMO", 0.05},
 	{"SVD_des_EP1", 0.05},
 	{SVD, 0.06},
 	{"huntingrifle", 0.27},
 	{"M24_des_EP1", 0.06},
-	{M24, 0.06},
+	{"M24", 0.06},
 	{"BAF_LRR_scoped", 0.01},
-	{KSVK_DZE, 0.01},
+	{"KSVK_DZE", 0.01},
 	{"VSS_vintorez", 0.04},
 	{"SCAR_H_LNG_Sniper_SD", 0.01},
 	{M14_EP1, 0.08},
-	{DMR, 0.05},
+	{"DMR", 0.05},
 	{"SVD_NSPU_EP1", 0.04}, //SVD_NSPU
 	};
 
@@ -462,37 +462,37 @@ class CfgLoot {
 
 //Пистолеты-пулеметы
 	submachinegun[] = {
-	{UZI_EP1, 0.25},
+	{"UZI_EP1", 0.25},
 	{"bizon", 0.2},
 	{"Sa61_EP1", 0.3},
-	{MP5A5, 0.25},
+	{"MP5A5", 0.25},
 	{"bizon_silenced", 0.03},
-	{UZI_SD_EP1, 0.25},
-	{MP5SD, 0.03}
+	{"UZI_SD_EP1", 0.25},
+	{"MP5SD", 0.03}
 	};
 
 //Штурмовые винтовки
 	assaultrifles[] = {
 	{"AKS_74_kobra", 0.5},
-	{AKS_74_U, 0.5},
-	{AKS_GOLD, 0.01},
-	{AK_47_M, 0.5},
-	{AK_74, 0.5},
-	{FN_FAL, 0.1},
-	{FN_FAL_ANPVS4, 0.03},
+	{"AKS_74_U", 0.5},
+	{"AKS_GOLD", 0.01},
+	{"AK_47_M", 0.5},
+	{"AK_74", 0.5},
+	{"FN_FAL", 0.1},
+	{"FN_FAL_ANPVS4", 0.03},
 	{"G36A_camo", 0.5},
 	{G36C, 0.4},
 	{"G36C_camo", 0.3},
 	{"G36K_camo", 0.3},
 	{"G36_C_SD_camo", 0.5},
-	{M16A2, 0.5},
-	{M16A2GL, 0.25},
-	{M16A4_ACG, 0.25},
-	{M4A1, 0.5},
+	{"M16A2", 0.5},
+	{"M16A2GL", 0.25},
+	{"M16A4_ACG", 0.25},
+	{"M4A1", 0.5},
 	{"M4A1_Aim", 0.4},
 	{"M4A1_AIM_SD_camo", 0.2},
 	{"M4A1_HWS_GL_camo", 0.25}, 
-	{M4A3_CCO_EP1, 0.3},
+	{"M4A3_CCO_EP1", 0.3},
 	{"Sa58P_EP1", 0.4},
 	{"Sa58V_CCO_EP1", 0.2},
 	{"Sa58V_EP1", 0.45},
@@ -518,7 +518,7 @@ class CfgLoot {
 
 //Тяжелое вооружение
 	machineguns[] = {
-	{RPK_74, 0.11},
+	{"RPK_74", 0.11},
 	{M8_SAW, 0.2},
 	{"Pecheneg_DZ", 0.02},
 	{PK_DZ, 0.01},
@@ -557,7 +557,7 @@ class CfgLoot {
 	militaryshotguns[] = {
 	{"Saiga12K", 0.1},
 	{"Remington870_lamp", 0.35},
-	{M1014, 0.4}
+	{"M1014", 0.4}
 	};
 
 };

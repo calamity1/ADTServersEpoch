@@ -24,7 +24,7 @@ enableSentences false;
 
 // DayZ Epoch config
 spawnShoremode = 1; // Default = 1 (on shore)
-spawnArea= 1500; // Default = 1500
+spawnArea = 1500; // Default = 1500
 
 DZE_SelfTransfuse = true; //Самозаливка крови
 
@@ -41,10 +41,16 @@ DZE_BuildingLimit = 700;
 DZE_PlotPole = [30,45]; //Default: [30;45]
 
 snapTutorial = true;
-
-DZE_DeathMsgGlobal = false;
+/*
+DZE_DeathMsgGlobal = false; //false
 DZE_DeathMsgSide = false;
 DZE_DeathMsgTitleText = false;
+*/
+
+DZE_DeathMsgGlobal = true; //
+DZE_DeathMsgSide = true;
+DZE_DeathMsgTitleText = true;
+
 
 DZE_vehicleAmmo = 1;
 deathMessages = 1;
@@ -58,6 +64,10 @@ DZE_PlayerZed =	false;	//	Если игрок умер инфицированн�
 dayz_spawnselection = 1; // DayZ Spawnselection / 1 = on spawn Spawnselection // 0 = off spawn Spawnselection
 dayz_tameDogs = false; //fix "false"
 DZE_ForceNameTags =	false;	//	Принудительно отображать имена игроков.
+DZE_ForceNameTagsInTrader = true; //Отображать имена игроков в трейде
+MaxMineVeins = 20; // Мини рудники на карте 
+MaxAmmoBoxes = 20; //Коробки с лутом на дорогах
+
 DZE_Light =	false;	//	Локальное освещение
 
 dayz_paraSpawn = false;
@@ -117,6 +127,63 @@ call compile preprocessFileLineNumbers "server_traders.sqf";				//Compile trader
 progressLoadingScreen 1.0;
 
 "filmic" setToneMappingParams [0.153, 0.357, 0.231, 0.1573, 0.011, 3.750, 6, 4]; setToneMapping "Filmic";
+//zombie_generate = compile preprocessFileLineNumbers "scripts\zombie_generate.sqf";
+if (isServer) then {
+/*
+     _factions = [] execVM "\z\addons\dayz_server\ai_adt\faction\set_unit_faction.sqf";
+	 _aispawn = [[5035.50,12225.0,0],600,5,5,4,1] execVM "\z\addons\dayz_server\ai_adt\faction\add_unit_server.sqf"; 
+     _aispawn = [[4989.50,12205.0,0],600,5,5,4,1] execVM "\z\addons\dayz_server\ai_adt\faction\add_unit_server.sqf";
+     _aispawn = [[5009.50,12173.0,0],600,5,5,4,1] execVM "\z\addons\dayz_server\ai_adt\faction\add_unit_server.sqf";
+     _aispawn = [[4948.50,12168.0,0],600,5,5,4,1] execVM "\z\addons\dayz_server\ai_adt\faction\add_unit_server.sqf";
+     _aispawn = [[4959.50,12268.0,0],600,5,5,4,1] execVM "\z\addons\dayz_server\ai_adt\faction\add_unit_server.sqf";
+     _aispawn = [[5026.50,12266.0,0],600,5,5,4,1] execVM "\z\addons\dayz_server\ai_adt\faction\add_unit_server.sqf"; //40
+	 
+	 
+	 _aispawn = [[4848.50,12251.0,0],600,7,5,1,1] execVM "\z\addons\dayz_server\ai_adt\faction\add_unit_server.sqf";
+	 _aispawn = [[5088.50,12431.0,0],600,7,5,4,1] execVM "\z\addons\dayz_server\ai_adt\faction\add_unit_server.sqf";
+	 _aispawn = [[4848.50,12251.0,0],600,7,5,1,1] execVM "\z\addons\dayz_server\ai_adt\faction\add_unit_server.sqf";
+	 _aispawn = [[5088.50,12431.0,0],600,7,5,4,1] execVM "\z\addons\dayz_server\ai_adt\faction\add_unit_server.sqf";
+	 _aispawn = [[4963.50,12781.0,0],600,7,5,1,1] execVM "\z\addons\dayz_server\ai_adt\faction\add_unit_server.sqf";
+	 
+	 _aispawn = [[5338.50,12700.0,0],600,7,5,4,1] execVM "\z\addons\dayz_server\ai_adt\faction\add_unit_server.sqf";
+	 _aispawn = [[5683.50,12286.0,0],600,7,5,1,1] execVM "\z\addons\dayz_server\ai_adt\faction\add_unit_server.sqf";
+	 _aispawn = [[5564.50,11905.0,0],600,7,5,4,1] execVM "\z\addons\dayz_server\ai_adt\faction\add_unit_server.sqf"; //56
+	 
+	 
+	 _aispawn = [[4755.00,12550.0,0],600,7,5,1,1] execVM "\z\addons\dayz_server\ai_adt\faction\add_unit_server.sqf";
+	 _aispawn = [[5035.00,11694.0,0],600,7,5,4,1] execVM "\z\addons\dayz_server\ai_adt\faction\add_unit_server.sqf";
+	 _aispawn = [[5743.00,11774.0,0],600,7,5,1,1] execVM "\z\addons\dayz_server\ai_adt\faction\add_unit_server.sqf";
+	 
+	 _aispawn = [[6022.00,12206.0,0],600,7,5,4,1] execVM "\z\addons\dayz_server\ai_adt\faction\add_unit_server.sqf";
+	 _aispawn = [[5186.00,12168.0,0],600,7,5,1,1] execVM "\z\addons\dayz_server\ai_adt\faction\add_unit_server.sqf";
+	 _aispawn = [[4993.00,12223.0,0],600,7,5,4,1] execVM "\z\addons\dayz_server\ai_adt\faction\add_unit_server.sqf"; //42
+	 
+	 _aispawn = [[5055.50,12238.0,0],600,5,5,1,1] execVM "\z\addons\dayz_server\ai_adt\faction\add_unit_server.sqf";
+	 _aispawn = [[5102.50,12230.0,0],600,5,5,4,1] execVM "\z\addons\dayz_server\ai_adt\faction\add_unit_server.sqf";
+	 _aispawn = [[5046.50,12211.0,0],600,5,5,1,1] execVM "\z\addons\dayz_server\ai_adt\faction\add_unit_server.sqf";
+	 _aispawn = [[5077.50,12199.0,0],600,5,5,4,1] execVM "\z\addons\dayz_server\ai_adt\faction\add_unit_server.sqf";
+
+	 */
+	 
+	 /*
+	 _aispawn = [[5186.00,12168.0,0],600,5,5,1,1] execVM "\z\addons\dayz_server\ai_adt\faction\add_unit_server.sqf";
+	 _aispawn = [[4993.00,12223.0,0],600,5,5,4,1] execVM "\z\addons\dayz_server\ai_adt\faction\add_unit_server.sqf";
+	 _aispawn = [[5186.00,12168.0,0],600,5,5,1,1] execVM "\z\addons\dayz_server\ai_adt\faction\add_unit_server.sqf";
+	 _aispawn = [[4993.00,12223.0,0],600,5,5,4,1] execVM "\z\addons\dayz_server\ai_adt\faction\add_unit_server.sqf"; //40
+	 
+	 _aispawn = [[5118.00,12966.0,0],600,3,5,1,1] execVM "\z\addons\dayz_server\ai_adt\faction\add_unit_server.sqf";
+	 _aispawn = [[5468.00,12700.0,0],600,3,5,4,1] execVM "\z\addons\dayz_server\ai_adt\faction\add_unit_server.sqf"; 
+	 _aispawn = [[4851.00,12426.0,0],600,3,5,1,1] execVM "\z\addons\dayz_server\ai_adt\faction\add_unit_server.sqf";
+	 _aispawn = [[5511.00,12454.0,0],600,3,5,4,1] execVM "\z\addons\dayz_server\ai_adt\faction\add_unit_server.sqf"; //12
+	 
+	 _aispawn = [[4969.00,12390.0,0],600,3,5,1,1] execVM "\z\addons\dayz_server\ai_adt\faction\add_unit_server.sqf";
+	 _aispawn = [[4818.00,12222.0,0],600,3,5,4,1] execVM "\z\addons\dayz_server\ai_adt\faction\add_unit_server.sqf"; 
+	 _aispawn = [[4991.00,12181.0,0],600,3,5,1,1] execVM "\z\addons\dayz_server\ai_adt\faction\add_unit_server.sqf";
+	 _aispawn = [[5180.00,12102.0,0],600,3,5,4,1] execVM "\z\addons\dayz_server\ai_adt\faction\add_unit_server.sqf"; 
+	 _aispawn = [[5049.00,12274.0,0],600,3,5,4,1] execVM "\z\addons\dayz_server\ai_adt\faction\add_unit_server.sqf"; //15 = 197ботов
+	 */
+	 
+};
 
 if (isServer) then {
 	call compile preprocessFileLineNumbers "\z\addons\dayz_server\missions\DayZ_Epoch_11.Chernarus\dynamic_vehicle.sqf";
@@ -129,7 +196,7 @@ if (isServer) then {
 
 if (!isDedicated) then {
 [] execVM "scripts\welcome_adt.sqf"; //ADT_Welcome_ by GROM "11.06.2014"
-[] execVM "scripts\kill_msg.sqf";
+//[] execVM "scripts\kill_msg.sqf";
 [] execVM "scripts\mining\init.sqf"; // Добыча руды ADTMod
 	//Conduct map operations
 	0 fadeSound 0;
@@ -149,25 +216,12 @@ if (!isDedicated) then {
 	//[] execVM "\z\addons\dayz_code\system\antihack.sqf";
 
 	//Lights
-
-	if (DZE_Light) then
-			{[false,12] execVM "\z\addons\dayz_code\compile\local_lights_init.sqf";};
-			
-	//[false,12] execVM "\z\addons\dayz_code\compile\local_lights_init.sqf";
-	//[getPos player, 3000]execVM "\lightsoff.sqf"
-	
-	
-	//System Lights by GROM 
-	//execVM "scripts\light\lightsoff.sqf";
-	/*
-	["OFF",player,3000] execVM "scripts\light\ws_fnc_switchLights.sqf";
-	["OFF",Land_A_Office01,3000] execVM "scripts\light\ws_fnc_switchLights.sqf";
-	["OFF",Land_A_GeneralStore_01a,3000] execVM "scripts\light\ws_fnc_switchLights.sqf";
-	["OFF",Land_Church_03,3000] execVM "scripts\light\ws_fnc_switchLights.sqf";
-	["OFF",Land_Mil_ControlTower,3000] execVM "scripts\light\ws_fnc_switchLights.sqf";
-	["OFF",Land_NAV_Lighthouse,3000] execVM "scripts\light\ws_fnc_switchLights.sqf";
-	["OFF",Land_NAV_Lighthouse2,3000] execVM "scripts\light\ws_fnc_switchLights.sqf";
-	*/
+	DZE_RequireGenerator = true;
+	DZE_StreetLights = false;
+	DZE_HouseLights = false;
+	DZE_TowerLights = false;
+	DZE_LightChance = 1;
+	[] execVM "lights\local_lights_init.sqf";
 	
 	[] execVM "scripts\fixes\effects_adt.sqf"; //Effects_ADT
 	
@@ -194,8 +248,11 @@ if (!isDedicated) then {
 
 [] execVM "scripts\weedfarm.sqf"; //hemp farms
 
-[] execVM "\z\addons\dayz_server\maps\rud_mar.sqf"; //rud_mar
+//[] execVM "scripts\marker_adt_sector.sqf"; //marker_adt_sector
 
+[] execVM "scripts\rud_mar.sqf"; //rud_mar
+
+//[] execVM "scripts\box_adt.sqf"; //box_adt
 
 ["elevator"] execVM "elevator\elevator_init.sqf";
 
@@ -203,11 +260,11 @@ if (!isDedicated) then {
 
  while {1 == 1} do
  {
-  _vehicle_list = player nearEntities [["LandVehicle","Air","Ship"], 3];  //m12
+  _vehicle_list = player nearEntities [["LandVehicle","Air","Ship"], 5];  //m12
   {
    if (locked _x) then {
     closeDialog 0;
-    hint "by GROM"; //msg
+    //hint "by GROM"; //msg
    }
   } forEach _vehicle_list;
   uiSleep 0.1;

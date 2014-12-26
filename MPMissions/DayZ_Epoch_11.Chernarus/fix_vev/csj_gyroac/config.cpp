@@ -112,7 +112,7 @@ class CfgVehicles
 		mapSize = 8;
 		fov = 0.5;
 		side = 3;
-		soundEngine[] = {"\z\addons\CSJ_GyroAC\camel1.wss",0.039999999,0.34999999,500};
+		soundEngine[] = {"\z\addons\CSJ_GyroAC\camel1.wss",0.039999999,0.34999999,300};
 		insideSoundCoef = 1;
 		airBrake = 0;
 		flaps = 0;
@@ -250,7 +250,7 @@ class CfgVehicles
 		extCameraPosition[] = {0,0,-5};
 		soundGetIn[] = {"",0.1,1};
 		soundGetOut[] = {"",0.0,1}; //0.0,1
-		soundEngine[] = {"\z\addons\CSJ_GyroAC\UH1_v1.wss",1,0.2,500}; //10.1189,2
+		soundEngine[] = {"\z\addons\CSJ_GyroAC\UH1_v1.wss",1,0.1,300}; //10.1189,2
 		typicalCargo[] = {};
 		weapons[] = {"GyroGrenadeLauncher"};
 		magazines[] = {"3Rnd_GyroGrenade"};//3Rnd_GyroGrenade

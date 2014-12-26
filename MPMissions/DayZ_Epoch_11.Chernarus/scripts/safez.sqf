@@ -50,7 +50,7 @@ if (isNil 'inSafezone') then {inSafezone = false;};
         {
                 if (isNil 'outNow') then
                 {
-                        _msg = '[ADT-TEAM] Вы в безопасной зоне - GodMod включен!'; //fix
+                        _msg = '[ADT-Team] Вы в безопасной зоне - GodMod включен!'; //fix
                         hint _msg;
                         taskHint [_msg, [0,1,0,1], 'taskDone'];
                         inNow = nil;
@@ -122,7 +122,7 @@ if (isNil 'inSafezone') then {inSafezone = false;};
                 {
                         if (str fnc_usec_damageHandler == '{}') then
                         {
-                                _msg = '[ADT-TEAM] Вы покинули безопасную зону - GodMod выключен!'; //off_safez
+                                _msg = '[ADT-Team] Вы покинули безопасную зону - GodMod выключен!'; //off_safez
                                 hint _msg;
                                 taskHint [_msg, [1,0,0.1,1], 'taskFailed'];
                         };
@@ -235,7 +235,7 @@ if (USE_AntiSteal) then
                                 {
                                         (findDisplay 106) closedisplay 0;
                                         closeDialog 0;
-                                        _log = format['%1 [ADT-TEAM] Вы не можете лутать рюкзак выжившего в этой зоне!',name player]; //no_open_gear
+                                        _log = format['%1 [ADT-Team] Вы не можете лутать рюкзак выжившего в этой зоне!',name player]; //no_open_gear
                                         cutText [_log,'PLAIN'];
                                         hint _log;
                                 };
